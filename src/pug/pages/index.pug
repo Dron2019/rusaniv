@@ -1,0 +1,91 @@
+extends ../layout/main
+block variable
+block meta
+	title= 'Rusaniv Residence'
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	
+	script(defer src='./assets/scripts/libs.js')
+	script(defer src='./assets/scripts/home.js')
+	script(defer src='./assets/scripts/index.js')
+
+	
+block content
+	.main-screen
+		.title-wrapper 
+			+svg('vertical-line').vertical-line
+			.title-large Сценарій, написаний вами
+			.button.text.arrow Обрати квартиру
+		.developers-row
+			.button.text-small Замовити дзвінок
+			span.developers-title Девелопери:
+			a(target='_blank' href="https://perfect-group.ua")
+				+img('home/perfect-group.svg').perfect-logo.developer-logo
+			a(target='_blank' href="https://citex.company")
+				+img('home/citex-logo.svg').citex-logo.developer-logo
+	.layout.layout__white.about-block
+		.text-block 
+			.title-large Про проект
+			.text-standart Раді запросити Вас до території сучасних і щасливих людей, які цінують свій час, захоплені улюбленою справою, піклуються про родинний затишок і знаються на дійсно гарних речах. Природна естетика цього місця і його вражаючі панорами є візитною карткою житлового комплексу, що вже скоро буде височіти біля води, навпроти видатних київських пагорбів.
+			.button.text.arrow Детальніше
+			+svg('vertical-line').vertical-line
+		+img('home/about.jpg')
+	.layout.scroll-block
+		+img('home/scroll-block-img.jpg')
+		.scroll-element.scroll-element-js <span class="blue">R</span>USANI<span class="blue">V</span>
+	.layout.layout__white.choose-flat
+		+img('home/choose-flat.jpg')
+		.text-block 
+			.title-large Обрати квартиру
+			.text-standart За кілька кроків від блакитної перлини столичного Лівобережжя — Русанівського каналу, ми створюємо еталонне житло нового покоління, що за будь-якої пори року сповнює енергією, сонцем і особливим настроєм.
+			.button.text.arrow Детальніше
+			+svg('vertical-line').vertical-line
+	.layout.news-layout
+		.bg-logo
+		.wrapper.news-block
+			.bg-title-large NEWS
+			.news-block__slider.news-block-slider-js
+				.news-slide
+					.subtitle Графік роботи відділу продажу на День захисника України
+					.news-date 19 листопада 2020
+					.text-standart Дорога на роботу і додому — значна частина нашого життя. Але якщо офіс буде розташований у житловому комплексі Rusaniv Residence, вільний час можна витратити інші речі...
+					a.button.text-small.transparent.hvr-bounce-to-right Читати новину	
+				.news-slide
+					.subtitle Правила перепланування квартир у Rusaniv Residence
+					.news-date 20 листопада 2020
+					.text-standart Ми піклуємося про комфорт мешканців Happy House та хочемо, щоб кожен у сім’ї мав власний простір. Саме тому для будівництва житлового комплексу ми використовуємо монолітно-каркасну технологію...
+					a.button.text-small.transparent.hvr-bounce-to-right Читати новину
+				.news-slide
+					.subtitle Правила перепланування квартир у Rusaniv Residence
+					.news-date 20 листопада 2020
+					.text-standart Ми піклуємося про комфорт мешканців Happy House та хочемо, щоб кожен у сім’ї мав власний простір. Саме тому для будівництва житлового комплексу ми використовуємо монолітно-каркасну технологію...
+					a.button.text-small.transparent.hvr-bounce-to-right Читати новину
+				.news-slide
+					.subtitle Правила перепланування квартир у Rusaniv Residence
+					.news-date 20 листопада 2020
+					.text-standart Ми піклуємося про комфорт мешканців Happy House та хочемо, щоб кожен у сім’ї мав власний простір. Саме тому для будівництва житлового комплексу ми використовуємо монолітно-каркасну технологію...
+					a.button.text-small.transparent.hvr-bounce-to-right Читати новину
+				.news-slide
+					.subtitle Правила перепланування квартир у Rusaniv Residence
+					.news-date 20 листопада 2020
+					.text-standart Ми піклуємося про комфорт мешканців Happy House та хочемо, щоб кожен у сім’ї мав власний простір. Саме тому для будівництва житлового комплексу ми використовуємо монолітно-каркасну технологію...
+					a.button.text-small.transparent.hvr-bounce-to-right Читати новину
+				.news-slide
+					.subtitle Правила перепланування квартир у Rusaniv Residence
+					.news-date 20 листопада 2020
+					.text-standart Ми піклуємося про комфорт мешканців Happy House та хочемо, щоб кожен у сім’ї мав власний простір. Саме тому для будівництва житлового комплексу ми використовуємо монолітно-каркасну технологію...
+					a.button.text-small.transparent.hvr-bounce-to-right Читати новину
+			.buttons-block
+				.button.text.arrow Більше новин
+				.arrows-container 
+					.previous
+						+svg('arrow')
+					.next
+						+svg('arrow')
+block footer
+block header
+	
+
+
