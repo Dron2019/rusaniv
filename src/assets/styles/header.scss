@@ -63,3 +63,15 @@ header.header {
         background: var(--red);
     }
 }
+
+
+/*Zaglushka Styles*/
+
+@include to(768px) {
+    .header-telephone {
+        margin-right: 0;
+    }
+}
+
+
+/*Zaglushka Styles END*/

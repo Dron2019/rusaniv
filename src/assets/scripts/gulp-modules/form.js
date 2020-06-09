@@ -3,7 +3,12 @@ const lang = langDetect();
 function langDetect() {
     if (window.location.href.match(/\/ru\//)) {
         return 'ru'
-    } else {
+    } else if(window.location.href.match(/\/en\//)){
+
+        return 'en'
+    }
+
+    else {
         return 'ua';
     }
 }
@@ -18,7 +23,7 @@ const langObject = {
     send: {ru: 'Отправить', ua:'Надіслати',en:'Send'},
     orderCall: {ru: 'Интересует проект', ua:'Цікавить проект?',en:'Interested in project?'},
     succesSend: {ru: 'Ваше сообщение отправлено', ua:'Ваше повідомлення відправлено',en:'Your message was sent'},
-    formSubLegend: {ru: 'Оставьте заявку, и мы вас обязательно сообщим о старте продаж!', ua:'Залиште заявку, і ми Вас обов`язково повідомимо про старт продажів!',en:'Leave a request and we will inform you about the start of sales!'},
+    formSubLegend: {ru: ' Оставьте заявку и наш менеджер позвонит вам в ближайшее время', ua:'Залиште заявку і наш менеджер зателефонує вам найближчим часом',en:'    Leave a request and our manager will call you soon'},
     requireField: {ru: 'обязательно для заполнения', ua:'обов`язкове для заповнення ',en:'is required'},
     totalSquare: {ru: 'Общая площадь м<sup>2</sup>:', ua:'Загальна площа м<sub>2</sub>:',en:'Total square m<sub>2</sub>:'},
     livingSquare: {ru: 'Жилая площадь м<sup>2</sup>:', ua:'Житлова площа м<sub>2</sub>:',en:'Living square m<sub>2</sub>:'},
@@ -30,6 +35,7 @@ const langObject = {
     agreementText: {ru: 'Я согласен на обработку персональных данных и запись телефонного звонка в соответствии с Законом Украины "О защите персональных данных"', ua:'Я погоджуюся на обробку персональних даних і запис телефонного дзвінка відповідно до Закону України "Про захист персональних даних"',en:'More info'},
     loginOrPassword: {ru: 'Ваш номер или логин:', ua:'Ваш номер або логін:',en:'Ваш номер або логін'},
     howGetConsult:{ru: 'Как удобнее получить консультацию', ua:'Як зручно отримати консультацію:',en:'Як зручно отримати консультацію:'},
+    leaveRequest:{ru: 'Оставить заявку', ua:'Залишити заявку',en:'leave a request'},
 }
 /* beautify preserve:end */
     /**Класс формы */
@@ -53,7 +59,7 @@ class FormCreater {
         this.countIndex = 0;
         this.regExp = {
             tel: /([A-Z])\w+/gi,
-            telephone: /^[\+]?\d{2,}?[(]?\d{2,}[)]?[-\s\.]?\d{2,}?[-\s\.]?\d{2,}[-\s\.]?\d{0,9}$/im,
+            // telephone: /^[\+]?\d{2,}?[(]?\d{2,}[)]?[-\s\.]?\d{2,}?[-\s\.]?\d{2,}[-\s\.]?\d{0,9}$/im,
             email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 
         };
@@ -406,7 +412,7 @@ class FormCreater {
 
     }
     telephoneMask(input) {
-        input.setAttribute('maxlength', 19);
+        // input.setAttribute('maxlength', 19);
         // console.log(input);
         // input.addEventListener('keydown', (e) => {
 
