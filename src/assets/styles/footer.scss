@@ -10,15 +10,37 @@
     font-size: 14px;
     line-height: 20px;
     max-width: 174px;
+    padding-bottom: 50px;
+    .button {
+        margin-top: 12px;
+        position: fixed;
+        left: var(--side-fields);
+        bottom: calc(var(--side-fields) - 10px);
+    }
+}
+
+// #developers .page__footer-wrapper {
+//     position: fixed;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+// }
+#infrastructure .page__footer-wrapper {
+    margin-top: -102px;
+    .footer-adress .button {
+        position: static;
+    }
 }
 
 .page__footer-wrapper {
     display: flex;
+    height: 102px;
+    // margin-top: -102px;
     justify-content: space-between;
     padding-left: var(--side-fields);
     padding-right: var(--side-fields);
     padding-top: 10px;
     padding-bottom: 10px;
-    position: relative;
+    // position: relative;
     z-index: 2;
 }

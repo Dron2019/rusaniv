@@ -1,0 +1,26 @@
+extends ../layout/main
+block variable
+    -pageName = 'web-camera';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    script(defer src='./assets/scripts/web-camera.js')
+block content
+        .wrapper.first.web-camera-page
+            .breadcrumbs-wrapper
+                h1.page-title Веб камера
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a(href="/news.html").link.current-link Веб камера
+                a(href="gallery.html").link-standart.arrow-after Дивитись галерею
+            .webcam-links
+                a().active Камера 1
+                a() Камера 2
+            .webcam-frame
+                iframe(height="567" src="https://www.youtube.com/embed/4XapjSIvhak" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen).active
+                iframe(height="567" src="https://www.youtube.com/embed/Y5ABWkK80GE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)

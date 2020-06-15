@@ -1,0 +1,20 @@
+extends ../layout/main
+block variable
+    -pageName = 'build-construction';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    script(defer src='./assets/scripts/documents.js')
+block content
+        .wrapper.first.documents-page
+            .breadcrumbs-wrapper
+                h1.page-title Хід будівництва
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a().link.current-link Хід будівництва
+                a(href="documents.html").link-standart Переглянути документи

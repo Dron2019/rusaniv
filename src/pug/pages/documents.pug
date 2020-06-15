@@ -1,0 +1,63 @@
+extends ../layout/main
+block variable
+    -pageName = 'documents';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    script(defer src='./assets/scripts/documents.js')
+block content
+        .wrapper.first.documents-page
+            .breadcrumbs-wrapper
+                h1.page-title Документи
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a(href="/news.html").link.current-link Документи
+                a(href="gallery.html").link-standart.key-before Обрати квартиру
+            .slider
+                .doc-slide
+                    +svg('pdf-icon').doc-slide__file-type-icon
+                    .doc-slide__date 19.01.2020
+                    .doc-slide__title Дозвіл на будівельні роботи
+                    hr
+                    a(href="#" target='_blank').doc-slide__file-size
+                        span 0.2 МБ
+                        +svg('plus').plus
+                .doc-slide
+                    +svg('pdf-icon').doc-slide__file-type-icon
+                    .doc-slide__date 19.01.2020
+                    .doc-slide__title Дозвіл на будівельні роботи
+                    hr
+                    a(href="#" target='_blank').doc-slide__file-size
+                        span 0.2 МБ
+                        +svg('plus').plus
+                .doc-slide
+                    +svg('pdf-icon').doc-slide__file-type-icon
+                    .doc-slide__date 19.01.2020
+                    .doc-slide__title Дозвіл на будівельні роботи
+                    hr
+                    a(href="#" target='_blank').doc-slide__file-size
+                        span 0.2 МБ
+                        +svg('plus').plus
+                .doc-slide
+                    +svg('pdf-icon').doc-slide__file-type-icon
+                    .doc-slide__date 19.01.2020
+                    .doc-slide__title Дозвіл на будівельні роботи
+                    hr
+                    a(href="#" target='_blank').doc-slide__file-size
+                        span 0.2 МБ
+                        +svg('plus').plus
+            .slider-arrows
+                .prev
+                    <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.92308 14.5565L7.87559 13.5898L2.61944 8.24706L18 8.24706L18 6.8661L2.61944 6.8661L7.87559 1.52319L6.92308 0.556517L6.11954e-07 7.55658L6.92308 14.5565Z" />
+                    </svg>
+                .dots
+                .next
+                    <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.92308 14.5565L7.87559 13.5898L2.61944 8.24706L18 8.24706L18 6.8661L2.61944 6.8661L7.87559 1.52319L6.92308 0.556517L6.11954e-07 7.55658L6.92308 14.5565Z" />
+                    </svg>

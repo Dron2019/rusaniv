@@ -1,0 +1,46 @@
+.web-camera-page {
+    display: flex;
+    flex-wrap: wrap;
+    .breadcrumbs-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+        @include shift-padding-right(1.3);
+    }
+    .breadcrumbs-wrapper .link-standart {
+        margin-left: auto;
+    }
+    .webcam-links {
+        @include size(2);
+        display: flex;
+        flex-direction: column;
+        padding-top: 150px;
+        a.active {
+            color: var(--blue);
+            background-color: var(--hz);
+        }
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 170px;
+            border-radius: 25px;
+            color: var(--gray);
+            height: 30px;
+        }
+        a:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    .webcam-frame {
+        @include size(9);
+        @include shift-right(1);
+        transition: .5s;
+        iframe {
+            width: 100%;
+            display: none;
+        }
+        iframe.active {
+            display: initial;
+        }
+    }
+}
