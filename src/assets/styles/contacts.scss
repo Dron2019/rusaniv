@@ -1,0 +1,64 @@
+#contacts {
+    .breadcrumbs-wrapper .link-standart {
+        margin-left: auto;
+    }
+    #map {
+        @include size(7);
+        height: calc(100vh - 120px - 87px);
+        margin-left: auto;
+        margin-right: calc(var(--side-fields) - (var(--side-fields) * 2));
+    }
+    .breadcrumbs-wrapper {
+        width: 100%;
+        margin-bottom: 40px;
+        max-width: 1360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .wrapper.first {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: none;
+    }
+    .page__footer-wrapper {
+        margin-top: -102px;
+    }
+    .sales-scheldule {
+        margin-top: 15px;
+    }
+}
+
+.contact-call-form {
+    font-size: 18px;
+    line-height: 1.67em;
+    /* identical to box height, or 167% */
+    letter-spacing: 0.1em;
+    margin-top: 35px;
+    /* Blue */
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    &>svg {
+        width: 57.33px;
+        height: 57.33px;
+        margin-right: 30.67px;
+    }
+}
+
+.contact-info-group {
+    position: relative;
+    padding-left: 37px;
+    @include shift-left(1.5);
+}
+
+.group-with-marker {
+    position: relative;
+    margin-bottom: 15px;
+    &>svg {
+        position: absolute;
+        top: 0;
+        left: -37px;
+        width: 18px;
+        height: 26px;
+    }
+}

@@ -1,0 +1,39 @@
+extends ../layout/main
+block variable
+    -pageName = 'contacts';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    script(defer src='./assets/scripts/infrastructure.js')
+    script(defer src='./assets/scripts/contacts.js')
+block content
+        .wrapper.first
+            .breadcrumbs-wrapper
+                h1.page-title Контакти
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a().link.current-link Контакти
+                a(href="gallery.html").link-standart.key-before Обрати квартиру
+            .contact-info-group
+                .group-with-marker.group-with-marker_red
+                    +svg('marker-red')
+                    .subtitle Адреса об'єкту
+                    a(target='_blank' href="").text-standart.dark-gray м. Київ, вул. Сверстюка, 54 
+                .group-with-marker.group-with-marker_gray
+                    +svg('marker')
+                    .subtitle Відділ продажів
+                    a(target='_blank' href="").text-standart.dark-gray м. Київ, вул. Сверстюка, 54
+                .text-standart.sales-tel-title Телефон відділу продажів
+                a(href="tel:"+phoneNumberHref+"").subtitle #{phoneNumber}
+                .text-standart.red.sales-scheldule Графік роботи відділу продажів:
+                .text-standart Пн-пт: 09.00 - 19.00 
+                .text-standart Сб-нд: 10.00 - 18.00
+                .contact-call-form.call-form-js 
+                    +svg('letter-opened')
+                    span Написати нам
+            #map

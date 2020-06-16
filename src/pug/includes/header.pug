@@ -1,5 +1,6 @@
 header.header
-    +img('logo.svg').logo
+    a(href="/dist/home.html")
+        +img('logo.svg').logo
     a(href="tel:"+phoneNumberHref+"").header-telephone
         .button.icon.hvr-buzz
             +svg('tel-tube')
@@ -11,6 +12,64 @@ header.header
         <rect x="9.5" y="39.4999" width="39" height="1" transform="rotate(-90 9.5 39.4999)" fill="#B3717B" stroke="#B3717B"/>
         <rect x="18.5" y="39.4999" width="17" height="1" transform="rotate(-90 18.5 39.4999)" fill="#B3717B" stroke="#B3717B"/>
         </svg>
+menu.top-menu
+    a(href="/")
+        +img('logo.svg').logo
+    .top-menu__content
+        .top-menu__top-blocks
+            .button.text-small.call-form-js Замовити дзвінок
+            .close-button Закрити
+                +svg('close-button')
+        ul.top-menu__group
+            li.top-menu__large-span Про комплекс
+            li
+                a(href="#").top-menu__standart-span Про проект
+            li
+                a(href="#").top-menu__standart-span Переваги
+            li
+                a(href="gallery.html").top-menu__standart-span Галерея
+            li
+                a(href="#").top-menu__standart-span Хід будівництва
+            li
+                a(href="panorama.html").top-menu__standart-span Панорама
+            li
+                a(href="web-camera.html").top-menu__standart-span Веб-камера
+            li
+                a(href="documents.html").top-menu__standart-span Документи
+        ul.top-menu__group
+            li.top-menu__large-span Квартири
+            li
+                a(href="#").top-menu__standart-span Вибір на генплані
+            li
+                a(href="#").top-menu__standart-span Будинок
+            li
+                a(href="#").top-menu__standart-span Вибір на плані поверху
+            li
+                a(href="#").top-menu__standart-span Підбір за параметрами
+            li
+                a(href="#").top-menu__standart-span 1-кімнатні квартири
+            li
+                a(href="#").top-menu__standart-span 2-кімнатні квартири
+            li
+                a(href="#").top-menu__standart-span 3-кімнатні квартири
+            li
+                a(href="#").top-menu__standart-span 4-кімнатні квартири
+        .top-menu__big-links-group
+            a.top-menu__large-span(href="#") Розташування
+            a.top-menu__large-span(href="#") Комерційна нерухомість
+            a.top-menu__large-span(href="developers.html") Девелопери
+            a.top-menu__large-span(href="news.html") Новини
+            a.top-menu__large-span(href="infrastructure.html") Iнфраструктура
+            a.top-menu__large-span(href="#") Контакти
+        .top-menu__bottom-links
+            a(href="tel:"+phoneNumberHref+"").top-menu__tel-link 
+                +svg('menu-tel-icon')
+                span #{phoneNumber}
+            a(href="№" target='_blank').top-menu__adress-link 
+                +svg('marker')
+                span м.Київ, вул.Сверстюка, 54
+//- .common-form#common-form
+//-     .common-form-js.form-wrapper
 .lang-block
     a.lang.active UK
     a.lang RU

@@ -6,8 +6,8 @@ block meta
 block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
-	
 	script(defer src='./assets/scripts/libs.js')
+	script(defer src='./assets/scripts/form.js')
 	script(defer src='./assets/scripts/home.js')
 	script(defer src='./assets/scripts/index.js')
 
@@ -17,7 +17,7 @@ block content
 		.title-wrapper 
 			+svg('vertical-line').vertical-line
 			.title-large Сценарій, написаний вами
-			.button.text.arrow Обрати квартиру
+			a.button.text.arrow Обрати квартиру
 		.developers-row
 			span.developers-title Девелопери:
 			a(target='_blank' href="https://perfect-group.ua")

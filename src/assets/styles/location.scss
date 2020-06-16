@@ -1,0 +1,114 @@
+#location {
+    .page__footer-wrapper {
+        margin-top: -102px;
+    }
+}
+
+.location-wrapper {
+    @include size(12);
+    @include shift-padding(1.8);
+    display: flex;
+    flex-wrap: wrap;
+    .vertical-line {
+        left: -20px;
+    }
+    &__description-text {
+        @include size(6);
+        margin-left: auto;
+    }
+    .title-wrapper {
+        @include size(6);
+        padding-left: 40px;
+        margin-left: -40px;
+    }
+    .arrows-container {
+        height: 135px;
+        width: 50px;
+        flex-direction: column;
+        justify-content: space-between;
+        .previous {
+            transform: rotate(-90deg);
+        }
+        .next {
+            transform: rotate(90deg);
+        }
+        margin-left: auto;
+    }
+    &__slider-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    &__slider-wrapper .subtitle {
+        width: calc(100% / 8 * 3 - #{$offset});
+    }
+    &__slider {
+        width: calc(100% / 8 * 4 - #{$offset});
+        margin: 0 auto;
+    }
+    &__slider .slide {
+        display: flex;
+        align-items: center;
+    }
+    &__map-block {
+        width: 100%;
+        height: 556px;
+        position: relative;
+        margin-top: 85px;
+        margin-bottom: 130px;
+        overflow: hidden;
+    }
+    &__map-block-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var(--shta);
+        padding-bottom: 25px;
+        padding-top: 20px;
+        padding-left: calc(100% / 8 - #{$offset});
+        padding-right: calc(100% / 8 * 0.7 - #{$offset});
+    }
+    &__map-block-info svg {
+        width: 18.34px;
+        height: 12.1px;
+        margin-right: 6px;
+    }
+    &__map-block-info &__map-block #map {
+        width: 100%;
+        height: 556px;
+    }
+}
+
+.big-red-digit {
+    font-size: 240px;
+    line-height: 1em;
+    color: var((--red));
+    margin-right: 20px;
+}
+
+.location-bottom-block {
+    margin-top: 180px;
+    font-size: 0;
+    display: flex;
+    &__text {
+        width: 50%;
+        background-color: var(--shta);
+        vertical-align: top;
+        padding-top: 73px;
+        padding-bottom: 73px;
+        padding-left: calc(100% / 12 - #{$offset});
+        padding-right: calc(100% / 12 - #{$offset});
+    }
+    &__image {
+        width: 50%;
+        object-fit: cover;
+    }
+    .title-wrapper {
+        padding-left: 60px;
+        margin-left: -60px;
+        margin-bottom: 35px;
+    }
+    .text-standart {
+        margin-bottom: 35px;
+    }
+}

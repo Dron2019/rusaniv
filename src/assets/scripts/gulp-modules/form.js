@@ -4,10 +4,8 @@ function langDetect() {
     if (window.location.href.match(/\/ru\//)) {
         return 'ru'
     } else if(window.location.href.match(/\/en\//)){
-
         return 'en'
     }
-
     else {
         return 'ua';
     }
@@ -61,9 +59,7 @@ class FormCreater {
             tel: /([A-Z])\w+/gi,
             // telephone: /^[\+]?\d{2,}?[(]?\d{2,}[)]?[-\s\.]?\d{2,}?[-\s\.]?\d{2,}[-\s\.]?\d{0,9}$/im,
             email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-
         };
-
         this.color = config.color || '';
     };
     styleSetup() {
@@ -134,7 +130,7 @@ class FormCreater {
         let requiredFields = this.container.querySelectorAll('[data-required=true]');
         let validCounter = 0;
         requiredFields.forEach(field => {
-            if (this.sendObject[field.name] && this.sendObject[field.name].length > 5) {
+            if (this.sendObject[field.name] && this.sendObject[field.name].length > 2) {
                 field.parentNode.querySelector('.error-span').innerText = '';
                 field.classList.remove('unfilled');
                 validCounter++;
@@ -145,7 +141,6 @@ class FormCreater {
                 /**Вывод сообщения об ошибке */
                 field.parentNode.querySelector('.error-span').innerText = `${langObject.requireField[lang]}`;
                 field.classList.add('unfilled');
-
                 this.requiredReady = false;
             }
         });

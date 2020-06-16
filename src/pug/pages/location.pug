@@ -1,0 +1,67 @@
+extends ../layout/main
+block variable
+    -pageName = 'location';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    script(defer src='./assets/scripts/infrastructure.js')
+    script(defer src='./assets/scripts/location.js')
+block content
+        .wrapper.first
+            .breadcrumbs-wrapper
+                h1.page-title Розташування
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a().link.current-link Розташування
+                a(href="gallery.html").link-standart.key-before Обрати апартаменти
+        .wrapper.location-wrapper
+            .title-wrapper 
+                +svg('vertical-line').vertical-line
+                .title-large 5 хвилин прогулянки до метро Лівобережна
+            .text-standart.location-wrapper__description-text
+                p Зручне розташування дозволить майбутнім мешканцям легко і швидко діставатися центру столиці і будь-яких районів, обираючи зручний транспорт для пересування. 
+                p Тут ви матиме все необхідне для комфортного життя: власна інфраструктура, продуманий благоустрій території, якісний сервіс обслуговування будинків.
+            .location-wrapper__map-block
+                #map
+                .location-wrapper__map-block-info
+                    .text-standart Адреса об'єкту
+                    .subtitle Київ, вул. Сверстюка, 54
+                    a(href="" target='_blank').link-standart 
+                        +svg('marker-on-map')
+                        span Відкрити гугл карти
+            .location-wrapper__slider-wrapper
+                .subtitle Добиратись додому та на работу буде легко:
+                .location-wrapper__slider
+                    .slide
+                        .big-red-digit 15
+                        .text-standart хвилин пішки до станції метро «Лівобережна»
+                    .slide
+                        .big-red-digit 12
+                        .text-standart хвилин пішки до станції метро «Лівобережна»
+                    .slide
+                        .big-red-digit 7
+                        .text-standart хвилин пішки до станції метро «Лівобережна»
+                    .slide
+                        .big-red-digit 1
+                        .text-standart хвилин пішки до станції метро «Лівобережна»
+                    .slide
+                        .big-red-digit 2
+                        .text-standart хвилин пішки до станції метро «Лівобережна»
+                .arrows-container 
+                    .previous
+                        +svg('arrow')
+                    .next
+                        +svg('arrow')
+        .location-bottom-block
+            +img('location/bottom-block-image.jpg').location-bottom-block__image
+            .location-bottom-block__text
+                .title-wrapper
+                    +svg('vertical-line').vertical-line
+                    .title-large Зручний виїзд на ХХ проспект
+                .text-standart Перебуваючи в Rusaniv Residence, ви зможете переміститися в будь-яку точку Києва за дуже короткий час. Комплекс знаходиться на перетині вулиць Х і Х, звідки передбачено максимально зручний виїзд на автомобілі у напрямку Х.
+                a(href="#").button.text.arrow Обрати квартиру
