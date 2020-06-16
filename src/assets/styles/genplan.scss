@@ -1,0 +1,36 @@
+.genplan {
+    margin-top: -194px;
+    position: relative;
+    height: 100vh;
+    z-index: 0;
+    & svg {
+        height: 100vh;
+        width: calc(100vh * 479.777 / 264.58334);
+    }
+    & svg path {
+        transition: .5s;
+        cursor: pointer;
+        fill: transparent;
+    }
+    & svg path:hover {
+        fill: var(--red);
+        opacity: .7;
+    }
+}
+
+#genplan {
+    .wrapper.first {
+        position: relative;
+        z-index: 1;
+    }
+    .page__footer-wrapper {
+        margin-top: -102px;
+    }
+    .flying-help {
+        svg {
+            animation: swing 1s infinite ease-in;
+        }
+        top: 194px;
+        left: 20%;
+    }
+}

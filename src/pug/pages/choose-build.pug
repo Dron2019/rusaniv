@@ -1,0 +1,53 @@
+extends ../layout/main
+block variable
+    -pageName = 'choose-build';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    script(defer src='./assets/scripts/choose-floor.js')
+block content
+        .wrapper.first
+            .breadcrumbs-wrapper
+                h1.page-title Будинок
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a(href="genplan.html").link Вибір на генплані
+                    a().link.current-link Будинок
+                a(href="gallery.html").link-standart.white.plus-before Підбір за параметрами
+            .filter-links
+                a(href='1-room.html') 1 кімнатні
+                a(href='2-room.html') 2 кімнатні
+                a(href='3-room.html') 3 кімнатні
+                a(href='4-room.html') 4 кімнатні
+            .switcher
+                .arrow.previous
+                    <svg viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.92308 14.6669L7.87559 13.7003L2.61944 8.35747L18 8.35748L18 6.97651L2.61944 6.97651L7.87559 1.6336L6.92308 0.666929L6.11954e-07 7.66699L6.92308 14.6669Z" fill="white"/>
+                    </svg>
+                .circle
+                    span K1
+                .arrow.next
+                    <svg viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.92308 14.6669L7.87559 13.7003L2.61944 8.35747L18 8.35748L18 6.97651L2.61944 6.97651L7.87559 1.6336L6.92308 0.666929L6.11954e-07 7.66699L6.92308 14.6669Z" fill="white"/>
+                    </svg>
+        .genplan 
+            include ../../assets/images/choose-build/choose-build.svg
+        .flying-help оберіть потрібний будинок
+            <svg width="49" height="50" viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M38.7685 45.3309C35.6064 45.9758 32.4443 46.6207 29.2822 47.2657C27.7719 47.5737 26.4465 45.1499 28.122 44.8082C29.9411 44.4372 31.7602 44.0661 33.5792 43.6951C24.0813 40.8633 15.1365 35.5138 11.1599 26.0143C8.53592 19.7458 8.4327 12.6063 9.84221 6.02796C10.1578 4.55471 10.527 3.06366 11.068 1.65385C11.4204 0.735473 14.1357 0.410899 13.7772 1.34503C9.77124 11.7852 11.1316 24.9562 19.0748 33.1469C23.3089 37.513 28.8473 40.2162 34.5994 41.9953C33.2832 40.5504 31.9671 39.1055 30.651 37.6605C29.4279 36.3176 31.5436 34.9733 32.6874 36.229C34.8604 38.6148 37.0335 41.0005 39.2066 43.3863C39.7003 43.9284 39.6317 45.1548 38.7685 45.3309Z" fill="#F4F9FB"/>
+            </svg>
+        <div class="floor-info-window floor-info-window-js" >
+            <div class="floor-number">
+                <span class="floor-number-js title-large white">9</span>
+                <span class="floor-number-title">Поверх </span>
+            </div>
+            <div class="flat-on-floor">
+                <span class="flat-on-floor-js">18 </span>
+                <span>квартир у продажу </span>
+            </div>
+        </div>
