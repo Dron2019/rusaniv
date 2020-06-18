@@ -1,0 +1,58 @@
+extends ../layout/main
+block variable
+    -pageName = 'choose-floor';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    //- script(defer src='./assets/scripts/choose-floor.js')
+block content
+        .wrapper.first
+            .breadcrumbs-wrapper
+                h1.page-title Вибір на плані поверху
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a(href="genplan.html").link Вибір на генплані
+                    a(href="genplan.html").link Будинок
+                    a().link.current-link Вибір на плані поверху
+                a(href="gallery.html").link-standart.red-plus-before Підбір за параметрами
+        .wrapper.choose-floor-wrapper
+            .flat-info-block.first
+                +img('common/compass.png').compass
+                .circle.flat-type
+                    span K1
+                .circle.flat-type
+                    span B3
+            .flat-info-block
+                .subtitle.flat-number #145
+                .text-standart Номер квартири
+                .subtitle.flat-rooms 2
+                .text-standart Кімнати
+                .subtitle.red.flat-tot-square 117.3 м<sub>2</sub>
+                .text-standart Загальна площа
+                .subtitle.red.flat-live-square 35.6 м<sub>2</sub>
+                .text-standart Житлова площа
+            .floor-plan-block
+                +img('choose-floor/floor-plan.jpg')
+                .arrows-container 
+                    .previous
+                        +svg('arrow')
+                    .text-standart.blue 10 поверх
+                    .next
+                        +svg('arrow')
+                - var n = 0;
+                ul.floor-indicator
+                    li.top-line
+                    while n < 25
+                        - n++
+                        if n===5
+                            li.active 
+                                a(href="#") #{n}
+                        else 
+                            li
+                                a(href="#") #{n}
+

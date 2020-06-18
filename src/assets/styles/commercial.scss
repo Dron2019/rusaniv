@@ -1,0 +1,61 @@
+#commercial {}
+
+.cards-wrapper {
+    @include size(10);
+    @include shift-left(2);
+    @include row-flex();
+    margin: 45px auto 45px 8%;
+}
+
+.card-value {
+    vertical-align: top;
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 28px;
+    /* or 200% */
+    /* Gray-2 */
+    color: #6C7C84;
+}
+
+.card-title {
+    vertical-align: top;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 28px;
+    /* or 200% */
+    /* Gray */
+    color: #AAC0C9;
+    width: 70%;
+}
+
+.card-name {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    width: 20%;
+    /* identical to box height, or 167% */
+    letter-spacing: 0.1em;
+    /* Blue */
+    color: #00395A;
+}
+
+.card {
+    display: flex;
+    max-width: 310px;
+    text-align: left;
+    .link-row {
+        padding-top: 25px;
+        border-spacing: 25px;
+    }
+    img {
+        width: 40%;
+        object-fit: contain;
+        margin-right: 20px;
+    }
+}

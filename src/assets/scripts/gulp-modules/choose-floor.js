@@ -31,11 +31,13 @@ pathesList.forEach(function(path, index) {
     path.addEventListener('mouseover', () => {
         infoWindow.querySelector('.floor-number-js').innerText = path.dataset.floor;
         infoWindow.querySelector('.flat-on-floor-js').innerText = `${path.dataset.flats} `;
+        infoWindow.style.display = `initial`;
         infoWindow.style.position = 'fixed';
         infoWindow.style.visibility = `visible`;
         infoWindow.style.top = `${path.getBoundingClientRect().top}px`;
         if (window.screen.width > 768) infoWindow.style.left = `${path.getBoundingClientRect().left - 200}px`;
         infoWindow.style.opacity = `1`;
+
     });
     path.addEventListener('mouseout', function() {
         infoWindow.style.opacity = `0`;

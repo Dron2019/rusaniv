@@ -1,0 +1,113 @@
+#flat {
+    .pdf-link {
+        display: flex;
+        align-items: center;
+    }
+    .pdf-link:before {
+        content: url(../images/common/pdf-link.svg);
+        width: 33px;
+        height: 47px;
+        margin-right: 19px;
+    }
+    .flat-plan-wrapper {
+        @include row-flex();
+        justify-content: space-between;
+        margin: 45px auto;
+    }
+    .flat-info-block.first {
+        @include size(1);
+        .circle {
+            margin-top: 30px;
+            margin-right: auto;
+            margin-left: 0;
+        }
+    }
+    .mini-floor-plan-block {
+        @include size(2.5);
+        align-self: center;
+        .text-standart {
+            font-family: $default-font2;
+            font-size: 12px;
+            line-height: 28px;
+            /* identical to box height, or 233% */
+            display: flex;
+            align-items: center;
+            /* Gray */
+            color: #AAC0C9;
+        }
+        .link-standart {
+            display: block;
+            margin-top: 25px;
+        }
+    }
+    .flat-info-block.last {
+        @include size(2.4);
+        @include shift-right(1);
+        .button {
+            margin-top: 50px;
+        }
+        .pdf-link {
+            margin-top: 25px;
+        }
+    }
+    .flat-plan-block {
+        cursor: zoom-in;
+        @include size(2.5);
+        img {
+            object-fit: contain;
+            max-height: 500px;
+        }
+    }
+}
+
+
+/* overlay at start */
+
+.mfp-fade.mfp-bg {
+    opacity: 0;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+
+/* overlay animate in */
+
+.mfp-fade.mfp-bg.mfp-ready {
+    opacity: 0.8;
+}
+
+
+/* overlay animate out */
+
+.mfp-fade.mfp-bg.mfp-removing {
+    opacity: 0;
+}
+
+
+/* content at start */
+
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+    transition-delay: .5s;
+    animation: fadeInDown .5s 1 linear;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+
+/* content animate it */
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+    animation: fadeInDown .5s 1 linear;
+}
+
+
+/* content animate out */
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    // opacity: 0;
+    animation: fadeInDown .5s 1 linear;
+}

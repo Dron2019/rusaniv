@@ -40,6 +40,7 @@
         border-radius: 25px;
         left: 50%;
         transform: translateX(-50%);
+        white-space: nowrap;
     }
     .filter-links>a {
         padding-left: 45px;
@@ -67,10 +68,12 @@
         background-color: var(--white);
     }
     .switcher {
-        width: 125px;
+        width: 220px;
         display: flex;
         align-items: center;
         position: fixed;
+        left: var(--side-fields);
+        padding-left: calc((100vw - 1360px) / 2);
         .arrow svg {
             width: 18px;
             height: 15px;
@@ -104,6 +107,19 @@
         }
         .next svg {
             transform: translateX(0px) rotate(0.5turn);
+        }
+    }
+    .flying-help {
+        position: fixed;
+        width: 170px;
+        height: 88px;
+        color: var(--shta);
+        text-align: center;
+        z-index: 34;
+        right: 0;
+        top: 190px;
+        svg {
+            transform: matrix(-1, 0, 0, 1, 100, 0);
         }
     }
 }
