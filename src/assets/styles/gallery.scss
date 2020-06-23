@@ -45,4 +45,17 @@
         margin-left: auto;
         margin-right: 20vw;
     }
+    .slick-slide:not(.slick-active) {
+        animation: clipPathOut .5s 1 ease-in;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes clipPathOut {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+    }
 }

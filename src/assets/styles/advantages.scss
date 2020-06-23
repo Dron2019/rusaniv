@@ -1,0 +1,92 @@
+#advantages {
+    .adv-second-layout {}
+}
+
+.advantages-full-screen-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -187px;
+    position: relative;
+    z-index: -1;
+    min-height: 100vh;
+    .title-wrapper {
+        padding-left: 57px;
+        margin-bottom: 10px;
+    }
+    .text-standart {
+        max-width: 80%;
+    }
+    &__img {
+        width: 42%;
+        object-fit: cover;
+    }
+    &__text-block {
+        @include shift-padding(1);
+        width: 58%;
+        background-color: var(--shta);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+.adv-second-layout {
+    position: relative;
+    .wrapper {
+        padding-top: 118px;
+        padding-bottom: 92px;
+        @include wrapper();
+        @include shift-padding(1);
+        display: flex;
+        flex-wrap: wrap;
+        .subtitle {
+            width: 100%;
+            @include shift-padding-left(8);
+            margin-bottom: 30px;
+        }
+    }
+    .adv-dark-block {
+        @include shift-padding(1);
+        @include size(6);
+        padding-top: 70px;
+        padding-bottom: 70px;
+        background-color: var(--blue);
+        max-height: 530px;
+        position: relative;
+        left: 8%;
+        top: -150px;
+        z-index: 1;
+    }
+    .adv-dark-block__subtitle {
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 28px;
+        color: var(--shta);
+        padding-bottom: 20px;
+    }
+    .list-standart>li {
+        margin-bottom: 5px;
+    }
+    &__img {
+        @include size(6);
+        object-fit: cover;
+        max-height: 530px;
+        position: relative;
+        z-index: 2;
+    }
+    &__side-image {
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+        bottom: 150px;
+        left: -150px;
+        transition: .5s;
+        z-index: 3;
+    }
+    &__side-image:hover {
+        left: 0;
+    }
+}

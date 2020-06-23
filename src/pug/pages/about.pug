@@ -1,0 +1,54 @@
+extends ../layout/main
+block variable
+    -pageName = 'about';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    //- script(defer src='./assets/scripts/commercial.js')
+block content
+        .wrapper.first
+            .breadcrumbs-wrapper
+                h1.page-title Про проект
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a().link.current-link  Про проект
+        +img("about/about-bg.jpg").about-background-image
+        .about-wrapper
+            .bg-title-large RUSANIV
+            .subtitle.about-wrapper__subtitle Перший будинок буде введений в експлуатацію у 20ХХ році.
+            .about-dark-block
+                .title-wrapper
+                    +svg('vertical-line-white').vertical-line
+                    .title-large.white Архітектура
+                    .text-standart.white
+                        p Виразні форми RUSANIV RESIDENCE звертатимуть на себе увагу ще здалеку. Елегантні лінії сучасних висотних секцій гармонійно доповнюватимуть пейзаж. Уявіть самі, як вдало ці силуети контрастуватимуть з панорамами Правого берега і вечірнім небом столиці. 
+                        p Сміливий формат архітектурного проекту створений для тих, хто не шукає компромісів і звик почуватися на висоті!
+            .complex-data-block
+                .complex-data-block-item
+                    .title-large.red XX
+                    .text-standart м2 територія комплексу
+                .complex-data-block-item
+                    .title-large.red XX
+                    .text-standart житлова площа
+                .complex-data-block-item
+                    .title-large.red XX
+                    .text-standart кількість квартир
+                .complex-data-block-item
+                    .title-large.red XX
+                    .text-standart кількість паркомісць
+            .about-description-paragraph.text-standart Житловий комплекс спроектовано з урахуванням високих вимог покупців до нерухомості в мегаполісі. Продумане поєднання двох неординарних будівель гарантує кожній квартирі необхідну кількість сонячного світла, відмінний краєвид з вікна і приватність водночас.
+                a(target='_blank' href="").link-standart.google-maps Відкрити гугл карти
+        .about-wrapper-bottom.layout__white
+            .wrapper
+                .title-wrapper
+                    +svg('vertical-line').vertical-line
+                    .title-large Планування
+                .text-standart
+                    p Ми пропонуємо лише комфортні і функціональні планувальні рішення. У комплексі представлені квартирі від ХХ метрів, одно-, дво-, трикімнатні варіанти з можливістю об'єднання (?) 
+                    p Особливою перевагою проекту є панорамні вікна і високий рівень природної інсоляції житлового простору.
+                        a(href="filter.html").button.text.arrow Обрати квартиру

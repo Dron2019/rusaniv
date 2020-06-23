@@ -1,0 +1,42 @@
+extends ../layout/main
+block variable
+    -pageName = 'advantages';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    //- script(defer src='./assets/scripts/commercial.js')
+block content
+        .wrapper.first
+            .breadcrumbs-wrapper
+                h1.page-title Переваги
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a().link.current-link  Переваги
+        .advantages-full-screen-wrapper
+            +img('advantages/Rectangle171.jpg').advantages-full-screen-wrapper__img
+            .advantages-full-screen-wrapper__text-block
+                .title-wrapper
+                    +svg('vertical-line').vertical-line
+                    .title-large Дім з волелюбним характером
+                    .text-standart
+                        p Жити у великому мегаполісі — це насолода! Насолода для тих, хто сам обирає драйв шаленого міста. Хто кличе до себе друзів і влаштовує свято в будь-який день, а не лише у вихідний. Хто працює у зручний час і віддає перевагу індивідуальному графіку. 
+                        p Хто воліє бути режисером власної реальності і створювати її за авторським сценарієм.
+        .layout.adv-second-layout
+            .wrapper
+                .subtitle Проект з новою концепцією
+                .adv-dark-block
+                    .adv-dark-block__subtitle.text-standart.white Ми презентуємо зразковий проект з абсолютно новою концепцією для цього району столиці
+                    ul.list-standart.shta
+                        li Розташування поруч з набережною і метро 
+                        li Унікальна архітектура з елементами параметризму 
+                        li Розкішні краєвиди з панорамних вікон і тераси на даху 
+                        li Преміальні сучасні технології і матеріали будівництва 
+                        li Ефективні планувальні рішення
+                +img('advantages/adv_block2.jpg').adv-second-layout__img
+            +img('advantages/adv_block3.jpg').adv-second-layout__side-image
+

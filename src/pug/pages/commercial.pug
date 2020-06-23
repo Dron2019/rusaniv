@@ -9,7 +9,7 @@ block head
 block scripts
     script(defer src='./assets/scripts/libs.js')
     script(defer src='./assets/scripts/index.js')
-    script(defer src='./assets/scripts/flat.js')
+    script(defer src='./assets/scripts/commercial.js')
 block content
         .wrapper.first
             .breadcrumbs-wrapper
@@ -17,42 +17,44 @@ block content
                 .breadcrumbs-block
                     a(href="/").link Головна
                     a().link.current-link  Комерційна нерухомість
-        .wrapper.cards-wrapper
-            - var n = 0;
-            while n < 25
-                - n++
-                .card
-                    +img('flat/plan.png')
-                    table
-                        tr
-                            td(colspan="2").card-name Приміщення 5Г
-                        tr
-                            td.card-title Будинок
-                            td.card-value 1
-                        tr
-                            td.card-title Поверх
-                            td.card-value 10
-                        tr
-                            td.card-title Загальна площа м<sub>2</sub>
-                            td.card-value 10,2 
-                        tr
-                            td(colspan="2").link-row
-                                a(href="#").link-standart.arrow-after Детальніше
-                .card
-                    +img('flat/test.png')
-                    table
-                        tr
-                            td(colspan="2").card-name Приміщення 5Г
-                        tr
-                            td.card-title Будинок
-                            td.card-value 1
-                        tr
-                            td.card-title Поверх
-                            td.card-value 10
-                        tr
-                            td.card-title Загальна площа м<sub>2</sub>
-                            td.card-value 10,2 
-                        tr
-                            td(colspan="2").link-row
-                                a(href="#").link-standart.arrow-after Детальніше
-            
+        .wrapper
+            .cards-wrapper
+                - var n = 0;
+                while n < 25
+                    - n++
+                    a(href="flat-commercial.html").card
+                        +img('flat/plan.png')
+                        table
+                            tr
+                                td(colspan="2").card-name Приміщення 5Г
+                            tr
+                                td.card-title Будинок
+                                td.card-value 1
+                            tr
+                                td.card-title Поверх
+                                td.card-value 10
+                            tr
+                                td.card-title Загальна площа м<sub>2</sub>
+                                td.card-value 10,2 
+                            tr
+                                td(colspan="2").link-row
+                                    a(href="#").link-standart.arrow-after Детальніше
+                    a(href="flat-commercial.html").card
+                        +img('flat/test.png')
+                        table
+                            tr
+                                td(colspan="2").card-name Приміщення 5Г
+                            tr
+                                td.card-title Будинок
+                                td.card-value 1
+                            tr
+                                td.card-title Поверх
+                                td.card-value 10
+                            tr
+                                td.card-title Загальна площа м<sub>2</sub>
+                                td.card-value 10,2 
+                            tr
+                                td(colspan="2").link-row
+                                    a(href="#").link-standart.arrow-after Детальніше
+            .load-more-block
+                .button.text.arrow.load-more.load-more-js Завантажити більше

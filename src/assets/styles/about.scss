@@ -1,0 +1,101 @@
+#about {
+    --negative-block-margin: -123px;
+    .title-wrapper {
+        padding-left: 35px;
+        position: relative;
+    }
+    .about-background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        object-position: center;
+    }
+    .about-wrapper {
+        margin-top: calc(100vh - 167px);
+        @include shift-left(2);
+        padding-left: var(--side-fields);
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        padding-bottom: 110px;
+        .bg-title-large {
+            top: 0.5em;
+            position: absolute;
+            left: 0;
+            z-index: -1;
+        }
+    }
+    .about-wrapper__subtitle {
+        @include size(3);
+        margin-top: 60px;
+    }
+    .about-dark-block {
+        background-color: var(--blue);
+        // padding: 110px 50px;
+        padding-top: 50px;
+        // padding-left: 50px;
+        padding-bottom: 110px;
+        @include shift-padding-right(1);
+        @include shift-padding-left(0.5);
+        margin-top: var(--negative-block-margin);
+        @include size(8.3);
+        margin-left: auto;
+    }
+    .complex-data-block {
+        width: 100%;
+        margin-top: 110px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .about-description-paragraph {
+        @include size(3);
+        margin-top: 100px;
+    }
+    .complex-data-block {
+        @include size(8);
+    }
+    .complex-data-block-item {
+        width: 50%;
+    }
+    .complex-data-block-item:nth-child(-n+2) {
+        margin-bottom: 94px;
+    }
+    .about-wrapper-bottom {
+        @include shift-padding-left(2);
+        background: url(../images/common/white-logo-for-bg.png) left bottom no-repeat, linear-gradient(0deg, rgba(244, 249, 251, 1) 100%, rgba(244, 249, 251, 1) 100%);
+        margin-bottom: -103px;
+        padding-bottom: 103px;
+        padding-top: 100px;
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .title-wrapper {
+            @include size(6);
+            align-items: flex-start;
+        }
+        .text-standart {
+            @include size(6);
+            @include shift-padding-right(2);
+        }
+        .button {
+            margin-top: 35px;
+        }
+        .title-wrapper {
+            padding-left: 57px;
+        }
+    }
+    .link-standart {
+        display: block;
+        margin-top: 70px;
+    }
+    @include from(1720px) {
+        .about-dark-block {
+            @include size(7);
+        }
+    }
+}

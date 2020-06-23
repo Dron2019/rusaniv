@@ -1,0 +1,33 @@
+extends ../layout/main
+block variable
+    -pageName = 'flat-commercial';
+block meta
+    title= 'Rusaniv Residence'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/index.js')
+    //- script(defer src='./assets/scripts/commercial.js')
+block content
+        .wrapper.first
+            .breadcrumbs-wrapper
+                h1.page-title Комерційна нерухомість
+                .breadcrumbs-block
+                    a(href="/").link Головна
+                    a(href="commercial.html").link Комерційна нерухомість
+                    a().link.current-link  Приміщення 2А
+        .wrapper.commecial-flat-wrapper
+            +img('/flat/plan.png').flat-img
+            .flat-text-block
+                .title-large Приміщення 2А
+                .flat-data-block
+                    .subtitle.subtitle-1 1
+                    .text-standart Будинок 1
+                    .subtitle.subtitle-2 2
+                    .text-standart Поверх
+                    .subtitle.red.subtitle-3 23
+                    .text-standart.square-m-block Загальна площа м<sub>2</sub>
+                .button.text.arrow Дізнатись ціну
+                .link-standart.arrow-before Назад на фільтр

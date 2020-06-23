@@ -11,4 +11,5 @@ $('.gallery-slider-js').slick({
     nextArrow: '.gallery-arrow-js',
     prevArrow: false,
     fade: true,
+    speed: 1000,
 });
