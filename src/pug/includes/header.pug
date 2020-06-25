@@ -12,64 +12,36 @@ header.header
         <rect x="9.5" y="39.4999" width="39" height="1" transform="rotate(-90 9.5 39.4999)" fill="#B3717B" stroke="#B3717B"/>
         <rect x="18.5" y="39.4999" width="17" height="1" transform="rotate(-90 18.5 39.4999)" fill="#B3717B" stroke="#B3717B"/>
         </svg>
-menu.top-menu
-    a(href="/")
-        +img('logo.svg').logo
-    .top-menu__content
-        .top-menu__top-blocks
-            .button.text-small.call-form-js Замовити дзвінок
-            .close-button Закрити
-                +svg('close-button')
-        ul.top-menu__group
-            li.top-menu__large-span Про комплекс
-            li
-                a(href="about.html").top-menu__standart-span Про проект
-            li
-                a(href="advantages.html").top-menu__standart-span Переваги
-            li
-                a(href="gallery.html").top-menu__standart-span Галерея
-            li
-                a(href="#").top-menu__standart-span Хід будівництва
-            li
-                a(href="panorama.html").top-menu__standart-span Панорама
-            li
-                a(href="web-camera.html").top-menu__standart-span Веб-камера
-            li
-                a(href="documents.html").top-menu__standart-span Документи
-        ul.top-menu__group
-            li.top-menu__large-span Квартири
-            li
-                a(href="#").top-menu__standart-span Вибір на генплані
-            li
-                a(href="choose-floor.html").top-menu__standart-span Будинок
-            li
-                a(href="choose-flat.html").top-menu__standart-span Вибір на плані поверху
-            li
-                a(href="filter.html").top-menu__standart-span Підбір за параметрами
-            li
-                a(href="#").top-menu__standart-span 1-кімнатні квартири
-            li
-                a(href="#").top-menu__standart-span 2-кімнатні квартири
-            li
-                a(href="#").top-menu__standart-span 3-кімнатні квартири
-            li
-                a(href="#").top-menu__standart-span 4-кімнатні квартири
-        .top-menu__big-links-group
-            a.top-menu__large-span(href="location.html") Розташування
-            a.top-menu__large-span(href="commercial.html") Комерційна нерухомість
-            a.top-menu__large-span(href="developers.html") Девелопери
-            a.top-menu__large-span(href="news.html") Новини
-            a.top-menu__large-span(href="infrastructure.html") Iнфраструктура
-            a.top-menu__large-span(href="contacts.html") Контакти
-        .top-menu__bottom-links
-            a(href="tel:"+phoneNumberHref+"").top-menu__tel-link 
-                +svg('menu-tel-icon')
-                span #{phoneNumber}
-            a(href="№" target='_blank').top-menu__adress-link 
-                +svg('marker')
-                span м.Київ, вул.Сверстюка, 54
-//- .common-form#common-form
-//-     .common-form-js.form-wrapper
+    include menu.pug
+    .common-form#common-form
+        .common-form-js.form-wrapper.form-container-js
+            .form-close-block
+                .form-close-block-title Закрити
+                .form-close-button
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8.44582" y="23.5151" width="21.4279" height="0.738894" transform="rotate(-45 8.44582 23.5151)" fill="white" stroke="white" stroke-width="0.738894"/>
+                    <rect x="8.96826" y="8.3633" width="21.4279" height="0.738894" transform="rotate(45 8.96826 8.3633)" fill="white" stroke="white" stroke-width="0.738894"/>
+                    </svg>
+            legend.form-legend &Zcy;&acy;&mcy;&ocy;&vcy;&icy;&tcy;&icy; &dcy;&zcy;&vcy;&iukcy;&ncy;&ocy;&kcy;
+            .input-group.text
+                label.name-label.common-label(for='name') &Vcy;&acy;&shcy;&iecy; &iukcy;&mcy;&grave;&yacy;:
+                input.text-input.common-input.unfilled(type='text' name='name' placeholder='Ваше ім`я:' autocomplete='off' id='' data-required='true' data-count='0')
+                .input-group-line
+            .input-group.text
+                label.telephone-label.common-label(for='telephone') &Vcy;&acy;&shcy; &tcy;&iecy;&lcy;&iecy;&fcy;&ocy;&ncy;:*
+                input.text-input.common-input.inputtelmask.unfilled(type='text' name='telephone' placeholder='Ваш телефон:*' autocomplete='off' id='' data-required='true')
+                .input-group-line
+            div.checkbox-wrap
+                input(name="callmenow" type="radio")
+                .checkbox
+            .time-label.common-label(for='callmenow') &Pcy;&iecy;&rcy;&iecy;&dcy;&zcy;&vcy;&ocy;&ncy;&iukcy;&tcy;&softcy; &zcy;&acy;&rcy;&acy;&zcy;
+            .datetimewrapper
+                div.checkbox-wrap
+                    input(name="callmenow" type="radio")
+                    .checkbox
+                .time-label.common-label(for='time') Вказати зручний час
+                input(type="text").visible-input.datetimepicker
+            button.button.text.arrow(type='submit' value="Відправити")  Відправити
 .lang-block
     a.lang.active UK
     a.lang RU

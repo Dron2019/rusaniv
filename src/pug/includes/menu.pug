@@ -1,0 +1,56 @@
+menu.top-menu
+    a(href="/")
+        +img('logo.svg').logo
+    .top-menu__content
+        .top-menu__top-blocks
+            .button.text-small.call-form-js Замовити дзвінок
+            .close-button Закрити
+                +svg('close-button')
+        ul.top-menu__group
+            li.top-menu__large-span Про комплекс
+            li
+                a(href="about.html").top-menu__standart-span Про проект
+            li
+                a(href="advantages.html").top-menu__standart-span Переваги
+            li
+                a(href="gallery.html").top-menu__standart-span Галерея
+            li
+                a(href="build-progress.html").top-menu__standart-span Хід будівництва
+            li
+                a(href="panorama.html").top-menu__standart-span Панорама
+            li
+                a(href="web-camera.html").top-menu__standart-span Веб-камера
+            li
+                a(href="documents.html").top-menu__standart-span Документи
+        ul.top-menu__group
+            li.top-menu__large-span Квартири
+            li
+                a(href="#").top-menu__standart-span Вибір на генплані
+            li
+                a(href="choose-floor.html").top-menu__standart-span Будинок
+            li
+                a(href="choose-flat.html").top-menu__standart-span Вибір на плані поверху
+            li
+                a(href="filter.html").top-menu__standart-span Підбір за параметрами
+            li
+                a(href="#").top-menu__standart-span 1-кімнатні квартири
+            li
+                a(href="#").top-menu__standart-span 2-кімнатні квартири
+            li
+                a(href="#").top-menu__standart-span 3-кімнатні квартири
+            li
+                a(href="#").top-menu__standart-span 4-кімнатні квартири
+        .top-menu__big-links-group
+            a.top-menu__large-span(href="location.html") Розташування
+            a.top-menu__large-span(href="commercial.html") Комерційна нерухомість
+            a.top-menu__large-span(href="developers.html") Девелопери
+            a.top-menu__large-span(href="news.html") Новини
+            a.top-menu__large-span(href="infrastructure.html") Iнфраструктура
+            a.top-menu__large-span(href="contacts.html") Контакти
+        .top-menu__bottom-links
+            a(href="tel:"+phoneNumberHref+"").top-menu__tel-link 
+                +svg('menu-tel-icon')
+                span #{phoneNumber}
+            a(href="№" target='_blank').top-menu__adress-link 
+                +svg('marker')
+                span м.Київ, вул.Сверстюка, 54

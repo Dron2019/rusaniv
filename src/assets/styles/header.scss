@@ -89,6 +89,7 @@ header.header {
     z-index: 100;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
     // display: none;
 }
 
@@ -99,15 +100,115 @@ header.header {
     padding: 30px;
     background-color: #00395ae3;
     color: var(--white);
+    font-family: $default-font2;
     legend {
         font-size: 25px;
         line-height: 1.44em;
+        font-family: $default-font;
         /* identical to box height, or 144% */
         letter-spacing: 0.025em;
+        margin-bottom: 22px;
+        margin-top: 45px;
         /* White */
         color: var(--white);
     }
     .input-group:not(.checkbox) .common-label {
         display: none;
+    }
+    .input-group {
+        margin-bottom: 32px;
+    }
+    .form-close-block {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        width: max-content;
+    }
+    .form-close-button {
+        background-color: var(--red);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+    .form-close-block-title {
+        color: var(--gray);
+        opacity: 0.6;
+    }
+    input[type=text] {
+        background: none;
+        border: none;
+        color: var(--gray);
+        font-family: $default-font;
+        font-size: 14px;
+        line-height: 2em;
+        margin-bottom: 6px;
+    }
+    input[type=text]::placeholder {
+        color: var(--gray);
+    }
+    .input-group-line {
+        height: 1px;
+        width: 100%;
+        background-color: #AAC0C9;
+    }
+    .button.text {
+        font-size: 18px;
+        line-height: 20px;
+        /* identical to box height */
+        display: flex;
+        height: 30px;
+        align-items: center;
+        letter-spacing: 0.025em;
+        padding: 0 20px;
+        /* White */
+        color: #FFFFFF;
+        margin-left: auto;
+        margin-top: 52px;
+    }
+    .button.text:after {
+        transform: translateY(2px);
+        margin-left: 10px;
+    }
+    input[type=text].visible-input {
+        border-bottom: 1px solid #AAC0C9;
+    }
+    .checkbox-wrap {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        border: 1px solid var(--red);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .checkbox {
+        background: transparent;
+        width: 6px;
+        border-radius: 50%;
+        height: 6px;
+    }
+    .time-label {
+        display: inline-block;
+    }
+    input:checked~.checkbox {
+        background: var(--red);
+    }
+    .checkbox-wrap input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    .datetimewrapper .input[type=radio]~input[type=text] {
+        display: none;
+    }
+    .datetimewrapper .input[type=radio]:checked~input[type=text] {
+        display: block;
     }
 }
