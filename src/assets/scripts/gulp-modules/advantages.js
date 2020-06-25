@@ -10,6 +10,7 @@ $('.advantage-slider-js').on('beforeChange', (slick, r, current, next) => {
 });
 $('.advantage-slider-js').slick({
     arrows: false,
+    speed: 1500,
     slidesToShow: 2.5,
     slidesToScroll: 1,
     centerMode: true,
@@ -22,7 +23,7 @@ function transformSlickTrack() {
     // let slickSlideWidth = +getComputedStyle(document.querySelector('.slick-slide')).width.replace(/px/, '');
     let slickSlideWidth = +document.querySelector('.slick-slide').getAttribute('style').split(';')[0].replace(/[^0-9]|/gi, '');
     console.log(slickSlideWidth);
-    document.querySelector('.slick-track').style.left = -(slickSlideWidth * 2) * 0.5 - 40 + 'px';
+    document.querySelector('.slick-track').style.left = -(slickSlideWidth * 2) * 0.5 + 'px';
     console.log();
 }
 

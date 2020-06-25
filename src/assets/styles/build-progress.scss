@@ -1,0 +1,159 @@
+#build-progress {
+    .page__footer-wrapper {
+        margin-top: -110px;
+        height: 110px;
+        pointer-events: none;
+    }
+    .smarto-logo {
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+.text-medium {
+    font-size: 18px;
+    color: var(--blue);
+    font-family: $default-font;
+}
+
+.build-progress-wrap {
+    @include shift(1);
+    @include size(10);
+    .delimiter {
+        background-color: var(--hz);
+        height: 1.16px;
+        // @include size(4);
+        color: var(--hz);
+        width: 50%;
+        margin: 35px 25% 71px 25%;
+        padding: 0 25%;
+    }
+    .navigation-block {
+        padding-left: 0;
+    }
+}
+
+.section-choose {
+    padding: 0 $fields;
+    display: flex;
+    cursor: pointer;
+    &>li {
+        background: var(--hz);
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        width: 170px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -1px;
+        transition: .5s;
+    }
+    &>li.active {
+        background: var(--shta);
+    }
+}
+
+.build-section {
+    background: var(--shta);
+    @include shift-padding(1.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    &.active {
+        // display: flex;
+        padding-bottom: 102px;
+        padding-top: 76px;
+        height: auto;
+        visibility: visible;
+        pointer-events: initial;
+        overflow: initial;
+    }
+    &__text-description {
+        @include size(4.6)
+    }
+    &__text-description-part:not(:last-child) {
+        margin-bottom: 28px;
+    }
+    .title-large {
+        margin-bottom: 46px;
+    }
+    .navigation-block {
+        margin-bottom: 43px;
+    }
+    .build-progress-part {
+        @include size(6);
+    }
+    .build-progress-part:not(:nth-last-child(-n+2)) {
+        margin-bottom: 38px;
+    }
+    .subtitle {
+        margin-bottom: 28px;
+    }
+    .subtitle,
+    .title-large,
+    .navigation-block {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+    .slider-arrows {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .slick-active {
+        animation: flipInY 1s 1 ease-in;
+    }
+    .exit-slide-animate {
+        animation: flipOutY 1s 1 ease-in;
+    }
+}
+
+.build-progress-section-slider {
+    @include size(6.5);
+}
+
+.build-progress-part {
+    font-family: $default-font2;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 2em;
+    color: var(--blue);
+    overflow: hidden;
+    .build-progress-part-load-indicator {
+        position: relative;
+        height: 40px;
+        border-radius: 22px;
+        background: var(--hz);
+        svg {
+            transform: translate(-1.3px, -0.2px);
+            display: block;
+        }
+    }
+    .build-progress-part-load-indicator-completed {
+        position: absolute;
+        height: 100%;
+        background: var(--blue);
+        border-top-left-radius: 22px;
+        border-bottom-left-radius: 22px;
+        width: calc(var(--completed-value) - 15px);
+    }
+    .build-progress-part-load-indicator-completed {}
+}
+
+.navigation-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .select-box {
+        margin-right: auto;
+    }
+    @include shift-padding-left(1);
+}

@@ -508,3 +508,70 @@
         width: 3px;
     }
 }
+
+.slider-arrows {
+    display: flex;
+    margin-left: auto;
+    justify-content: flex-end;
+    @include shift-left(2);
+    @include shift-right(1);
+    margin-top: 40px;
+    .prev,
+    .next {
+        width: 50px;
+        height: 50px;
+        border: 1px solid var(--red);
+        border-radius: 50%;
+        transition: .5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .prev svg,
+    .next svg {
+        fill: var(--red);
+    }
+    .next {
+        transform: rotate(180deg);
+    }
+    .prev:hover,
+    .next:hover {
+        background-color: var(--red);
+    }
+    .prev:hover svg,
+    .next:hover svg {
+        fill: var(--white);
+    }
+    .dots {
+        display: flex;
+        margin: 0 40px;
+        align-items: center;
+    }
+    .slick-dots {
+        display: flex;
+        align-items: center;
+    }
+    .slick-dots li {
+        width: 4px;
+        height: 4px;
+        margin-right: 10px;
+        position: relative;
+        opacity: 0.5;
+    }
+    .slick-dots li.slick-active {
+        opacity: 1;
+    }
+    .slick-dots button[type=button] {
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--red);
+        border: none;
+        color: transparent;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        font-size: 0;
+    }
+}
