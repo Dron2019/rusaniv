@@ -44,10 +44,18 @@
     .circle-red-arrow {
         margin-left: auto;
         margin-right: 20vw;
+        // transition: .2s;
+        cursor: none;
+    }
+    .circle-red-arrow.left-side {
+        transform: rotate(180deg);
     }
     .slick-slide:not(.slick-active) {
         animation: clipPathOut .5s 1 ease-in;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .slider-numbers {
+        pointer-events: none;
     }
 }
 

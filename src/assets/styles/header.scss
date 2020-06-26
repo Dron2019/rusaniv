@@ -87,10 +87,12 @@ header.header {
     background-size: cover;
     position: relative;
     z-index: 100;
-    position: fixed;
+    margin: auto;
+    // position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     // display: none;
+    animation: fadeInDown 1s forwards;
 }
 
 .form-wrapper {
@@ -112,7 +114,7 @@ header.header {
         /* White */
         color: var(--white);
     }
-    .input-group:not(.checkbox) .common-label {
+    .input-group:not(.checkbox-group) .common-label {
         display: none;
     }
     .input-group {
@@ -168,7 +170,7 @@ header.header {
         /* White */
         color: #FFFFFF;
         margin-left: auto;
-        margin-top: 52px;
+        margin-top: 40px;
     }
     .button.text:after {
         transform: translateY(2px);
@@ -186,6 +188,7 @@ header.header {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-right: 7px;
     }
     .checkbox {
         background: transparent;
@@ -205,10 +208,28 @@ header.header {
         left: 0;
         opacity: 0;
     }
+    .datetimewrapper {
+        transition: .5s;
+        opacity: 0;
+    }
     .datetimewrapper .input[type=radio]~input[type=text] {
         display: none;
     }
     .datetimewrapper .input[type=radio]:checked~input[type=text] {
         display: block;
     }
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        cursor: pointer;
+    }
+}
+
+.forms-wrapper {
+    display: none;
+}
+
+.mfp-bg {
+    transition: .5s;
 }

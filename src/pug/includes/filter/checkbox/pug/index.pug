@@ -1,0 +1,10 @@
+.checkbox-wrap
+	span.u-filter__title.u-room-list__title Количество комнат:
+	.u-room-list-wrapper
+		each val,i in ['1','2','3','4','5+','Св']
+			.u-room-list-item.u-filter__checkbox
+				label.u-filter__checkbox__label(for="room_"+i)
+					input.invisible(id="room_"+i name="room[]" type="checkbox" value= i+1)
+					svg.u-filter-icon(xmlns="http://www.w3.org/2000/svg" viewbox="0 -1 24.13 26.13")
+						path.u-filter-icon__circle(d="M13,25.07A12.07,12.07,0,1,1,25.07,13,12.09,12.09,0,0,1,13,25.07Z" transform="translate(-0.93 -0.93)")
+					span.u-filter__checkbox__text= val

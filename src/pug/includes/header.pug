@@ -13,35 +13,38 @@ header.header
         <rect x="18.5" y="39.4999" width="17" height="1" transform="rotate(-90 18.5 39.4999)" fill="#B3717B" stroke="#B3717B"/>
         </svg>
     include menu.pug
-    .common-form#common-form
-        .common-form-js.form-wrapper.form-container-js
-            .form-close-block
-                .form-close-block-title Закрити
-                .form-close-button
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="8.44582" y="23.5151" width="21.4279" height="0.738894" transform="rotate(-45 8.44582 23.5151)" fill="white" stroke="white" stroke-width="0.738894"/>
-                    <rect x="8.96826" y="8.3633" width="21.4279" height="0.738894" transform="rotate(45 8.96826 8.3633)" fill="white" stroke="white" stroke-width="0.738894"/>
-                    </svg>
-            legend.form-legend &Zcy;&acy;&mcy;&ocy;&vcy;&icy;&tcy;&icy; &dcy;&zcy;&vcy;&iukcy;&ncy;&ocy;&kcy;
-            .input-group.text
-                label.name-label.common-label(for='name') &Vcy;&acy;&shcy;&iecy; &iukcy;&mcy;&grave;&yacy;:
-                input.text-input.common-input.unfilled(type='text' name='name' placeholder='Ваше ім`я:' autocomplete='off' id='' data-required='true' data-count='0')
-                .input-group-line
-            .input-group.text
-                label.telephone-label.common-label(for='telephone') &Vcy;&acy;&shcy; &tcy;&iecy;&lcy;&iecy;&fcy;&ocy;&ncy;:*
-                input.text-input.common-input.inputtelmask.unfilled(type='text' name='telephone' placeholder='Ваш телефон:*' autocomplete='off' id='' data-required='true')
-                .input-group-line
-            div.checkbox-wrap
-                input(name="callmenow" type="radio")
-                .checkbox
-            .time-label.common-label(for='callmenow') &Pcy;&iecy;&rcy;&iecy;&dcy;&zcy;&vcy;&ocy;&ncy;&iukcy;&tcy;&softcy; &zcy;&acy;&rcy;&acy;&zcy;
-            .datetimewrapper
-                div.checkbox-wrap
-                    input(name="callmenow" type="radio")
-                    .checkbox
-                .time-label.common-label(for='time') Вказати зручний час
-                input(type="text").visible-input.datetimepicker
-            button.button.text.arrow(type='submit' value="Відправити")  Відправити
+    .forms-wrapper
+        .common-form#common-form
+            .common-form-js.form-wrapper.form-container-js
+                .form-close-block
+                    .form-close-block-title Закрити
+                    .form-close-button
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8.44582" y="23.5151" width="21.4279" height="0.738894" transform="rotate(-45 8.44582 23.5151)" fill="white" stroke="white" stroke-width="0.738894"/>
+                        <rect x="8.96826" y="8.3633" width="21.4279" height="0.738894" transform="rotate(45 8.96826 8.3633)" fill="white" stroke="white" stroke-width="0.738894"/>
+                        </svg>
+                legend.form-legend &Zcy;&acy;&mcy;&ocy;&vcy;&icy;&tcy;&icy; &dcy;&zcy;&vcy;&iukcy;&ncy;&ocy;&kcy;
+                .input-group.text
+                    label.name-label.common-label(for='name') &Vcy;&acy;&shcy;&iecy; &iukcy;&mcy;&grave;&yacy;:
+                    input.text-input.common-input.unfilled(type='text' name='name' placeholder='Ваше ім`я:' autocomplete='off' id='' data-required='true' data-count='0')
+                    .input-group-line
+                .input-group.text
+                    label.telephone-label.common-label(for='telephone') &Vcy;&acy;&shcy; &tcy;&iecy;&lcy;&iecy;&fcy;&ocy;&ncy;:*
+                    input.text-input.common-input.inputtelmask.unfilled(type='text' name='telephone' placeholder='Ваш телефон:*' autocomplete='off' id='' data-required='true')
+                    .input-group-line
+                .input-group.checkbox-group
+                    div.checkbox-wrap
+                        input(name="callmenow" type="radio")
+                        .checkbox
+                    .time-label.common-label(for='callmenow') &Pcy;&iecy;&rcy;&iecy;&dcy;&zcy;&vcy;&ocy;&ncy;&iukcy;&tcy;&softcy; &zcy;&acy;&rcy;&acy;&zcy;
+                .input-group.checkbox-group.with-date-js
+                    div.checkbox-wrap
+                        input(name="callmenow" type="radio")
+                        .checkbox
+                    .time-label.common-label(for='time') Вказати зручний час
+                    .datetimewrapper
+                        input(type="text").visible-input.datetimepicker
+                button.button.text.arrow(type='submit' value="Відправити")  Відправити
 .lang-block
     a.lang.active UK
     a.lang RU

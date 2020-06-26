@@ -21,16 +21,32 @@ menu.querySelector('.close-button').addEventListener('click', function(evt) {
     menu.classList.remove('opened');
 });
 /**Menu hover Effect  END*/
+document.querySelector('div').__proto__.putTempClass = function(className, timeout = 1000) {
+    this.classList.add(className);
+
+
+    setTimeout(() => {
+        this.classList.remove(className);
+    }, timeout);
+};
 
 
 /**MASK */
 // VMasker(document.querySelector(".inputtelmask")).maskPattern("+99 (999) 999-99-99");
 /**MASK END*/
 console.log(document.querySelector('.common-form'));
-
+document.querySelector('.common-form .form-close-block').onclick = () => {
+    $.magnificPopup.close();
+};
 $('.call-form-js').magnificPopup({
-    src: '#common-form',
-    type: 'inline',
+    items: {
+        type: 'inline',
+        src: '#common-form',
+    },
+    callbacks: {
+        beforeClose: () => document.querySelector('#common-form').putTempClass('f', 2000),
+    },
+    showCloseBtn: false,
     // other options
 });
 
@@ -45,3 +61,23 @@ $('.datetimepicker').datetimepicker({
     dayOfWeekStart: 1,
 
 });
+
+
+/**checkbox click on label config */
+
+let checkboxes = document.querySelectorAll('.checkbox-group');
+checkboxes.forEach(box => {
+    box.addEventListener('click', function(evt) {
+        box.querySelector('input').checked = true;
+
+        if (box.classList.contains('with-date-js')) {
+            let dateInput = box.querySelector('.datetimewrapper') || null;
+            dateInput.style.opacity = `1`;
+        } else {
+
+            document.querySelector('.datetimewrapper').style.opacity = `0`;
+        }
+    });
+})
+
+/**checkbox click on label config END */

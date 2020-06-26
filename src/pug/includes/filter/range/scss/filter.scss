@@ -1,0 +1,119 @@
+/*
+* range start
+*/
+
+.range-wrapper{
+	display: flex;
+}
+.range-item{
+	flex-direction: column;
+	&__label{
+		margin-bottom: 6px;
+		font-size: 12px;
+		line-height: 2em;
+		color: #2F2536;
+		display: block;
+	}
+}
+
+
+
+.filter__label{
+	text-align: center;
+	font-size: 14px;
+	font-family: $default-font2;
+
+}
+
+.filter__item{
+	margin: 0 13px;
+	display: flex;
+	width: calc(33.33% - 13px);
+}
+
+.u-range-item-nav{
+	margin-top: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	input:first-child{
+		margin-right: 5px;
+	}
+	input:nth-child(2){
+		margin-left: 5px;
+	}
+	input{
+		width: 80px;
+		height: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		font-size: 12px;
+		background: #FFFFFF;
+		text-align: center;
+		color: #8494A7;
+		&:hover,
+		&:focus{
+			color: $text;
+		}
+	}
+}
+
+.irs--flat .irs-bar {
+	height: 3px;
+	background-color: $mc;
+}
+.irs--flat .irs-handle:not(#j){
+	width: 7px;
+	height: 7px;
+	top: 23px;
+}
+
+.irs--flat .irs-min, .irs--flat .irs-max{
+	font-family: $default-font2;
+	font-size: 12px;
+	font-weight: 500;
+	top: -1px;
+}
+
+.irs--flat .irs-line {
+	height: 3px;
+	background-color: rgba(154, 149, 158, 0.2);
+}
+.irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single, .irs--flat .irs-min, .irs--flat .irs-max{
+	padding: 3px 14px;
+	border-radius: 13px;
+}
+.irs-from, .irs-to, .irs-single {
+	top: -1px;
+}
+.irs--flat .irs-handle>i:first-child, .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single  {
+	background-color: $mc;
+}
+.irs--flat .irs-from:before, .irs--flat .irs-to:before, .irs--flat .irs-single:before {
+
+	border-top-color: $mc;
+}
+.irs--flat .irs-handle.state_hover>i:first-child,
+.irs--flat .irs-handle:hover>i:first-child {
+	background-color: transparent;
+	cursor: pointer;
+}
+.irs--flat .irs-handle {
+	top: 21px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: $mc;
+}
+
+.irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single{
+	font-family: $default-font2;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+/*
+* range end
+*/
