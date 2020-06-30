@@ -98,4 +98,45 @@
             @include size(7);
         }
     }
+    @include to(768px) {
+        .about-background-image {
+            height: 40vh;
+        }
+        .about-wrapper {
+            margin-top: calc(40vh - 167px);
+            @include shift-left(1);
+        }
+        .about-description-paragraph {
+            @include size(7);
+            margin-top: 30px;
+            @include shift-left(4);
+            @include shift-right(1);
+        }
+        .complex-data-block {
+            @include size(7);
+            @include shift-left(4);
+            @include shift-right(1);
+            margin-top: 30px;
+        }
+        .complex-data-block .title-large {
+            font-size: 64px;
+        }
+        .complex-data-block-item:nth-child(-n+2) {
+            margin-bottom: 30px;
+        }
+        .link-standart {
+            margin-top: 30px;
+        }
+        .about-wrapper-bottom {
+            padding-top: 50px;
+        }
+        .about-wrapper-bottom .title-wrapper {
+            width: 100%;
+            margin-bottom: 0.5em;
+        }
+        .about-wrapper-bottom .text-standart {
+            padding-left: 57px;
+            width: 100%;
+        }
+    }
 }

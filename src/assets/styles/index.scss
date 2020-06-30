@@ -11,7 +11,7 @@
     --side-fields: 30px;
     --transition: .5s;
     @include to(768px) {
-        --side-fields: 10px;
+        --side-fields: 20px;
     }
 }
 
@@ -69,6 +69,10 @@ a:-webkit-any-link {
     .developer-logo {
         margin-left: 20px;
     }
+    @include to(768px) {
+        background: url(../images/home/BG.jpg) 34% no-repeat;
+        background-size: cover;
+    }
 }
 
 .about-block {
@@ -85,12 +89,27 @@ a:-webkit-any-link {
         @include size(6.74);
         margin-left: auto;
         margin-right: calc(var(--side-fields) - (var(--side-fields) * 2));
+        height: max-content;
+        object-fit: cover;
     }
     .button {
         margin-top: 40px;
     }
     .title-large {
         margin-bottom: 10px;
+    }
+    @include to(1240px) {
+        .text-block {
+            margin-top: 0px;
+            margin-bottom: 50px;
+            @include shift-left(0);
+            @include size(5);
+        }
+    }
+    @include to(768px) {
+        &>img {
+            min-height: 61vh;
+        }
     }
 }
 
@@ -115,6 +134,11 @@ a:-webkit-any-link {
         color: var(--blue);
         -webkit-text-stroke: 0px transparent;
     }
+    @include to(768px) {
+        .scroll-element {
+            left: 10%;
+        }
+    }
 }
 
 .choose-flat {
@@ -125,6 +149,8 @@ a:-webkit-any-link {
         margin-left: calc(var(--side-fields) - (var(--side-fields) * 2));
         @include size(6);
         margin-right: auto;
+        height: max-content;
+        object-fit: cover;
     }
     .title-large {
         margin-bottom: 10px;
@@ -137,6 +163,25 @@ a:-webkit-any-link {
     }
     .button {
         margin-top: 40px;
+    }
+    @include to(1240px) {
+        .text-block {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            @include shift-left(0);
+            @include size(5);
+        }
+    }
+    @include to(1140px) {
+        .text-block {
+            @include shift(0);
+            @include size(5.9);
+        }
+    }
+    @include to(768px) {
+        &>img {
+            width: calc(50% - 5px);
+        }
     }
 }
 
@@ -202,6 +247,51 @@ a:-webkit-any-link {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+    @include to(1140px) {
+        .news-slide .subtitle {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -moz-box;
+            -moz-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-clamp: 3;
+            box-orient: vertical;
+        }
+        &__slider {
+            @include size(8);
+            @include shift-left(1);
+        }
+        .buttons-block {
+            @include size(4);
+        }
+    }
+    @include to(768px) {
+        flex-wrap: wrap;
+        padding-bottom: 0;
+        &__slider {
+            @include size(9);
+            @include shift-left(1);
+        }
+        &__slider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        a.button {
+            margin-bottom: 5px;
+        }
+        .buttons-block {
+            @include size(9);
+            margin: 50px auto 0 auto;
+            flex-direction: row-reverse;
+        }
+        .buttons-block a.button {
+            margin-top: 0;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
     }
 }
 
@@ -295,7 +385,7 @@ a:-webkit-any-link {
 
 @include to(768px) {
     .logo {
-        --logo-width: 100px;
+        // --logo-width: 100px;
     }
     .header-telephone {
         font-size: 18px;

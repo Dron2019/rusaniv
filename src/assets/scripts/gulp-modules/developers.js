@@ -7,7 +7,9 @@ $('.projects-slider').on('beforeChange', (e, t, f) => {
     document.querySelector('.projects .current').innerHTML = f + 1;
     console.log(t);
 
-    document.querySelector('.slide-title-show').innerHTML = document.querySelector('.slick-active').dataset.project;
+    document.querySelector('.slide-title-show').innerHTML = document.querySelector('.slick-active:not(li)').dataset.project;
+    console.log(document.querySelector('.slick-active'));
+
 })
 
 $('.projects-slider').slick({
@@ -16,4 +18,14 @@ $('.projects-slider').slick({
     prevArrow: false,
     fade: true,
     adaptiveHeight: false,
+    responsive: [{
+        breakpoint: 769,
+        settings: {
+            slide: '.project-slide',
+            nextArrow: '#developers  .next',
+            prevArrow: '#developers  .prev',
+            appendDots: '#developers .dots',
+            dots: true
+        }
+    }, ],
 });

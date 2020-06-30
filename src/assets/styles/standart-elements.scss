@@ -91,6 +91,12 @@
     &.hvr-bounce-to-right:hover {
         color: var(--white);
     }
+    @include to(768px) {
+        &.icon {
+            width: 35px;
+            height: 35px;
+        }
+    }
 }
 
 .text-standart {
@@ -133,6 +139,12 @@
     &.red {
         color: var(--red);
     }
+    @include to(1024px) {
+        font-size: 56px;
+    }
+    @include to(768px) {
+        font-size: 48px;
+    }
 }
 
 .vertical-line {
@@ -158,6 +170,9 @@
     color: var(--blue);
     &.red {
         color: var(--red);
+    }
+    @include to(768px) {
+        font-size: 24px;
     }
 }
 
@@ -521,6 +536,23 @@
     @include shift-left(2);
     @include shift-right(1);
     margin-top: 40px;
+    &.white {
+        .prev,
+        .next {
+            border-color: var(--white);
+        }
+        .prev:hover,
+        .next:hover {
+            border-color: var(--red);
+        }
+        .prev svg,
+        .next svg {
+            fill: var(--white);
+        }
+        .slick-dots button[type=button] {
+            background-color: var(--white);
+        }
+    }
     .prev,
     .next {
         width: 50px;
@@ -531,6 +563,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
     }
     .prev svg,
     .next svg {
@@ -578,5 +611,27 @@
         height: 4px;
         border-radius: 50%;
         font-size: 0;
+    }
+}
+
+.years-slider {
+    display: flex;
+    color: var(--gray);
+    font-size: 36px;
+    line-height: 1.33em;
+    &>li {
+        margin-right: 1.75em;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    &>li:hover {
+        color: var(--blue);
+    }
+    &>li.active {
+        color: var(--blue);
+    }
+    @include to(768px) {
+        font-size: 26px;
+        line-height: 1.85em;
     }
 }

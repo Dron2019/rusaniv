@@ -8,6 +8,13 @@
         display: flex;
         align-items: flex-end;
     }
+    @include from-to(575px, 768px) {
+        .page__footer-wrapper {
+            margin-top: 0px;
+            background: var(--shta);
+            pointer-events: auto;
+        }
+    }
 }
 
 .advantages-full-screen-wrapper {
@@ -35,6 +42,18 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+    }
+    @include to(768px) {
+        min-height: 65vh;
+        &__text-block {
+            @include shift-padding-left(0);
+            @include shift-padding-right(0.5);
+            width: 50%;
+            padding-top: 65px;
+        }
+        &__img {
+            width: 50%;
+        }
     }
 }
 
@@ -97,6 +116,38 @@
     &__side-image:hover {
         left: 0;
     }
+    @include from-to(575px, 768px) {
+        padding-left: 0;
+        padding-right: 0;
+        .wrapper {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .adv-dark-block {
+            width: 100%;
+            left: 0;
+            top: -240px;
+            @include shift-padding-left(2);
+        }
+        .list-standart {
+            column-count: 2;
+        }
+        .wrapper .subtitle {
+            position: relative;
+            top: 300px;
+            @include shift-padding-left(2);
+            font-size: 36px;
+            width: 50%;
+        }
+        &__img {
+            position: relative;
+            bottom: 310px;
+            margin-left: auto;
+        }
+        &__side-image {
+            display: none;
+        }
+    }
 }
 
 .advantage-bottom-section {
@@ -107,6 +158,13 @@
     flex-wrap: wrap;
     .title-large {
         @include size(3);
+    }
+    @include from-to(575px, 768px) {
+        position: relative;
+        bottom: 360px;
+        margin-bottom: -360px;
+        padding-top: 75px;
+        @include shift-padding-left(0);
     }
 }
 
@@ -144,6 +202,25 @@
     .slider-hint {
         font-weight: bold;
         margin-top: 60px;
+    }
+    @include from-to(575px, 768px) {
+        .first-slide {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .advantage-slide:not(.first-slide) {
+            width: 350px;
+        }
+        .first-slide {
+            width: 200px;
+            align-self: center;
+        }
+        .advantage-slide .nav-view {
+            text-align: right;
+        }
+        .advantage-slide .subtitle {
+            margin-bottom: 0.5em;
+        }
     }
 }
 

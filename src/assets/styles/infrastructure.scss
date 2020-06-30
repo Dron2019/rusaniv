@@ -11,4 +11,9 @@
     .breadcrumbs-wrapper .link-standart {
         margin-left: auto;
     }
+    @include to(768px) {
+        .breadcrumbs-wrapper .link-standart.key-before {
+            display: none;
+        }
+    }
 }

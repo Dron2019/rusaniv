@@ -1,8 +1,9 @@
 menu.top-menu
-    a(href="/")
+    a(href="/").menu-logo
         +img('logo.svg').logo
     .top-menu__content
         .top-menu__top-blocks
+            +img('common/logo-white.svg').logo-menu-mobile
             .button.text-small.call-form-js Замовити дзвінок
             .close-button Закрити
                 +svg('close-button')

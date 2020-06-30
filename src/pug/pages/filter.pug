@@ -183,7 +183,7 @@ block content
             .filter-result-block__body
                 .filter-tab--active.active.js-filter-result-block-tab.filter-result-block-tab.card-result(data-index="0")
                     each val, i in db_filter
-                        a( data-href= val.href data-image= val.image data-total_square= val.total_square data-life_square= val.life_square data-room= val.room data-floor= val.floor data-section= val.section).js-flat-item.card-filter
+                        a( href="flat.html" data-href= val.href data-image= val.image data-total_square= val.total_square data-life_square= val.life_square data-room= val.room data-floor= val.floor data-section= val.section).js-flat-item.card-filter
                             .card-filter__img
                                 +img('temp/'+i+'.jpg')
                             ul.card-filter-list.card-filter__list

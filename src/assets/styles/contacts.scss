@@ -49,6 +49,10 @@
     position: relative;
     padding-left: 37px;
     @include shift-left(1.5);
+    @include to(768px) {
+        margin-top: 35px;
+        @include shift-left(0);
+    }
 }
 
 .group-with-marker {

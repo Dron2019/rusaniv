@@ -131,4 +131,35 @@
     &__bottom-links>a {
         width: 50%;
     }
+    .logo-menu-mobile {
+        width: 150px;
+        height: 60px;
+    }
+    @include from(769px) {
+        .logo-menu-mobile {
+            display: none;
+        }
+    }
+    @include to(768px) {
+        margin-top: 0;
+        margin-left: 0;
+        overflow-x: hidden;
+        min-height: -webkit-fill-available;
+        height: auto;
+        .button {
+            margin-left: auto;
+        }
+        &__content {
+            width: 100%;
+            overflow-x: hidden;
+            min-height: 100%;
+            height: -webkit-fill-available;
+            // height: 100%
+        }
+        .menu-logo {
+            display: none;
+        }
+        padding-inline-start: 0;
+        -webkit-padding-start: 0;
+    }
 }

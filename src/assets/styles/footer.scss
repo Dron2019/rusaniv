@@ -3,6 +3,8 @@
         width: 70px;
         height: 28px;
     }
+    display: flex;
+    align-items: flex-end;
 }
 
 .footer-adress {
@@ -16,6 +18,12 @@
         position: fixed;
         left: var(--side-fields);
         bottom: calc(var(--side-fields) - 10px);
+    }
+    @include to(768px) {
+        .button {
+            // bottom: calc(var(--side-fields) + 10px);
+            bottom: calc(var(--side-fields));
+        }
     }
 }
 

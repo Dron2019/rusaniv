@@ -8,6 +8,11 @@
         display: flex;
         align-items: flex-end;
     }
+    @include to(768px) {
+        .breadcrumbs-wrapper .link-standart.arrow-after {
+            display: none;
+        }
+    }
 }
 
 .text-medium {
@@ -31,6 +36,18 @@
     .navigation-block {
         padding-left: 0;
     }
+    @include to(768px) {
+        @include shift(0);
+        // @include size(12);
+        padding-left: 0;
+        padding-right: 0;
+        width: calc(100% + var(--side-fields) * 2);
+        margin-left: calc(var(--side-fields) - (var(--side-fields) * 2));
+        .delimiter {
+            width: 100%;
+            margin: 35px 0% 45px 0%;
+        }
+    }
 }
 
 .section-choose {
@@ -51,6 +68,33 @@
     }
     &>li.active {
         background: var(--shta);
+    }
+    @include to(768px) {
+        // width: calc(100% + var(--side-fields) * 2);
+        // margin-left: calc(var(--side-fields) - (var(--side-fields) * 2));
+        width: 100%;
+        background: var(--shta);
+        padding: 40px calc(var(--side-fields) * 2);
+        margin-bottom: -1px;
+        .desktop-section-choose-title {
+            display: none;
+        }
+        &>li {
+            width: 50px;
+            height: 50px;
+            margin-right: 50px;
+            border-radius: 50%;
+            background: none;
+            border: 1px solid var(--red);
+            text-transform: uppercase;
+        }
+        &>li:after {
+            content: attr(data-mobile-title);
+        }
+        &>li.active {
+            background: var(--red);
+            color: var(--white);
+        }
     }
 }
 
@@ -76,7 +120,7 @@
         overflow: initial;
     }
     &__text-description {
-        @include size(4.6)
+        @include size(4.6);
     }
     &__text-description-part:not(:last-child) {
         margin-bottom: 28px;
@@ -113,10 +157,39 @@
     .exit-slide-animate {
         animation: flipOutY 1s 1 ease-in;
     }
+    .years-slider {
+        margin-left: 15px;
+    }
+    @include to(768px) {
+        padding-left: var(--side-fields);
+        padding-right: var(--side-fields);
+        &.active {
+            padding-top: 0;
+        }
+        .build-progress-part:not(:nth-last-child(-n+2)) {
+            margin-bottom: 35px;
+        }
+        .build-progress-part:nth-last-child(-n+2) {
+            margin-bottom: 35px;
+        }
+        .build-progress-part {
+            width: calc(100% - 20px);
+            @include shift-padding(3);
+        }
+        .subtitle {
+            @include shift-padding-left(3);
+        }
+        &__text-description {
+            @include size(5);
+        }
+    }
 }
 
 .build-progress-section-slider {
     @include size(6.5);
+    @include to(768px) {
+        @include size(7);
+    }
 }
 
 .build-progress-part {

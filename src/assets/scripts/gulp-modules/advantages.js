@@ -16,6 +16,24 @@ $('.advantage-slider-js').slick({
     centerMode: true,
     centerPadding: '0',
     infinite: false,
+    responsive: [{
+            breakpoint: 769,
+            settings: {
+                variableWidth: true,
+                slidesToShow: 1.5,
+                centerMode: false,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
+            }
+        }
+    ]
 });
 
 function transformSlickTrack() {
@@ -39,4 +57,4 @@ document.querySelectorAll('.navigation-dot').forEach(dot => {
         advSlider[0].slick.slickGoTo(+dot.dataset.dotIndex);
         switchDot(+dot.dataset.dotIndex);
     });
-})
+});

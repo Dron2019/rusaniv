@@ -20,10 +20,14 @@ block content
                 a(href="documents.html").link-standart.arrow-after Переглянути докумнети
         .build-progress-wrap
             ul.section-choose.section-choose-js.wrapper
-                li(data-section="1").text-medium.active Секція 1
-                li(data-section="2").text-medium Секція 2
-                li(data-section="3").text-medium Секція 3
-                li(data-section="4").text-medium Секція 4
+                li(data-section="1" data-mobile-title="С1").text-medium.active 
+                    span.desktop-section-choose-title Секція 1
+                li(data-section="2" data-mobile-title="С2").text-medium 
+                    span.desktop-section-choose-title Секція 2
+                li(data-section="3" data-mobile-title="С3").text-medium 
+                    span.desktop-section-choose-title Секція 3
+                li(data-section="4" data-mobile-title="С4").text-medium 
+                    span.desktop-section-choose-title Секція 4
             .build-sections-wrap.build-sections-wrap-js.wrapper
                 .build-section.build-section-js.active(data-section="1")
                     .title-large Секція 1

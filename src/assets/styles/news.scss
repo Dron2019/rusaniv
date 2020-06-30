@@ -12,24 +12,6 @@
     @include shift-padding-left(1);
 }
 
-.years-slider {
-    display: flex;
-    color: var(--gray);
-    font-size: 36px;
-    line-height: 1.33em;
-    &>li {
-        margin-right: 1.75em;
-        cursor: pointer;
-        transition: var(--transition);
-    }
-    &>li:hover {
-        color: var(--blue);
-    }
-    &>li.active {
-        color: var(--blue);
-    }
-}
-
 .years-arrows {
     display: flex;
     &>div:first-child {
