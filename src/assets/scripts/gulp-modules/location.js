@@ -3,4 +3,11 @@ $('.location-wrapper__slider').slick({
     vertical: true,
     nextArrow: '.location-wrapper .next',
     prevArrow: '.location-wrapper .previous',
+    swipe: true,
+    responsive: [{
+        breakpoint: 769,
+        settings: {
+
+        }
+    }, ],
 })

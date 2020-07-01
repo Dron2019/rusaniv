@@ -13,8 +13,8 @@ block scripts
 block content
         .wrapper.first
             .breadcrumbs-wrapper
-                h1.page-title Квартира 5Г
                 .breadcrumbs-block
+                    h1.page-title Квартира 5Г
                     a(href="/").link Головна
                     a(href="genplan.html").link Вибір на генплані
                     a(href="choose-build.html").link Будинок
@@ -32,7 +32,7 @@ block content
                     span П10
             .mini-floor-plan-block
                 .text-standart Поверх
-                +img('choose-floor/floor-plan.jpg')
+                include ../../assets/images/choose-floor/floor-plan.svg
                 a(href="choose-floor.html").link-standart.arrow-before Назад на вибір поверху
             .flat-plan-block
                 +img('flat/plan.png')
@@ -45,5 +45,5 @@ block content
                 .text-standart Загальна площа
                 .subtitle.red.flat-live-square 35.6 м<sub>2</sub>
                 .text-standart Житлова площа
-                .button.text.arrow Дізнатись ціну
+                .button.text.arrow.call-form-js Дізнатись ціну
                 a(href="#" target='_blank').pdf-link.link-standart Завантажити булкет

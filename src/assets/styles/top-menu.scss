@@ -64,6 +64,9 @@
         letter-spacing: 0.025em;
         color: var(--white);
     }
+    &__large-span a {
+        color: var(--white);
+    }
     &__standart-span,
     &__standart-span[href] {
         font-family: $default-font2;

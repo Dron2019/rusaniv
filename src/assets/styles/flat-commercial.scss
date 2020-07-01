@@ -52,4 +52,45 @@
             @include size(7);
         }
     }
+    @include to(768px) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        .flat-img {
+            @include size(6.2);
+        }
+        .flat-text-block {
+            @include size(4);
+            @include shift-left(0.5);
+        }
+        .flat-data-block {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            margin-top: 30px;
+            .subtitle {
+                align-self: center;
+                font-size: 36px;
+            }
+            .subtitle-1 {
+                grid-area: 1/1/1/1;
+            }
+            .subtitle-2 {
+                grid-area: 3/1/3/1;
+            }
+            .subtitle-3 {
+                grid-area: 5/1/5/1;
+            }
+            .text-standart {
+                justify-self: start;
+            }
+        }
+        .button {
+            margin-top: 83px;
+            width: 250px;
+        }
+        .flat-img {
+            max-height: 556px;
+        }
+    }
 }

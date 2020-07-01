@@ -12,6 +12,10 @@
     // margin: 45px auto 45px 8%;
     // overflow: hidden;
     padding-bottom: 70px;
+    @include to(768px) {
+        margin-left: 0;
+        @include size(11);
+    }
 }
 
 .load-more-block {
@@ -19,6 +23,11 @@
     @include shift-left(2);
     margin-top: 50px;
     margin-bottom: 60px;
+    @include to(768px) {
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .load-more {
@@ -91,6 +100,11 @@
             margin-right: 0;
         }
         @include size(6);
+    }
+    @include to(768px) {
+        &:nth-child(-n+2) {
+            margin-top: 0;
+        }
     }
     @include to(480px) {
         &:nth-child(n) {

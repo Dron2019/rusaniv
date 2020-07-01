@@ -1,5 +1,13 @@
 .news-wrapper {
     @include shift-padding-left(1);
+    .mobile-pagination {
+        margin: 60px auto 0 auto;
+    }
+    @include from(769px) {
+        .mobile-pagination {
+            display: none;
+        }
+    }
 }
 
 .news-navigation-block {
@@ -10,6 +18,9 @@
         margin-right: auto;
     }
     @include shift-padding-left(1);
+    @include to(768px) {
+        @include shift-padding-left(0);
+    }
 }
 
 .years-arrows {
@@ -28,6 +39,12 @@
     .next,
     .previous {
         cursor: pointer;
+    }
+    @include to(768px) {
+        margin-left: 40px;
+        &>div:first-child {
+            margin-right: 25px;
+        }
     }
 }
 
@@ -76,5 +93,13 @@
         -webkit-box-orient: vertical;
         line-clamp: 3;
         box-orient: vertical;
+    }
+    @include to(768px) {
+        @include size(9);
+        @include shift-left(2);
+        &:nth-child(n+3),
+        & {
+            margin-top: 50px;
+        }
     }
 }

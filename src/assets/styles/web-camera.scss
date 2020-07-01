@@ -17,6 +17,7 @@
         a.active {
             color: var(--blue);
             background-color: var(--hz);
+            border-color: var(--hz);
         }
         a {
             display: flex;
@@ -27,6 +28,7 @@
             border-radius: 25px;
             color: var(--gray);
             height: 30px;
+            border: 1px solid var(--gray);
         }
         a:not(:last-child) {
             margin-bottom: 20px;
@@ -42,6 +44,26 @@
         }
         iframe.active {
             display: initial;
+        }
+    }
+    @include to(768px) {
+        .webcam-links {
+            @include size(12);
+            padding-top: 47px;
+            flex-direction: row;
+            a {
+                margin-right: 45px;
+            }
+        }
+        .webcam-frame {
+            width: 100%;
+            margin-right: 0;
+        }
+        .breadcrumbs-wrapper {
+            padding-right: 0;
+        }
+        .webcam-links a:not(:last-child) {
+            margin-bottom: 30px;
         }
     }
 }

@@ -9,6 +9,9 @@ header.header {
     left: 0;
     z-index: 5;
     padding: 32px var(--side-fields) 0 var(--side-fields);
+    @include to(768px) {
+        padding-top: 25px;
+    }
 }
 
 .page__inner {
@@ -55,7 +58,7 @@ header.header {
 
 .lang-block {
     position: fixed;
-    right: 30px;
+    right: var(--side-fields);
     top: 50%;
     color: var(--blue);
     --lang-width: 40px;

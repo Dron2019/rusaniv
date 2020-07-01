@@ -9,12 +9,12 @@ block head
 block scripts
     script(defer src='./assets/scripts/libs.js')
     script(defer src='./assets/scripts/index.js')
-    //- script(defer src='./assets/scripts/choose-floor.js')
+    script(defer src='./assets/scripts/choose-floor-plan-func.js')
 block content
         .wrapper.first
             .breadcrumbs-wrapper
-                h1.page-title Вибір на плані поверху
                 .breadcrumbs-block
+                    h1.page-title Вибір на плані поверху
                     a(href="/").link Головна
                     a(href="genplan.html").link Вибір на генплані
                     a(href="genplan.html").link Будинок
@@ -27,17 +27,23 @@ block content
                     span K1
                 .circle.flat-type
                     span B3
-            .flat-info-block
-                .subtitle.flat-number #145
+            .flat-info-block.flat-info-block-js
+                .subtitle.flat-number 
+                    span(data-number="") #145
                 .text-standart Номер квартири
-                .subtitle.flat-rooms 2
+                .subtitle.flat-rooms 
+                    span(data-rooms="") 2
                 .text-standart Кімнати
-                .subtitle.red.flat-tot-square 117.3 м<sub>2</sub>
-                .text-standart Загальна площа
-                .subtitle.red.flat-live-square 35.6 м<sub>2</sub>
-                .text-standart Житлова площа
+                .subtitle.red.flat-tot-square 
+                    span(data-tot_square="") 117.3 
+                .text-standart.square-m-block Загальна площа м<sub>2</sub>
+                .subtitle.red.flat-live-square 
+                    span(data-liv_square="") 35.6 
+                .text-standart.square-m-block Житлова площа м<sub>2</sub>
             .floor-plan-block
-                +img('choose-floor/floor-plan.jpg')
+                include ../../assets/images/choose-floor/floor-plan.svg
+                //- +img('choose-floor/floor-plan.jpg')
+                a(href="#").button.text-small.arrow-after.js-see-more-floor Дивитися
                 .arrows-container 
                     .previous
                         +svg('arrow')

@@ -45,6 +45,7 @@
         @include shift-right(1);
         .button {
             margin-top: 50px;
+            width: 270px;
         }
         .pdf-link {
             margin-top: 25px;
@@ -56,6 +57,66 @@
         img {
             object-fit: contain;
             max-height: 500px;
+        }
+    }
+    .floor-plan-svg {
+        width: 188px;
+        height: 132px;
+    }
+    @include from-to(769px, 1100px) {
+        .breadcrumbs-wrapper .link-standart {
+            margin-left: initial;
+            margin-right: auto;
+        }
+        .flat-plan-block {
+            @include size(3.5);
+        }
+    }
+    @include to(768px) {
+        --tablet-negative-margin: 55px;
+        .wrapper.first {
+            margin-bottom: calc(var(--tablet-negative-margin) * (-1) - 0.5em);
+        }
+        .breadcrumbs-wrapper {
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+        .breadcrumbs-wrapper .link-standart {
+            margin-top: var(--tablet-negative-margin);
+        }
+        .flat-info-block.first {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 42px;
+        }
+        .flat-info-block.first .circle {
+            margin-top: 0;
+            margin-left: 30px;
+            margin-right: initial;
+        }
+        .flat-plan-block {
+            @include size(6);
+        }
+        .flat-info-block.last {
+            @include size(4);
+        }
+        .flat-info-block.last .subtitle {
+            margin-top: 16px;
+            font-size: 36px;
+        }
+        .mini-floor-plan-block {
+            @include size(4);
+            order: 2;
+        }
+        .flat-info-block.last .button {
+            width: 250px;
+        }
+        .flat-plan-block img {
+            max-height: 450px;
+        }
+        .flat-plan-wrapper {
+            margin: 20px auto;
         }
     }
 }
@@ -110,4 +171,8 @@
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
     // opacity: 0;
     animation: fadeInDown .5s 1 linear;
+}
+
+.mfp-img {
+    background: var(--white);
 }

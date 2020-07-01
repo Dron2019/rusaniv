@@ -1,0 +1,28 @@
+<svg class="floor-plan-svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="405.76001" height="288" viewBox="0 0 107.35733 76.200002" version="1.1">
+   <g transform="translate(114.15485,-23.042852)">
+      <image y="23.042852" x="-114.15485" xlink:href="./assets/images/choose-floor/floor-plan.png" preserveAspectRatio="none" height="76.199997" width="107.35734" />
+      <a href="flat.html">
+      <path data-section="1" data-tot_square="41.64" data-liv_square="15.27" data-rooms="1" data-number="1.C4.1К.1"
+         d="m -45.466583,31.089122 h 21.648832 l -0.133636,-3.474503 H -8.1824848 V 51.535241 H -45.199312 Z" />
+      </a>
+      <a href="flat.html">
+      <path data-section="1" data-tot_square="64.52" data-liv_square="30.8" data-rooms="2" data-number="1.С4.2К.1"
+         d="M -24.886829,51.535241 H -7.6479444 V 98.173773 H -37.849401 V 60.221501 h 12.828936 z"/>
+      </a>
+      <a href="flat.html">
+      <path data-section="1" data-tot_square="55.58" data-liv_square="18.38" data-rooms="1" data-number="1.C4.1К.2"
+         d="M -37.849401,60.221501 V 98.173773 H -66.44724 V 60.355134 Z"
+         />
+      </a>
+      <a href="flat.html">
+      <path data-section="1" data-tot_square="56.95" data-liv_square="18.89" data-rooms="1" data-number="1.C4.1К.3"
+         d="M -66.44724,60.355134 V 98.173773 H -97.31687 V 60.221501 Z"
+         />
+      </a>
+      <a href="flat.html">
+      <path data-section="1" data-tot_square="70.28" data-liv_square="26.66" data-rooms="3" data-number="1.C4.3К.1"
+         d="m -97.31687,60.221501 h 10.156243 V 33.227278 h -25.925143 v 65.080131 h 16.03617 z"
+         />
+      </a>
+   </g>
+</svg>

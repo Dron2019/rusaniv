@@ -13,8 +13,14 @@
         margin-bottom: 6px;
         font-size: 12px;
         line-height: 2em;
-        color: #2F2536;
+        color: #6C7C84;
         display: block;
+    }
+    @include to(768px) {
+        &__label {
+            font-size: 20px;
+            line-height: 1.4em;
+        }
     }
 }
 
@@ -68,6 +74,11 @@
     width: 7px;
     height: 7px;
     top: 23px;
+    @include to(768px) {
+        width: 10px;
+        height: 10px;
+        top: 21.6px;
+    }
 }
 
 .irs--flat .irs-min,
@@ -131,6 +142,11 @@
     font-family: $default-font2;
     font-size: 12px;
     font-weight: 500;
+    @include to(768px) {
+        font-size: 26px;
+        line-height: 28px;
+        margin-top: -1.4em;
+    }
 }
 
 
@@ -170,6 +186,32 @@
     .range-item {
         @include size(3.5);
     }
+    @include to(768px) {
+        .filter-controls {
+            @include shift-padding-left(3);
+            @include shift-padding-right(2);
+        }
+        .range-wrapper {
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+        .range-item {
+            width: 100%;
+            margin-bottom: 45px;
+        }
+        .range-item:last-child {
+            margin-bottom: 0;
+        }
+        .filter-button {
+            margin-top: 40px;
+            margin-left: 0;
+            order: 0;
+        }
+        .result-count-info-wrapper {
+            margin-top: 24px;
+            order: 1;
+        }
+    }
 }
 
 .filter-checkbox {
@@ -199,6 +241,12 @@
     &:before {
         content: attr(data-value);
     }
+    @include to(768px) {
+        width: 70px;
+        height: 70px;
+        font-size: 26px;
+        line-height: 28px;
+    }
 }
 
 .card-filter {
@@ -212,13 +260,41 @@
     &__card-filter__img {}
     &__img {
         max-height: 300px;
-        width: 50%;
+        width: calc(50% - 20px);
+        margin-right: 20px;
     }
     &__img img {
         object-fit: contain;
         width: 100%;
         height: 100%;
         object-position: top left;
+    }
+    .card-filter-list {
+        width: 49%;
+    }
+    @include from-to(769px, 1100px) {
+        @include size(6);
+    }
+    @include to(768px) {
+        @include size(12);
+        .subtitle {
+            font-size: 36px;
+            white-space: nowrap;
+            margin-bottom: 10px;
+        }
+        &__img {
+            width: calc(55% - 20px);
+        }
+        .card-filter-list {
+            width: 44%;
+        }
+        &:nth-child(n+3),
+        & {
+            margin-top: 80px;
+        }
+        &:first-child {
+            margin-top: 30px;
+        }
     }
 }
 
@@ -228,6 +304,15 @@
     &__title {
         width: 100%;
     }
+    @include to(768px) {
+        width: 100%;
+        &__title {
+            font-size: 20px;
+            line-height: 1.4em;
+            margin-bottom: 15px;
+        }
+        margin-bottom: 45px;
+    }
 }
 
 .filter-result-block {
@@ -236,6 +321,16 @@
     @include shift-padding-right(1);
     &__body {
         padding-top: 40px;
+    }
+    @include to(768px) {
+        padding-left: 0;
+        padding-right: 0;
+        @include shift-left(3);
+        @include shift-right(1);
+        @include size(8);
+        &__body {
+            padding-top: 15px;
+        }
     }
 }
 
@@ -269,6 +364,8 @@
     display: flex;
     justify-content: space-between;
     text-align: left;
+    font-family: Gilroy;
+    font-size: 14px;
     &__key {
         color: var(--gray);
     }
@@ -304,6 +401,9 @@
     height: 80px;
     border-top: 2px solid var(--hz);
     color: var(--blue);
+    @include to(768px) {
+        text-align: center;
+    }
 }
 
 .button--res {
@@ -313,6 +413,10 @@
     color: var(--hz);
     font-family: $default-font;
     letter-spacing: 0.1em;
+    font-size: 18px;
+    &:first-child {
+        margin-right: 48px;
+    }
     &.filter-tab-nav-btn--current {
         color: var(--blue);
     }

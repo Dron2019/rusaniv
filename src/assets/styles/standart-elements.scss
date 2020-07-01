@@ -11,6 +11,11 @@
     &.first {
         padding-top: 120px;
     }
+    @include to(768px) {
+        &.first {
+            padding-top: 100px;
+        }
+    }
 }
 
 #documents {
@@ -143,7 +148,8 @@
         font-size: 56px;
     }
     @include to(768px) {
-        font-size: 48px;
+        font-size: 36px;
+        line-height: 1.33em;
     }
 }
 
@@ -153,6 +159,9 @@
     position: absolute;
     top: 0;
     left: 0;
+    @include to(768px) {
+        top: 0.7em;
+    }
 }
 
 .bg-title-large {
@@ -242,6 +251,12 @@
     line-height: 1.33em;
     color: var(--blue);
     margin-right: 1em;
+    font-family: $default-font;
+    display: inline;
+    @include to(768px) {
+        font-size: 26px;
+        line-height: 1.88em;
+    }
 }
 
 .breadcrumbs-wrapper {
@@ -271,6 +286,12 @@
     .link.current-link:after {
         display: none;
         pointer-events: none;
+    }
+    @include to(768px) {
+        .link {
+            font-size: 12px;
+            line-height: 20px;
+        }
     }
 }
 
@@ -479,6 +500,7 @@
 .compass {
     width: 67px;
     height: 64px;
+    object-fit: contain;
 }
 
 .circle {
@@ -629,9 +651,20 @@
     }
     &>li.active {
         color: var(--blue);
+        order: 1;
     }
     @include to(768px) {
         font-size: 26px;
         line-height: 1.85em;
+        max-inline-size: 250px;
+        max-width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        li {
+            order: 2;
+        }
+        li.active {
+            order: 1;
+        }
     }
 }

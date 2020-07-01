@@ -22,6 +22,7 @@
         width: 290px;
         margin: 55px auto 24px auto;
         align-items: center;
+        letter-spacing: 0.1em;
         .text-standart {
             font-family: $default-font;
             font-size: 14px;
@@ -31,6 +32,60 @@
         }
         .previous {
             transform: rotate(90deg);
+        }
+    }
+    .js-see-more-floor {
+        width: 100%;
+        margin: 20px auto;
+    }
+    @include from(769px) {
+        .js-see-more-floor {
+            display: none;
+        }
+    }
+    @include from-to(769px, 1110px) {
+        .flat-info-block:not(.first) {
+            @include size(2.5);
+        }
+        .floor-plan-block {
+            @include size(8);
+        }
+    }
+    @include to(768px) {
+        .breadcrumbs-wrapper {
+            flex-wrap: wrap;
+            .link-standart {
+                margin-top: 37px;
+            }
+        }
+        .flat-info-block {
+            @include size(6);
+            text-align: left;
+            column-count: 2;
+        }
+        .flat-info-block:not(.first) {
+            margin-top: 70px;
+            margin-bottom: 50px;
+        }
+        .flat-info-block .subtitle {
+            font-size: 36px;
+        }
+        .flat-info-block.first {
+            justify-content: flex-start;
+            width: 100%;
+        }
+        .choose-floor-wrapper {
+            margin-top: -37px;
+        }
+        .floor-plan-block {
+            @include size(12);
+            @include shift-padding(0.5);
+        }
+        .compass {
+            margin-right: 40px;
+        }
+        .circle.flat-type {
+            margin: 0 30px 0 0px;
         }
     }
 }
@@ -80,5 +135,30 @@
         background: var(--red);
         width: 11.1px;
         height: 11.1px;
+    }
+}
+
+.floor-plan-svg {
+    margin: 0 auto;
+    display: block;
+    path,
+    polygon {
+        fill: transparent;
+        transition: .5s;
+        cursor: pointer;
+    }
+    path.active,
+    polygon.active {
+        fill: var(--red);
+        opacity: .75;
+    }
+    @include from(769px) {
+        path:hover,
+        polygon:hover,
+        path.active,
+        polygon.active {
+            fill: var(--red);
+            opacity: .75;
+        }
     }
 }

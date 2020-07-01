@@ -11,6 +11,21 @@
         @include shift-right(1);
         @include shift-left(2);
     }
+    @include to(768px) {
+        margin-left: 0;
+        .breadcrumbs-wrapper .link-standart {
+            margin-right: 0;
+        }
+        .slider {
+            @include size(10);
+            @include shift-right(0.5);
+            @include shift-left(1.5);
+        }
+        .slick-track {
+            position: relative;
+            left: -1px;
+        }
+    }
 }
 
 .doc-slide {
@@ -61,4 +76,5 @@
         display: inline-block;
         vertical-align: middle;
     }
+    @include to(768px) {}
 }
