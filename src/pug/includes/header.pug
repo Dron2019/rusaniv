@@ -1,17 +1,31 @@
 header.header
     a(href="/dist/home.html")
-        +img('logo.svg').logo
+        picture
+            source(srcset="./assets/images/logo-white.svg" media="(max-width: 575px)")
+            img(src="./assets/images/logo.svg" alt="rusaniv-logo")
+        //- +img('logo.svg').logo
     a(href="tel:"+phoneNumberHref+"").header-telephone
         .button.icon.hvr-buzz
             +svg('tel-tube')
         span #{phoneNumber}
+    a.header-telephone.header-form-mobile.call-form-js
+        .button.icon.hvr-buzz
+            +svg('tel-tube')
+        span Замовити дзвінок
     .menu-button 
         span Menu
-        <svg  viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="menu-button-desktop" viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="0.5" y="39.4999" width="29" height="1" transform="rotate(-90 0.5 39.4999)" fill="#B3717B" stroke="#B3717B"/>
         <rect x="9.5" y="39.4999" width="39" height="1" transform="rotate(-90 9.5 39.4999)" fill="#B3717B" stroke="#B3717B"/>
         <rect x="18.5" y="39.4999" width="17" height="1" transform="rotate(-90 18.5 39.4999)" fill="#B3717B" stroke="#B3717B"/>
         </svg>
+        <svg class="menu-button-mobile" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26 13C26 20.1797 20.1797 26 13 26C5.8203 26 0 20.1797 0 13C0 5.8203 5.8203 0 13 0C20.1797 0 26 5.8203 26 13Z" fill="#B3717B"/>
+        <line class="close-el-left" x1="19" y1="16.5" x2="7" y2="16.5" stroke="white"/>
+        <line class="not-close-el" x1="19" y1="13.5" x2="7" y2="13.5" stroke="white"/>
+        <line class="close-el-right" x1="19" y1="10.5" x2="7" y2="10.5" stroke="white"/>
+        </svg>
+
     include menu.pug
     .forms-wrapper
         .common-form#common-form

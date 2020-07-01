@@ -1,6 +1,7 @@
 /**Menu hover Effect */
 let menuButton = document.querySelector('.menu-button'),
-    menu = document.querySelector('menu.top-menu');
+    menu = document.querySelector('menu.top-menu'),
+    header = document.querySelector('header.header');
 menuButton.querySelectorAll('rect').forEach(rect => {
     rect.dataset.startHeight = rect.getAttribute('width');
 })
@@ -16,21 +17,27 @@ menuButton.addEventListener('mouseout', function(evt) {
 });
 menuButton.addEventListener('click', function(evt) {
     menu.classList.add('opened');
+    menuButton.classList.add('opened');
+    if (window.screen.width < 576) menuButton.addEventListener('click', closeMenuOnMobile);
+
 });
 menu.querySelector('.close-button').addEventListener('click', function(evt) {
     menu.classList.remove('opened');
+    menuButton.classList.remove('opened');
 });
 /**Menu hover Effect  END*/
 document.querySelector('div').__proto__.putTempClass = function(className, timeout = 1000) {
     this.classList.add(className);
-
-
     setTimeout(() => {
         this.classList.remove(className);
     }, timeout);
 };
 
-
+function closeMenuOnMobile(evt) {
+    menu.classList.remove('opened');
+    menuButton.classList.remove('opened');
+    menuButton.removeEventListener('click', closeMenuOnMobile, false);
+}
 /**MASK */
 // VMasker(document.querySelector(".inputtelmask")).maskPattern("+99 (999) 999-99-99");
 /**MASK END*/

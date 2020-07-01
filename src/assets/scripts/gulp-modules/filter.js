@@ -1037,7 +1037,6 @@ function(a, b) {
         const key = $(input).data().key;
         const inx = elemsWichMakeFilter.checkbox.findIndex(el => el.labelKey === key);
         filter[key] = [];
-
         [...elemsWichMakeFilter.checkbox[inx].DOMElem].forEach(function(checkbox) {
             if (checkbox.checked) {
                 filter[key].push(+checkbox.value);
@@ -1070,7 +1069,6 @@ function(a, b) {
         let i = 0;
         // Проход по массиву и сверка ключей и данных
         validDBTable = [];
-
         appartments.forEach(function(appartment) {
             appartment.flat.style.display = 'flex';
             for (var key in filter) {
@@ -1176,7 +1174,6 @@ function(a, b) {
 
     function initBoxRange({ range, onChange, onFinish }) {
         const { max, min, from, to } = range.dataset
-
         $(range).ionRangeSlider({
             type: "double",
             values_separator: '-',

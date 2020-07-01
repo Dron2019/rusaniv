@@ -102,6 +102,12 @@
             height: 35px;
         }
     }
+    @include to(575px) {
+        &.text {
+            font-size: 18px;
+            letter-spacing: 0.025em;
+        }
+    }
 }
 
 .text-standart {

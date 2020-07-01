@@ -12,6 +12,13 @@ header.header {
     @include to(768px) {
         padding-top: 25px;
     }
+    @include to(575px) {
+        height: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: var(--blue);
+        font-size: 12px;
+    }
 }
 
 .page__inner {
@@ -52,6 +59,41 @@ header.header {
         &>svg {
             width: 15px;
             height: 30px;
+        }
+    }
+    @include from(576px) {
+        .menu-button-mobile {
+            display: none;
+        }
+    }
+    @include to(575px) {
+        .menu-button-desktop {
+            display: none;
+        }
+        & span {
+            display: none;
+        }
+        & rect {
+            stroke: var(--white) !important;
+            fill: var(--white) !important;
+        }
+        &>svg {
+            width: 26px;
+            height: 26px;
+        }
+        .menu-button-mobile line {
+            transform-origin: center;
+            transition: .5s;
+        }
+        &.opened .close-el-left {
+            transform: rotate(45deg) translate(0px, -13%);
+        }
+        &.opened .close-el-right {
+            transform: rotate(-45deg) translate(0px, 9%);
+        }
+        &.opened .not-close-el {
+            transition: 0;
+            opacity: 0;
         }
     }
 }
@@ -106,6 +148,9 @@ header.header {
     top: 0;
     // display: none;
     animation: fadeInDown 1s forwards;
+    @include to(575px) {
+        width: 354px;
+    }
 }
 
 .form-wrapper {
@@ -236,6 +281,9 @@ header.header {
         align-items: center;
         flex-wrap: wrap;
         cursor: pointer;
+    }
+    @include to(575px) {
+        width: 100%;
     }
 }
 

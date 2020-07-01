@@ -165,4 +165,34 @@
         padding-inline-start: 0;
         -webkit-padding-start: 0;
     }
+    @include to(575px) {
+        z-index: -1;
+        &__content {
+            padding: var(--side-fields);
+            top: 50px;
+            padding-top: 70px;
+        }
+        .logo-menu-mobile {
+            width: 77px;
+            height: 30px;
+        }
+        &__top-blocks {
+            display: none;
+        }
+        &__large-span,
+        &__large-span[href] {
+            font-size: 18px;
+            line-height: 2em;
+            letter-spacing: 0.025em;
+            color: var(--white);
+        }
+        &__standart-span,
+        &__standart-span[href] {
+            font-size: 12px;
+            line-height: 2.33em;
+        }
+        &__big-links-group &__large-span {
+            line-height: 1em;
+        }
+    }
 }

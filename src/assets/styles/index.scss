@@ -13,6 +13,9 @@
     @include to(768px) {
         --side-fields: 20px;
     }
+    @include to(575px) {
+        --side-fields: 10px;
+    }
 }
 
 a[href] {
@@ -27,6 +30,9 @@ a:-webkit-any-link {
     --logo-width: 151px;
     width: var(--logo-width);
     height: calc(var(--logo-width * 0.39));
+    @include to(575px) {
+        --logo-width: 77px;
+    }
 }
 
 .main-screen {
@@ -72,6 +78,32 @@ a:-webkit-any-link {
     @include to(768px) {
         background: url(../images/home/BG.jpg) 34% no-repeat;
         background-size: cover;
+    }
+    @include to(575px) {
+        height: 100%;
+        background-position: -47vh 5vh;
+        .title-wrapper {
+            @include size(12);
+            order: 2;
+            margin-top: auto;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .title-wrapper .button {
+            margin-top: auto;
+        }
+        .title-wrapper .title-large {
+            @include shift-left(6);
+        }
+        .title-wrapper .vertical-line {
+            left: calc(50% - 20px);
+        }
+        .developers-row {
+            margin-top: 60px;
+            margin-bottom: auto;
+            order: 1;
+        }
     }
 }
 
@@ -392,9 +424,33 @@ a:-webkit-any-link {
     }
 }
 
+@include from(576px) {
+    .header-telephone.header-form-mobile {
+        display: none;
+    }
+}
+
+@include to(575px) {
+    .header-telephone:not(.header-form-mobile) {
+        display: none;
+    }
+    .header-telephone {
+        color: var(--white);
+        font-size: 12px;
+        letter-spacing: 0.025em;
+        text-decoration: underline;
+        margin: 0 auto;
+    }
+    .header-telephone .icon.button {
+        width: 26px;
+        height: 26px;
+        margin-right: 10px;
+    }
+}
+
 @include to(480px) {
     header.header {
-        position: absolute;
+        // position: absolute;
     }
     .developers-row {
         flex-wrap: wrap;
