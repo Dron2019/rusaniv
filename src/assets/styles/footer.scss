@@ -25,6 +25,12 @@
             bottom: calc(var(--side-fields));
         }
     }
+    @include to(575px) {
+        max-width: 65%;
+        .button.text-small {
+            display: none;
+        }
+    }
 }
 
 // #developers .page__footer-wrapper {
@@ -43,6 +49,7 @@
 .page__footer-wrapper {
     display: flex;
     height: 102px;
+    font-family: $default-font2;
     // margin-top: -102px;
     justify-content: space-between;
     padding-left: var(--side-fields);
@@ -51,4 +58,8 @@
     padding-bottom: 10px;
     // position: relative;
     z-index: 2;
+    @include to(575px) {
+        height: 50px;
+        padding-top: 0;
+    }
 }

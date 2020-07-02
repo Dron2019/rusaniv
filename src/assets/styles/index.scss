@@ -57,6 +57,7 @@ a:-webkit-any-link {
         width: 100%;
         display: flex;
         margin-top: auto;
+        align-items: center;
     }
     .perfect-logo {
         width: 150px;
@@ -81,9 +82,12 @@ a:-webkit-any-link {
     }
     @include to(575px) {
         height: 100%;
-        background-position: -47vh 5vh;
+        background-position: -47vh 50px;
+        // min-height: -webkit-fill-available;
         .title-wrapper {
-            @include size(12);
+            width: 100%;
+            margin-right: 0;
+            padding-left: 0;
             order: 2;
             margin-top: auto;
             height: 70vh;
@@ -92,17 +96,31 @@ a:-webkit-any-link {
         }
         .title-wrapper .button {
             margin-top: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 260px;
         }
         .title-wrapper .title-large {
-            @include shift-left(6);
+            @include shift-left(5.3);
         }
         .title-wrapper .vertical-line {
-            left: calc(50% - 20px);
+            left: calc(46% - 20px);
         }
         .developers-row {
             margin-top: 60px;
             margin-bottom: auto;
             order: 1;
+        }
+        .developers-title {
+            margin-left: 0;
+        }
+        .perfect-logo {
+            width: 104px;
+            height: 18px;
+        }
+        .citex-logo {
+            width: 37px;
+            height: 19px;
         }
     }
 }
@@ -143,6 +161,28 @@ a:-webkit-any-link {
             min-height: 61vh;
         }
     }
+    @include to(575px) {
+        .text-block {
+            width: 100%;
+            margin-left: 0;
+            padding-left: 0;
+            margin-top: 30px;
+        }
+        .title-large,
+        .text-standart {
+            padding-left: 15px;
+        }
+        .text-block .vertical-line {
+            left: -15px;
+        }
+        &>img {
+            height: 50vh;
+            min-height: initial;
+            width: calc(100% + var(--side-fields) * 2);
+            max-width: unset;
+            margin-left: calc(var(--side-fields) - (var(--side-fields) * 2));
+        }
+    }
 }
 
 .scroll-block {
@@ -169,6 +209,19 @@ a:-webkit-any-link {
     @include to(768px) {
         .scroll-element {
             left: 10%;
+        }
+    }
+    @include to(575px) {
+        .scroll-element {
+            font-size: 100px;
+            line-height: 3em;
+        }
+        &>img {
+            margin-left: auto;
+            width: 80%;
+            height: 75vh;
+            object-fit: cover;
+            object-position: left;
         }
     }
 }
@@ -215,6 +268,33 @@ a:-webkit-any-link {
             width: calc(50% - 5px);
         }
     }
+    @include to(575px) {
+        flex-direction: column-reverse;
+        .text-block {
+            width: 100%;
+            margin-left: 0;
+            padding-left: 0;
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+        .title-large,
+        .text-standart {
+            padding-left: 15px;
+        }
+        .title-large {
+            max-width: 50%;
+        }
+        .vertical-line {
+            left: -15px;
+        }
+        &>img {
+            height: 50vh;
+            min-height: initial;
+            width: calc(100% + var(--side-fields) * 2);
+            max-width: unset;
+            margin-left: calc(var(--side-fields) - (var(--side-fields) * 2));
+        }
+    }
 }
 
 .news-layout {
@@ -229,6 +309,11 @@ a:-webkit-any-link {
         background-size: contain;
         z-index: 0;
         pointer-events: none;
+    }
+    @include to(575px) {
+        .bg-logo {
+            width: 30%;
+        }
     }
 }
 
@@ -323,6 +408,43 @@ a:-webkit-any-link {
             margin-top: 0;
             padding-left: 5%;
             padding-right: 5%;
+        }
+    }
+    @include to(575px) {
+        &.wrapper {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        padding-top: 60px;
+        padding-bottom: 30px;
+        &__slider {
+            width: 100%;
+        }
+        .news-date {
+            margin-top: 10px;
+        }
+        a.button:not(.transparent) {
+            height: 36px;
+            font-size: 14px;
+            margin-bottom: 0;
+            width: 185px;
+        }
+        a.button.transparent {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button.arrow:after {
+            position: relative;
+            top: 3.5px;
+        }
+        .buttons-block {
+            width: 100%;
+            margin: 30px auto 0 auto;
+            flex-direction: row-reverse;
+        }
+        .bg-title-large {
+            left: -15vw;
+            top: -1.25em;
         }
     }
 }
@@ -435,11 +557,12 @@ a:-webkit-any-link {
         display: none;
     }
     .header-telephone {
-        color: var(--white);
+        color: var(--gray);
         font-size: 12px;
         letter-spacing: 0.025em;
         text-decoration: underline;
         margin: 0 auto;
+        font-size: 12px;
     }
     .header-telephone .icon.button {
         width: 26px;
@@ -455,11 +578,11 @@ a:-webkit-any-link {
     .developers-row {
         flex-wrap: wrap;
     }
-    .footer-adress {
-        width: 100%;
-        max-width: none;
-        margin-bottom: 1em;
-    }
+    // .footer-adress {
+    //     width: 100%;
+    //     max-width: none;
+    //     margin-bottom: 1em;
+    // }
     .main-screen-template-page .developers-title {
         margin-left: 0;
     }

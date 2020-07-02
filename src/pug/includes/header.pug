@@ -25,11 +25,10 @@ header.header
         <line class="not-close-el" x1="19" y1="13.5" x2="7" y2="13.5" stroke="white"/>
         <line class="close-el-right" x1="19" y1="10.5" x2="7" y2="10.5" stroke="white"/>
         </svg>
-
     include menu.pug
     .forms-wrapper
         .common-form#common-form
-            .common-form-js.form-wrapper.form-container-js
+            form.common-form-js.form-wrapper.form-container-js
                 .form-close-block
                     .form-close-block-title Закрити
                     .form-close-button
@@ -40,11 +39,11 @@ header.header
                 legend.form-legend &Zcy;&acy;&mcy;&ocy;&vcy;&icy;&tcy;&icy; &dcy;&zcy;&vcy;&iukcy;&ncy;&ocy;&kcy;
                 .input-group.text
                     label.name-label.common-label(for='name') &Vcy;&acy;&shcy;&iecy; &iukcy;&mcy;&grave;&yacy;:
-                    input.text-input.common-input.unfilled(type='text' name='name' placeholder='Ваше ім`я:' autocomplete='off' id='' data-required='true' data-count='0')
+                    input.text-input.common-input(type='text' name='name' placeholder='Ваше ім`я:' autocomplete='off' id='' data-required='true' data-count='0')
                     .input-group-line
                 .input-group.text
                     label.telephone-label.common-label(for='telephone') &Vcy;&acy;&shcy; &tcy;&iecy;&lcy;&iecy;&fcy;&ocy;&ncy;:*
-                    input.text-input.common-input.inputtelmask.unfilled(type='text' name='telephone' placeholder='Ваш телефон:*' autocomplete='off' id='' data-required='true')
+                    input.text-input.common-input.inputtelmask(type='text' name='telephone' placeholder='Ваш телефон:*' autocomplete='off' id='' data-required='true')
                     .input-group-line
                 .input-group.checkbox-group
                     div.checkbox-wrap
@@ -58,7 +57,7 @@ header.header
                     .time-label.common-label(for='time') Вказати зручний час
                     .datetimewrapper
                         input(type="text").visible-input.datetimepicker
-                button.button.text.arrow(type='submit' value="Відправити")  Відправити
+                button.button.text.arrow.submit-js(type='submit' value="Відправити")  Відправити
 .lang-block
     a.lang.active UK
     a.lang RU

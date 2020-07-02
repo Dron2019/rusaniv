@@ -1,12 +1,17 @@
 #build-progress {
-    .page__footer-wrapper {
-        margin-top: -110px;
-        height: 110px;
-        pointer-events: none;
+    @include from(576px) {
+        .page__footer-wrapper {
+            margin-top: -110px;
+            height: 110px;
+            pointer-events: none;
+        }
     }
     .smarto-logo {
         display: flex;
         align-items: flex-end;
+    }
+    .breadcrumbs-wrapper {
+        white-space: nowrap;
     }
     @include to(768px) {
         .breadcrumbs-wrapper .link-standart.arrow-after {
@@ -19,6 +24,10 @@
     font-size: 18px;
     color: var(--blue);
     font-family: $default-font;
+    @include to(575px) {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
 }
 
 .build-progress-wrap {
@@ -32,6 +41,7 @@
         width: 50%;
         margin: 35px 25% 71px 25%;
         padding: 0 25%;
+        border: none;
     }
     .navigation-block {
         padding-left: 0;
@@ -94,6 +104,19 @@
         &>li.active {
             background: var(--red);
             color: var(--white);
+        }
+    }
+    @include to(575px) {
+        background-color: var(--white);
+        justify-content: space-between;
+        padding: 0px calc(var(--side-fields) * 2) 42px calc(var(--side-fields) * 2);
+        &>li {
+            margin-right: 0;
+            width: 46px;
+            height: 46px;
+        }
+        &>li:nth-last-child(n+2) {
+            margin-right: 35px;
         }
     }
 }
@@ -183,12 +206,44 @@
             @include size(5);
         }
     }
+    @include to(575px) {
+        background: var(--white);
+        &.active {
+            padding-bottom: 60px;
+        }
+        .title-large {
+            display: none;
+        }
+        &__text-description {
+            width: 100%;
+        }
+        .slider-arrows {
+            margin-left: auto;
+        }
+        .build-progress-part {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+        }
+        .subtitle {
+            padding-left: 0;
+            max-width: 85%;
+            line-height: 1.5em;
+        }
+        .build-progress-part:not(:nth-last-child(-n+2)),
+        .build-progress-part:nth-last-child(-n+2) {
+            margin-bottom: 15px;
+        }
+    }
 }
 
 .build-progress-section-slider {
     @include size(6.5);
     @include to(768px) {
         @include size(7);
+    }
+    @include to(575px) {
+        width: 100%;
     }
 }
 
@@ -230,3 +285,37 @@
     }
     @include shift-padding-left(1);
 }
+
+
+/**********************************/
+
+
+/*
+* moving tab inner elements start
+*/
+
+#build-progress {
+    @include to(575px) {
+        .build-progress-part {
+            order: 6;
+        }
+        .subtitle {
+            order: 5;
+        }
+        .delimiter {
+            order: 4;
+        }
+        .build-section__text-description {
+            order: 3;
+            margin-top: 40px;
+        }
+    }
+}
+
+
+/*
+* moving tab inner elements end
+*/
+
+
+/**********************************/

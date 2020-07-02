@@ -1,3 +1,4 @@
+const WIDTH = window.screen.width;
 $yearsWrapper = document.querySelector('.years-slider');
 let currentFilterData = {
     month: '',
@@ -40,6 +41,15 @@ function setCurrentFilterDate() {
 document.querySelector('.select-box').addEventListener('click', function(evt) {
     evt.stopPropagation();
     setCurrentFilterDate();
-
-
 });
+
+/**MOBILE */
+if (WIDTH < 576) {
+    document.querySelector('.years-slider-js').addEventListener('click', function(evt) {
+        this.style.overflow = `visible`;
+        console.log(evt.target);
+        if (evt.target.tagName === 'LI') {
+            this.style.overflow = `hidden`;
+        }
+    });
+}

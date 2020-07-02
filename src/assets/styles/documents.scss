@@ -26,6 +26,20 @@
             left: -1px;
         }
     }
+    @include to(575px) {
+        .link-standart.transfered-js {
+            margin-top: 30px;
+            margin-bottom: 60px;
+            display: inline-block;
+        }
+        .slider {
+            margin-left: 0;
+            width: 100%;
+        }
+        .slider-arrows {
+            display: none;
+        }
+    }
 }
 
 .doc-slide {
@@ -77,4 +91,22 @@
         vertical-align: middle;
     }
     @include to(768px) {}
+    @include to(575px) {
+        padding: 20px 20px 25px 20px;
+        margin-left: 0;
+        &:nth-last-child(n+2) {
+            margin-bottom: 20px;
+        }
+        &__title {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        & hr {
+            margin: 55px 0 20px 0;
+        }
+        &__file-type-icon {
+            width: 45px;
+            height: 56px;
+        }
+    }
 }

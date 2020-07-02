@@ -1,3 +1,5 @@
+const SCREEN_WIDTH = window.screen.width;
+
 $('.gallery-slider-js').on('init', (e, t) => {
     // console.log(e, t);
     document.querySelector('#gallery .total').innerHTML = t.slideCount;
@@ -95,4 +97,23 @@ function switchGallerySlide(side) {
 
 function handleArrow() {
     // arrow.style.display = `none`;
+};
+
+
+
+/**********************************/
+/*
+ * mobile elements move start
+ */
+if (SCREEN_WIDTH < 576) {
+    let $arrowsBlock = document.querySelector('.mobile-arrows'),
+        $navBlock = document.querySelector('.slider-numbers');
+    $arrowsBlock.prepend($navBlock);
+    $arrowsBlock.classList.remove('white');
+    document.querySelector('.page__content').prepend($arrowsBlock);
+
 }
+/*
+ * mobile elements move end
+ */
+/**********************************/

@@ -93,3 +93,23 @@ function handleSectionSliderFilter($yearsWrapper) {
     });
 }
 /**Фильтрация слайдер в секции по гадом и месяцам Конец */
+
+/**********************************/
+/*
+ * mobile start
+ */
+/**MOBILE */
+const WIDTH = window.screen.width;
+if (WIDTH < 576) {
+    document.querySelector('.years-slider-js').addEventListener('click', function(evt) {
+        this.style.overflow = `visible`;
+        console.log(evt.target);
+        if (evt.target.tagName === 'LI') {
+            this.style.overflow = `hidden`;
+        }
+    });
+}
+/*
+ * mobile end
+ */
+/**********************************/

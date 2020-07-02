@@ -121,6 +121,9 @@ header.header {
         color: var(--white);
         background: var(--red);
     }
+    @include to(575px) {
+        display: none;
+    }
 }
 
 
@@ -149,7 +152,7 @@ header.header {
     // display: none;
     animation: fadeInDown 1s forwards;
     @include to(575px) {
-        width: 354px;
+        width: 320px;
     }
 }
 
@@ -177,6 +180,9 @@ header.header {
     }
     .input-group {
         margin-bottom: 32px;
+    }
+    .input-group.unfilled .input-group-line {
+        background-color: var(--red);
     }
     .form-close-block {
         display: flex;
@@ -215,6 +221,7 @@ header.header {
         height: 1px;
         width: 100%;
         background-color: #AAC0C9;
+        transition: .5s;
     }
     .button.text {
         font-size: 18px;
@@ -229,6 +236,9 @@ header.header {
         color: #FFFFFF;
         margin-left: auto;
         margin-top: 40px;
+    }
+    .button.text:disabled {
+        background-color: var(--gray);
     }
     .button.text:after {
         transform: translateY(2px);

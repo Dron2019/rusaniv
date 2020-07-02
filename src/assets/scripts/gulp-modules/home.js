@@ -5,7 +5,7 @@ class Scroller {
         this.selectorName = selector;
         this.scrollElement = document.querySelector(selector);
         this.i = 1;
-        this.delta = 20;
+        this.delta = 10;
         this.lastScrollTop = 0;
     }
     styling() {
@@ -25,9 +25,13 @@ class Scroller {
             console.log('down');
         }
     }
+    isDevice() {
+        if (/Android|webOS|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|iPhone|iPad|iPod/.test(window.navigator.userAgent)) this.delta = 3;
+
+    };
     init() {
         // console.log(this.selectorName);
-
+        this.isDevice();
         if (this.scrollElement == undefined) {
             console.error(`${this.selectorName} is ${undefined}`);
             return
@@ -78,6 +82,12 @@ $('.news-block-slider-js').slick({
     cssEase: 'ease-in-out',
     nextArrow: $('.news-block .next'),
     prevArrow: $('.news-block .previous'),
+    responsive: [{
+        breakpoint: 576,
+        settings: {
+            slidesToShow: 1,
+        }
+    }, ],
 });
 
 

@@ -16,6 +16,11 @@
             padding-top: 100px;
         }
     }
+    @include to(575px) {
+        &.first {
+            padding-top: 60px;
+        }
+    }
 }
 
 #documents {
@@ -168,6 +173,10 @@
     @include to(768px) {
         top: 0.7em;
     }
+    @include to(575px) {
+        width: 17px;
+        height: 48px;
+    }
 }
 
 .bg-title-large {
@@ -177,6 +186,10 @@
     font-family: Cormorant;
     z-index: 0;
     pointer-events: none;
+    @include to(575px) {
+        font-size: 100px;
+        line-height: 4em;
+    }
 }
 
 .subtitle {
@@ -250,6 +263,10 @@
     .next:hover svg {
         fill: var(--white);
     }
+    @include to(575px) {
+        --arrow-width: 36px;
+        width: calc(var(--arrow-width) * 2 + 16px);
+    }
 }
 
 .page-title {
@@ -262,6 +279,10 @@
     @include to(768px) {
         font-size: 26px;
         line-height: 1.88em;
+    }
+    @include to(575px) {
+        margin-right: 15px;
+        font-size: 20px;
     }
 }
 
@@ -299,6 +320,14 @@
             line-height: 20px;
         }
     }
+    @include to(575px) {
+        .link {
+            margin-right: 5px;
+        }
+        .link:after {
+            margin-left: 5px;
+        }
+    }
 }
 
 .select-box {
@@ -308,6 +337,7 @@
     height: 30px;
     color: var(--blue);
     max-width: 170px;
+    font-size: 18px;
     &__current {
         position: relative;
         cursor: pointer;
@@ -386,6 +416,9 @@
             background-color: #fbfbfb;
         }
     }
+    @include to(575px) {
+        max-width: 145px;
+    }
 }
 
 @keyframes HideList {
@@ -461,6 +494,17 @@
     }
     .total:before {
         content: '/';
+    }
+    @include to(575px) {
+        --numbers-height: 26px;
+        .current {
+            font-size: var(--numbers-height);
+            line-height: 1.38em;
+        }
+        .total {
+            font-size: 12px;
+            line-height: 26px;
+        }
     }
 }
 
@@ -640,6 +684,24 @@
         border-radius: 50%;
         font-size: 0;
     }
+    @include to(575px) {
+        .dots {
+            margin: 0 25px;
+            height: 44px;
+        }
+        .prev,
+        .next {
+            width: 44px;
+            height: 44px;
+        }
+        .prev svg,
+        .next svg {
+            width: 12px;
+            height: 10px;
+        }
+        position: relative;
+        z-index: 1;
+    }
 }
 
 .years-slider {
@@ -651,6 +713,7 @@
         margin-right: 1.75em;
         cursor: pointer;
         transition: var(--transition);
+        order: 2;
     }
     &>li:hover {
         color: var(--blue);
@@ -671,6 +734,34 @@
         }
         li.active {
             order: 1;
+        }
+    }
+    @include to(575px) {
+        flex-direction: column;
+        max-height: 1.6em;
+        max-width: 2.7em;
+        position: relative;
+        &:after {
+            content: url("data:image/svg+xml,%3Csvg width='7' height='4' viewBox='0 0 7 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 0.48378L6.51666 -2.11274e-08L3.84527 2.66959L3.5 2.98421L3.15479 2.66959L0.483337 -2.84852e-07L-2.11467e-08 0.48378L3.50003 4L7 0.48378Z' fill='%23AAC0C9'/%3E%3C/svg%3E%0A");
+            position: absolute;
+            top: -0.2em;
+            right: 5px;
+            height: 4px;
+            width: 7px;
+        }
+        li {
+            width: 2.7em;
+            background: var(--white);
+        }
+        li:not(.active) {
+            font-size: 0.7em;
+            left: -18px;
+            padding-left: 18px;
+            position: relative;
+            width: calc(4em + 18px);
+        }
+        li.active {
+            pointer-events: none;
         }
     }
 }

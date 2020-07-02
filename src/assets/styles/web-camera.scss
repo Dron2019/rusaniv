@@ -29,6 +29,7 @@
             color: var(--gray);
             height: 30px;
             border: 1px solid var(--gray);
+            letter-spacing: 0.025em;
         }
         a:not(:last-child) {
             margin-bottom: 20px;
@@ -64,6 +65,28 @@
         }
         .webcam-links a:not(:last-child) {
             margin-bottom: 30px;
+        }
+    }
+    @include to(575px) {
+        .breadcrumbs-wrapper .link-standart {
+            display: none;
+        }
+        .breadcrumbs-wrapper {
+            margin-bottom: 12px;
+        }
+        .webcam-links {
+            padding-top: 0;
+            width: 100%;
+            margin-bottom: 35px;
+            a {
+                margin-right: 10px;
+            }
+        }
+        .webcam-frame {
+            height: 50vh;
+            iframe {
+                height: 100% !important;
+            }
         }
     }
 }
