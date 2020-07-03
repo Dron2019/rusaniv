@@ -2,30 +2,20 @@
 
 /* beautify preserve:start */
 @@include('../libs/animatenumber/jquery.animateNumber.js')
-/* beautify preserve:end */
+/* beautify preserve:end */;;;;
 
-const viewParentSelector = '.flat-info-block-js';
-const floorLink = $('.floor-plan-svg path, .floor-plan-svg polygon');
+
+
+const viewParentSelector = '.flat-info-block-js',
+    floorInfoBlock = document.querySelector(viewParentSelector),
+    seeFlatLink = document.querySelector('.js-see-more-floor'),
+    floorLink = $('.floor-plan-svg path, .floor-plan-svg polygon'),
+    chooseFloorWrapper = document.querySelector('.choose-floor-wrapper'),
+    breadCrumbLink = document.querySelector('.breadcrumbs-wrapper>.link-standart');
+
 // const card = $('.js-floor-info');
 const card = $(`${viewParentSelector}`);
-// $pathes.forEach(path => {
-//     path.addEventListener('mouseenter', function(evt) {
-//         console.log(Array.from(path.dataset));
 
-//         for (let index = 0; index <= path.dataset.length; index++) {
-//             const element = path.dataset[index];
-//             let elToView = document.querySelector(`${viewParentSelector} [data-${key}]`);
-//             console.log(elToView);
-
-//             // if (elToView !== null) continue;
-//             // if (elToView == null) break;
-//             // elToView.innerHTML = element;
-//             console.log(key, element);
-
-//         }
-
-//     });
-// })
 
 (function($) {
     function animNum(elem, num, int = null) {
@@ -107,44 +97,32 @@ const card = $(`${viewParentSelector}`);
             console.log(this);
 
         });
-    } else if (screen.width > 576 && screen.width <= 768) {
+    } else if (screen.width < 576) {
+        /*Перемещение елементов на мобилке */
+        floorInfoBlock.append(seeFlatLink);
+        chooseFloorWrapper.append(breadCrumbLink);
+        /*Перемещение елементов на мобилке end */
         floorLink.on('click', function(e) {
             e.preventDefault();
             // replace link
             console.log($(this).closest('a'));
-
             $('.js-see-more-floor').attr('href', $(this).closest('a')[0].href.baseVal);
             showInfo.call(this);
+            mobileFlatInfoOpen(floorInfoBlock);
+        });
+        floorInfoBlock.querySelector('.flat-info-block-js__close').addEventListener('click', function(evt) {
+            evt.stopPropagation();
+            floorInfoBlock.classList.remove('opened');
+            document.querySelector('path.active').classList.remove('active');
         });
     } else {
 
     }
-    //     floorLink.on('click', function(e) {
-    //         e.preventDefault();
-    //         // replace link
-    //         $('.js-mobile-popup-flat-info__link').attr('href', $(this).data().link)
-    //         console.log($(this).data().link);
 
-    //         showInfo.call(this);
-    //         // $('.js-mobile-popup-flat-info').addClass(popupInfoClass);
-    //         // $body.addClass('modal-active');
-    //         //$('.floor-plan-content').css('filter', 'blur(10px)');
-    //     });
 
-    //     $('.js-mobile-popup-flat-info-close').on('click', function(e) {
-    // gsap.to($('.js-mobile-popup-flat-info'), {
-    //     autoAlpha: 0,
-    //     yPercent: 25,
-    //     clearProps: "all",
-    //     ease: exI,
-    //     onComplete: () => {
-    //         $body.removeClass('modal-active');
-    //         $('.js-mobile-popup-flat-info').removeClass(popupInfoClass);
-    //         //$('.floor-plan-content').css('filter', 'none');
-    //     }
-    // })
-    //     });
 
-    // }
+    function mobileFlatInfoOpen(popup) {
+        popup.classList.add('opened');
 
+    }
 })(jQuery);

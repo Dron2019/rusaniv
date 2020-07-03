@@ -5,22 +5,39 @@ document.querySelectorAll('.floor-svg-js path').forEach(element => {
 
 let pathesList = document.querySelectorAll('.floor-path-js'),
     infoWindow = document.querySelector('.floor-info-window-js'),
-    helpTitle = document.querySelector('.help-title-js');
-// infoWindow.style.transition = `.2s`;
+    helpTitle = document.querySelector('.help-title-js'),
+    filterLinks = document.querySelector('.filter-links'),
+    genPlan = document.querySelector('.genplan');
+genPlan.insertAdjacentElement('afterEnd', filterLinks);
 
+
+
+// infoWindow.style.transition = `.2s`;
+let gradient = document.createElement('div');
+gradient.style.cssText = `
+background: linear-gradient(0deg, rgba(52,82,136,0.9023984593837535) 48%, rgba(167,206,217,1) 100%);
+position: absolute;
+width: 100%;
+height: 165px;
+top: 0;
+left: 0;
+`;
+document.body.append(gradient);
 if (window.screen.width < 769) {
     let link = document.createElement('a');
     link.classList.add('button');
     link.classList.add('mobile-plan-watch-button');
-    link.innerHTML = langObject.goToFloor[lang];
+    link.innerHTML = `Перейти на поверх `;
     infoWindow.append(link);
     pathesList.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
             link.href = item.parentElement.getAttribute('xlink:href');
-            infoWindow.style.right = `${item.getBoundingClientRect().left}px`;
+            console.log(item.getBoundingClientRect());
 
-            console.log(item.parentElement);
+            infoWindow.style.right = `${item.getBoundingClientRect().left/10}px`;
+
+            // console.log(item.parentElement);
 
 
         })
@@ -45,6 +62,11 @@ pathesList.forEach(function(path, index) {
 
     });
 });
+
+
+
+
+
 
 /**Вывод надписи про Второй дом */
 // let $buildLink = document.querySelector('.not-for-sale-js');

@@ -122,6 +122,8 @@ function initMap() {
         shop: `${baseFolder}marker-shop.svg`,
         work: `${baseFolder}marker-work.svg`,
         sport: `${baseFolder}marker-sport.svg`,
+        school: `${baseFolder}marker-school.svg`,
+
 
 
     }
@@ -178,6 +180,12 @@ function initMap() {
             type: 'sport',
             icon: { url: markersAdresses.sport,scaledSize: defaultMarkerSize,}
         },
+        {
+            content: `Тестовий school`,
+            position: { lat: 50.550773,  lng: 30.269847 },
+            type: 'school',
+            icon: { url: markersAdresses.school,scaledSize: defaultMarkerSize,}
+        },
     ]
 /* beautify preserve:end */
     var activeInfoBubble;
@@ -207,9 +215,53 @@ function initMap() {
         // console.log(category);
         // console.log(gmarkers1);
     });
+    /**********************************/
+    /*
+     * mobile pageHande start
+     */
+    const WIDTH = window.screen.width;
+
+    if (WIDTH < 576) {
+        const legend = document.querySelector('.infra-legend-js'),
+            icons = legend.querySelectorAll('.mobile-infra-legend__icon-row'),
+            title = legend.querySelector('.mobile-infra-legend__title'),
+            close = legend.querySelector('.mobile-infra-legend__close');
+
+        function displayFilterIcons(type, opened) {
+            gmarkers1.forEach(marker => {
+                if (marker.category === type && opened) {
+                    marker.setVisible(true);
+                } else if (marker.category === type && !opened) {
+                    marker.setVisible(false);
+                }
+            })
+        }
+        let $breadcrumbLink = document.querySelector('.breadcrumbs-wrapper .link-standart'),
+            $pageContent = document.querySelector('.page__content');
+        $pageContent.append($breadcrumbLink);
+        title.addEventListener('click', function(evt) {
+            legend.classList.add('opened')
+        });
+        close.addEventListener('click', function(evt) {
+            evt.stopPropagation();
+            legend.classList.remove('opened');
+        });
+        icons.forEach(icon => {
+            icon.addEventListener('click', function(evt) {
+                icon.classList.toggle('active');
+                if (icon.classList.contains('active')) {
+                    displayFilterIcons(icon.dataset.type, true);
+                } else {
+                    displayFilterIcons(icon.dataset.type, false);
+
+                }
+            });
+        })
+    }
+    /*
+     * mobile pageHande end
+     */
+    /**********************************/
 
 };
-
-
-
 // Google map end

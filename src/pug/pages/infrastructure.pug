@@ -19,3 +19,35 @@ block content
                     a().link.current-link Інфраструктура
                 a(href="gallery.html").link-standart.key-before Обрати квартиру
         #map
+        .mobile-infra-legend.infra-legend-js
+            .mobile-infra-legend__title Об’єкти інфраструктури
+            <svg class="mobile-infra-legend__close " width="27" height="27" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8.44582" y="23.5151" width="21.4279" height="0.738894" transform="rotate(-45 8.44582 23.5151)" fill="white" stroke="white" stroke-width="0.738894"></rect>
+            <rect x="8.96826" y="8.3633" width="21.4279" height="0.738894" transform="rotate(45 8.96826 8.3633)" fill="white" stroke="white" stroke-width="0.738894"></rect>
+            </svg>
+            .mobile-infra-legend__icon-wrapper
+                .mobile-infra-legend__icon-row.active(data-type="main")
+                    +svg('marker-main').mobile-infra-legend__icon-img
+                    .mobile-infra-legend__icon-text Комплекс
+                .mobile-infra-legend__icon-row.active(data-type="park")
+                    +svg('marker-park').mobile-infra-legend__icon-img
+                    .mobile-infra-legend__icon-text Парк
+                .mobile-infra-legend__icon-row.active(data-type="work")
+                    +svg('marker-office').mobile-infra-legend__icon-img
+                    .mobile-infra-legend__icon-text Простір для офісів
+                .mobile-infra-legend__icon-row.active(data-type="meal")
+                    +svg('marker-meal').mobile-infra-legend__icon-img
+                    .mobile-infra-legend__icon-text Кафе та ресторани
+                .mobile-infra-legend__icon-row.active(data-type="shop")
+                    +svg('marker-shop').mobile-infra-legend__icon-img
+                    .mobile-infra-legend__icon-text Магазини
+                .mobile-infra-legend__icon-row.active(data-type="kinder")
+                    +svg('marker-bear').mobile-infra-legend__icon-img
+                    .mobile-infra-legend__icon-text Дитячі садочки
+                .mobile-infra-legend__icon-row.active(data-type="sport")
+                    +svg('marker-sport').mobile-infra-legend__icon-img
+                    .mobile-infra-legend__icon-text Спорт
+                .mobile-infra-legend__icon-row.active(data-type="school")
+                    +svg('marker-school').mobile-infra-legend__icon-img
+                    .mobile-infra-legend__icon-text Школа
+

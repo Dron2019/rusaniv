@@ -1,3 +1,5 @@
+const WIDTH = window.screen.width;
+
 $('.projects-slider').on('init', (e, t) => {
     // console.log(e, t);
     document.querySelector('.projects .total').innerHTML = t.slideCount;
@@ -29,3 +31,24 @@ $('.projects-slider').slick({
         }
     }, ],
 });
+
+
+/**********************************/
+/*
+ * mobile elements move start
+ */
+if (WIDTH < 576) {
+
+    let $sliderNumbers = document.querySelector('.projects .slider-numbers'),
+        $sliderArrowsBlock = document.querySelector('.projects .mobile-arrows'),
+        $projectBlock = document.querySelector('.projects'),
+        $slideTitleShow = document.querySelector('.slide-title-show');
+    $sliderArrowsBlock.classList.remove('white');
+    $sliderArrowsBlock.prepend($sliderNumbers);
+    $projectBlock.append($slideTitleShow);
+    $projectBlock.append($sliderArrowsBlock);
+}
+/*
+ * mobile elements move end
+ */
+/**********************************/

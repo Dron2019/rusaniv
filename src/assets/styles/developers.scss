@@ -8,6 +8,13 @@
     width: 100%;
     height: 479px;
     z-index: -1;
+    @include to(575px) {
+        height: 50vh;
+        top: 50px;
+        background: url(../images/developers/developers-bg-mob.jpg) center no-repeat;
+        background-size: cover;
+        // background-position: top;
+    }
 }
 
 #developers {
@@ -35,6 +42,21 @@
         z-index: 2;
         left: 50%;
         transform: translate(-100%, 0);
+    }
+    @include to(575px) {
+        .wrapper.first {
+            margin-bottom: calc(50vh - 30px);
+        }
+        .mobile-arrows {
+            position: static;
+            width: 100%;
+            transform: none;
+            margin: 15px 0 0 0;
+        }
+        .mobile-arrows .slider-numbers {
+            margin-right: auto;
+            align-self: center;
+        }
     }
 }
 
@@ -73,6 +95,30 @@
             @include size(12);
         }
     }
+    @include to(575px) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 27px;
+        padding-left: 25px;
+        padding-bottom: 40px;
+        .title-wrapper {
+            right: 17px;
+            padding-top: 0;
+            padding-left: 15px;
+        }
+        .vertical-line {
+            left: -17px;
+            top: 27px;
+        }
+        .perfect-logo {
+            width: 273px;
+            height: 47px;
+        }
+        .text-standart {
+            width: 100%;
+        }
+    }
 }
 
 .citex-description-wrapper {
@@ -106,6 +152,26 @@
         }
         .text-standart {
             @include size(12);
+        }
+    }
+    @include to(575px) {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 40px 0;
+        .citex-logo {
+            width: 152px;
+            height: 76px;
+        }
+        .title-wrapper {
+            right: 17px;
+            padding-left: 29px;
+            width: 100%;
+            margin-right: 0;
+        }
+        .text-standart {
+            padding-left: 12px;
+            width: 100%;
         }
     }
 }
@@ -158,6 +224,32 @@
         }
         .circle-red-arrow {
             display: none !important;
+        }
+    }
+    @include to(575px) {
+        padding-top: 35px;
+        width: 100%;
+        padding: 35px var(--side-fields) 30px var(--side-fields);
+        .title-large {
+            font-size: 32px;
+            padding-right: 35%;
+            margin-bottom: 15px;
+        }
+        .bg-title-large {
+            top: -1.3em;
+            left: 0.7em;
+        }
+        .projects-slider {
+            width: 100%;
+        }
+        .project-slide {
+            max-height: 50vh;
+        }
+        .slider-description-block {
+            width: 100%;
+        }
+        .slide-title-show {
+            margin-top: 10px;
         }
     }
 }

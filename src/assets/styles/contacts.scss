@@ -26,6 +26,20 @@
     .sales-scheldule {
         margin-top: 15px;
     }
+    @include to(575px) {
+        .breadcrumbs-wrapper .link-standart {
+            display: none;
+        }
+        .page__footer-wrapper {
+            margin-top: 0px;
+        }
+        #map {
+            width: calc(100% + 20px);
+            margin-left: -10px;
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+    }
 }
 
 .contact-call-form {
@@ -53,6 +67,12 @@
         margin-top: 35px;
         @include shift-left(0);
     }
+    @include to(575px) {
+        margin-top: 0;
+        .subtitle {
+            font-size: 32px;
+        }
+    }
 }
 
 .group-with-marker {
@@ -64,5 +84,10 @@
         left: -37px;
         width: 18px;
         height: 26px;
+    }
+    @include to(575px) {
+        &>svg {
+            top: 0.5em;
+        }
     }
 }

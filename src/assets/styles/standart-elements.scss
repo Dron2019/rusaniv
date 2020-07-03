@@ -50,6 +50,7 @@
     text-transform: none;
     white-space: nowrap;
     font-family: $default-font;
+    pointer-events: auto;
     &.icon {
         width: 40px;
         height: 40px;
@@ -562,6 +563,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include to(575px) {
+        width: 46px;
+        height: 46px;
+    }
 }
 
 .circle span {
@@ -571,6 +576,9 @@
     letter-spacing: 0.1em;
     /* White */
     color: #FFFFFF;
+    @include to(575px) {
+        font-size: 20px;
+    }
 }
 
 .square-m-block {
@@ -709,6 +717,8 @@
     color: var(--gray);
     font-size: 36px;
     line-height: 1.33em;
+    max-width: calc(9em + 35px);
+    overflow: hidden;
     &>li {
         margin-right: 1.75em;
         cursor: pointer;

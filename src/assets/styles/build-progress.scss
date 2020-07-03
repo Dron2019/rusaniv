@@ -183,6 +183,11 @@
     .years-slider {
         margin-left: 15px;
     }
+    @include from(576px) {
+        .slider-numbers {
+            display: none;
+        }
+    }
     @include to(768px) {
         padding-left: var(--side-fields);
         padding-right: var(--side-fields);
@@ -218,7 +223,12 @@
             width: 100%;
         }
         .slider-arrows {
-            margin-left: auto;
+            margin-left: 0;
+            width: 100%;
+        }
+        .slider-numbers {
+            margin-right: auto;
+            align-self: center;
         }
         .build-progress-part {
             padding-left: 0;
@@ -238,6 +248,7 @@
 }
 
 .build-progress-section-slider {
+    transition: .5s;
     @include size(6.5);
     @include to(768px) {
         @include size(7);

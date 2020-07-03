@@ -33,22 +33,22 @@ block content
                     .title-large Секція 1
                     .navigation-block
                         +SelectBox('month-section1', [
-                            {name: 'Січень',value: '1'}, 
-                            {name: 'Лютий',value: '2'}, 
-                            {name: 'Березень',value: '3'}, 
-                            {name: 'Квітень', value: '4'}, 
-                            {name: 'Травень',value: '5'},
-                            {name: 'Червень',value: '6'},
-                            {name: 'Липень',value: '7'},
-                            {name: 'Серпень',value: '8'},
-                            {name: 'Вересень',value: '9'},
+                            {name: 'Січень',value: '01'}, 
+                            {name: 'Лютий',value: '02'}, 
+                            {name: 'Березень',value: '03'}, 
+                            {name: 'Квітень', value: '04'}, 
+                            {name: 'Травень',value: '05'},
+                            {name: 'Червень',value: '06'},
+                            {name: 'Липень',value: '07'},
+                            {name: 'Серпень',value: '08'},
+                            {name: 'Вересень',value: '09'},
                             {name: 'Жовтень',value: '10'},
                             {name: 'Листопад',value: '11'},
                             {name: 'Грудень',value: '12'},
                             ]).select-box
                         ul.years-slider.years-slider-js
-                            li(data-value="2019").active 2019
-                            li(data-value="2020") 2020
+                            //- li(data-value="2019") 2019
+                            li(data-value="2020").active 2020
                             li(data-value="2021") 2021
                         .years-arrows
                             .prev
@@ -67,16 +67,19 @@ block content
                             .text-medium.blue 19 листопа 2019
                             .text-standart Дорога на роботу і додому — значна частина нашого життя. 
                     .build-progress-section-slider
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="02")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="03")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="04")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="04")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="04")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="07")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="08")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="09")
                     .slider-arrows
+                        .slider-numbers
+                            .current 1
+                            .total 10
                         .prev
                             <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.92308 14.5565L7.87559 13.5898L2.61944 8.24706L18 8.24706L18 6.8661L2.61944 6.8661L7.87559 1.52319L6.92308 0.556517L6.11954e-07 7.55658L6.92308 14.5565Z" />
@@ -184,6 +187,9 @@ block content
                         +img('build-progress/1.jpg')
                         +img('build-progress/1.jpg')
                     .slider-arrows
+                        .slider-numbers
+                            .current 1
+                            .total 10
                         .prev
                             <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.92308 14.5565L7.87559 13.5898L2.61944 8.24706L18 8.24706L18 6.8661L2.61944 6.8661L7.87559 1.52319L6.92308 0.556517L6.11954e-07 7.55658L6.92308 14.5565Z" />
@@ -293,6 +299,9 @@ block content
                         +img('build-progress/1.jpg')
                         +img('build-progress/1.jpg')
                     .slider-arrows
+                        .slider-numbers
+                            .current 1
+                            .total 10
                         .prev
                             <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.92308 14.5565L7.87559 13.5898L2.61944 8.24706L18 8.24706L18 6.8661L2.61944 6.8661L7.87559 1.52319L6.92308 0.556517L6.11954e-07 7.55658L6.92308 14.5565Z" />
@@ -394,16 +403,19 @@ block content
                             .text-medium.blue 19 листопа 2019
                             .text-standart Дорога на роботу і додому — значна частина нашого життя. 
                     .build-progress-section-slider
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
-                        +img('build-progress/1.jpg')
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
+                        +img('build-progress/1.jpg')(data-yeasr="2020" data-month="01")
                     .slider-arrows
+                        .slider-numbers
+                            .current 1
+                            .total 10
                         .prev
                             <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.92308 14.5565L7.87559 13.5898L2.61944 8.24706L18 8.24706L18 6.8661L2.61944 6.8661L7.87559 1.52319L6.92308 0.556517L6.11954e-07 7.55658L6.92308 14.5565Z" />
