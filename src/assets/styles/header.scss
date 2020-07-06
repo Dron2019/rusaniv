@@ -115,6 +115,7 @@ header.header {
         font-size: 18px;
         letter-spacing: 0.025em;
         cursor: pointer;
+        color: var(--blue);
         margin-bottom: 10px;
     }
     .lang.active {
@@ -294,6 +295,10 @@ header.header {
     }
     @include to(575px) {
         width: 100%;
+        .form-close-button {
+            height: 27px;
+            width: 27px;
+        }
     }
 }
 

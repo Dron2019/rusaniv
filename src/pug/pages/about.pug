@@ -17,7 +17,10 @@ block content
                     h1.page-title Про проект
                     a(href="/").link Головна
                     a().link.current-link  Про проект
-        +img("about/about-bg.jpg").about-background-image
+        picture
+            source(srcset='./assets/images/about/about-bg-mob.jpg' media='(max-width: 575px)')
+            img(src='./assets/images/about/about-bg.jpg' alt='rusaniv residence picture').about-background-image
+        //- +img("about/about-bg.jpg")
         .about-wrapper
             .bg-title-large RUSANIV
             .subtitle.about-wrapper__subtitle Перший будинок буде введений в експлуатацію у 20ХХ році.

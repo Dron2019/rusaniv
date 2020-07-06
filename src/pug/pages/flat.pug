@@ -37,13 +37,17 @@ block content
             .flat-plan-block
                 +img('flat/plan.png')
             .flat-info-block.last
-                .subtitle.flat-number #145
-                .text-standart Номер квартири
-                .subtitle.flat-rooms 2
-                .text-standart Кімнати
-                .subtitle.red.flat-tot-square 117.3 м<sub>2</sub>
-                .text-standart Загальна площа
-                .subtitle.red.flat-live-square 35.6 м<sub>2</sub>
-                .text-standart Житлова площа
+                .flat-info-block__item
+                    .subtitle.flat-number #145
+                    .text-standart Номер квартири
+                .flat-info-block__item
+                    .subtitle.flat-rooms 2
+                    .text-standart Кімнати
+                .flat-info-block__item
+                    .subtitle.red.flat-tot-square 117.3 м<sub>2</sub>
+                    .text-standart Загальна площа
+                .flat-info-block__item
+                    .subtitle.red.flat-live-square 35.6 м<sub>2</sub>
+                    .text-standart Житлова площа
                 .button.text.arrow.call-form-js Дізнатись ціну
                 a(href="#" target='_blank').pdf-link.link-standart Завантажити булкет

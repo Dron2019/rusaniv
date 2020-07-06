@@ -14,6 +14,7 @@ genPlan.insertAdjacentElement('afterEnd', filterLinks);
 
 // infoWindow.style.transition = `.2s`;
 let gradient = document.createElement('div');
+gradient.classList.add('choose-build-gradient');
 gradient.style.cssText = `
 background: linear-gradient(0deg, rgba(52,82,136,0.9023984593837535) 48%, rgba(167,206,217,1) 100%);
 position: absolute;
@@ -21,6 +22,7 @@ width: 100%;
 height: 165px;
 top: 0;
 left: 0;
+
 `;
 document.body.append(gradient);
 if (window.screen.width < 769) {

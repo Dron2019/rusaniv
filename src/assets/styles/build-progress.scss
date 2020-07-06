@@ -271,6 +271,7 @@
         height: 40px;
         border-radius: 22px;
         background: var(--hz);
+        overflow: hidden;
         svg {
             transform: translate(-1.3px, -0.2px);
             display: block;

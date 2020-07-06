@@ -206,3 +206,9 @@
         }
     }
 }
+
+@include from(576px) {
+    .choose-build-gradient {
+        display: none;
+    }
+}

@@ -93,4 +93,45 @@
             max-height: 556px;
         }
     }
+    @include to(575px) {
+        margin-top: 25px;
+        padding-bottom: 40px;
+        .flat-img {
+            width: 100%;
+        }
+        .flat-text-block {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 35px;
+            .title-large {
+                font-size: 26px;
+                line-height: 36px;
+            }
+            .subtitle {
+                font-size: 32px;
+            }
+        }
+        .flat-data-block {
+            margin-top: 10px;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(2, 1fr);
+            .subtitle-2 {
+                grid-area: 1/2/1/2;
+            }
+            .subtitle-3 {
+                grid-area: 1/3/1/3;
+            }
+            .text-standart {
+                grid-row: 2;
+            }
+        }
+        .button {
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .link-standart {
+            text-align: center;
+        }
+    }
 }

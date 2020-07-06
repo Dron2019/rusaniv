@@ -119,6 +119,55 @@
             margin: 20px auto;
         }
     }
+    @include to(575px) {
+        --tablet-negative-margin: 0px;
+        .breadcrumbs-block {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -moz-box;
+            -moz-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-clamp: 2;
+            box-orient: vertical;
+            .link {
+                margin-right: 0;
+            }
+        }
+        .breadcrumbs-wrapper>.link-standart {
+            display: none;
+        }
+        .flat-plan-block {
+            width: auto;
+            &__item {
+                margin-top: 7px;
+            }
+        }
+        .flat-info-block.last {
+            width: 100%;
+            margin-right: 0;
+            margin-top: 29px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .flat-info-block.last .button.text,
+        .flat-info-block.last .pdf-link {
+            grid-area: auto/1/auto/3;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+        .flat-info-block.last .subtitle {
+            margin-top: 0;
+            font-size: 32px;
+        }
+        .mini-floor-plan-block {
+            width: 100%;
+            margin-bottom: 30px;
+            margin-top: 43.26px;
+        }
+    }
 }
 
 

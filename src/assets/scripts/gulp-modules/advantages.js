@@ -29,8 +29,9 @@ $('.advantage-slider-js').slick({
             settings: {
                 arrows: false,
                 centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 1
+                centerPadding: '0px',
+                slidesToShow: 1,
+                variableWidth: true,
             }
         }
     ]
@@ -40,14 +41,38 @@ function transformSlickTrack() {
     document.querySelector('.slick-track').style.position = `relative`;
     // let slickSlideWidth = +getComputedStyle(document.querySelector('.slick-slide')).width.replace(/px/, '');
     let slickSlideWidth = +document.querySelector('.slick-slide').getAttribute('style').split(';')[0].replace(/[^0-9]|/gi, '');
-    console.log(slickSlideWidth);
-    document.querySelector('.slick-track').style.left = -(slickSlideWidth * 2) * 0.5 + 'px';
+    if (window.screen.width > 575) document.querySelector('.slick-track').style.left = -(slickSlideWidth * 2) * 0.5 + 'px';
+
+
     console.log();
+}
+
+function changePseudoProperties(container, cssText, pseudoType) {
+    let containerSelector = '';
+    if (pseudoType === undefined) {
+        console.warn(`Pseudo element is not defined, ${changePseudoProperties.name} is stopping`);
+        return;
+    }
+    if (typeof container === 'string') {
+        containerSelector = container;
+        container = document.querySelector(container);
+    } else {
+        containerSelector = `.${container.classList[0]}`;
+    }
+    let style = document.createElement('style');
+    style.innerHTML = `
+    ${containerSelector}:${pseudoType}{
+        ${cssText}
+    } `;
+    container.append(style);
 }
 
 function switchDot(slideIndex) {
     if (+slideIndex === 0) return;
     let dotsContainer = document.querySelector('.navigation');
+    if (document.querySelector('.advantage-slider style') === null && window.screen.width < 576) {
+        changePseudoProperties('.advantage-slider', 'opacity:0', 'after');
+    }
     dotsContainer.querySelector('.active').classList.remove('active');
     dotsContainer.querySelector(`[data-dot-index="${slideIndex}"]`).classList.add('active');
 }

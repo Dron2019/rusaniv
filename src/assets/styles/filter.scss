@@ -5,6 +5,11 @@
 .range-wrapper {
     display: flex;
     justify-content: space-between;
+    @include to(575px) {
+        .irs--flat .irs-to {
+            transform: translateX(-10px);
+        }
+    }
 }
 
 .range-item {
@@ -20,6 +25,12 @@
         &__label {
             font-size: 20px;
             line-height: 1.4em;
+        }
+    }
+    @include to(575px) {
+        &__label {
+            font-size: 18px;
+            line-height: 1.56em;
         }
     }
 }
@@ -147,6 +158,9 @@
         line-height: 28px;
         margin-top: -1.4em;
     }
+    @include to(575px) {
+        line-height: 36px;
+    }
 }
 
 
@@ -212,18 +226,42 @@
             order: 1;
         }
     }
+    @include to(575px) {
+        .filter-controls {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 25px;
+            margin-top: 30px;
+        }
+        .filter-button {
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 300px;
+        }
+        .filter-tab-nav {
+            display: none;
+        }
+        .range-wrapper {
+            margin-top: 0;
+        }
+        .range-item {
+            margin-bottom: 30px;
+        }
+    }
 }
 
 .filter-checkbox {
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    border: 1px solid var(--gray);
+    border: 1px solid #AABFC9;
+    color: #AABFC9;
     position: relative;
     transition: .5s;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: $default-font;
     margin-right: 28px;
     input {
         width: 100%;
@@ -246,6 +284,16 @@
         height: 70px;
         font-size: 26px;
         line-height: 28px;
+    }
+    @include to(575px) {
+        width: 51px;
+        height: 51px;
+        font-size: 26px;
+        line-height: 36px;
+        margin-right: 32px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
 
@@ -296,6 +344,30 @@
             margin-top: 30px;
         }
     }
+    @include to(575px) {
+        padding-right: 30px;
+        padding-left: 30px;
+        box-shadow: 0px 20px 25px rgba(0, 57, 90, 0.1);
+        padding-bottom: 26px;
+        &:first-child {
+            margin-top: 0;
+        }
+        width: 100%;
+        &__img,
+        .card-filter-list {
+            width: 100%;
+        }
+        &__img {
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 26px;
+        }
+        &:nth-child(n+3),
+        & {
+            margin-top: 50px;
+        }
+    }
 }
 
 .checkbox-block {
@@ -312,6 +384,13 @@
             margin-bottom: 15px;
         }
         margin-bottom: 45px;
+    }
+    @include to(575px) {
+        margin-bottom: 25px;
+        &__title {
+            font-size: 18px;
+            line-height: 28px;
+        }
     }
 }
 
@@ -330,6 +409,15 @@
         @include size(8);
         &__body {
             padding-top: 15px;
+        }
+    }
+    @include to(575px) {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 40px;
+        width: 100%;
+        &__body {
+            padding-top: 0;
         }
     }
 }
@@ -376,6 +464,28 @@
 
 .card-filter-btn {
     margin-top: 2.2em;
+    @include to(575px) {
+        text-align: center;
+        .link-standart {
+            width: 175px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 14px;
+            line-height: 36px;
+            text-align: center;
+            background: var(--red);
+            color: var(--white);
+            display: inline-block;
+            padding: 0px 20px;
+            border-radius: 25px;
+        }
+        .link-standart.arrow-after:after {
+            content: url(../images/common/arrow-left.svg);
+            transform: none;
+            position: relative;
+            top: 2px;
+        }
+    }
 }
 
 .filter-result-block-tab {

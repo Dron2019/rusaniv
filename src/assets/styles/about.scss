@@ -139,4 +139,97 @@
             width: 100%;
         }
     }
+    @include to(575px) {
+        --negative-block-margin: 0;
+        .about-wrapper__subtitle {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .about-background-image {
+            position: relative;
+            margin-top: -67px;
+            z-index: -1;
+            height: 50vh;
+        }
+        .about-dark-block {
+            margin-left: calc(var(--side-fields) - (var(--side-fields) * 2));
+            width: calc(100% + (var(--side-field) * 2));
+            padding: 30px 10px 42px 0;
+        }
+        .about-wrapper {
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            margin-top: 0;
+            margin-left: 0;
+            padding-bottom: 40px;
+        }
+        .bg-title-large {
+            display: none;
+        }
+        .about-wrapper__subtitle {
+            padding-left: 25px;
+        }
+        .complex-data-block {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            display: block;
+            padding-left: 25px;
+        }
+        .about-description-paragraph {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .about-wrapper-bottom {
+            background: var(--shta);
+            padding-bottom: 30px;
+            margin-bottom: 0;
+            padding-left: 0;
+            padding-top: 30px;
+        }
+        .about-wrapper-bottom .text-standart {
+            padding-left: 12px;
+            padding-right: 0;
+        }
+        .about-wrapper-bottom .title-wrapper {
+            padding-left: 12px;
+            line-height: 1.25em;
+        }
+        .about-wrapper-bottom .title-wrapper .title-wrapper {
+            font-size: 32px;
+        }
+        .about-wrapper-bottom .vertical-line {
+            top: 6px;
+            left: -12px;
+        }
+        .about-wrapper-bottom .button {
+            margin-top: 30px;
+        }
+        .about-wrapper-bottom .button::after {
+            position: relative;
+            top: 3px;
+        }
+        .page__footer-wrapper {
+            background-color: var(--shta);
+            margin-top: -1px;
+        }
+    }
+}
+
+#about {
+    @include to(575px) {
+        .about-dark-block {
+            order: 1;
+        }
+        .about-wrapper__subtitle {
+            order: 2;
+        }
+        .complex-data-block {
+            order: 3;
+        }
+        .about-description-paragraph {
+            order: 4;
+        }
+    }
 }

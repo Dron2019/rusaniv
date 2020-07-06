@@ -193,12 +193,15 @@
         width: 70%;
         margin-left: auto;
         position: relative;
+        cursor: none;
     }
     .circle-red-arrow {
         position: absolute;
         top: 50%;
         left: 50%;
         z-index: 2;
+        pointer-events: none;
+        cursor: none;
     }
     .slider-description-block {
         align-self: center;
