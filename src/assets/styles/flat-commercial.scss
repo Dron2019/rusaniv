@@ -20,6 +20,7 @@
     }
     .link-standart {
         margin-top: 40px;
+        text-decoration: underline;
     }
     .button {
         margin-top: 100px;
@@ -44,6 +45,15 @@
         }
         .text-standart {
             justify-self: start;
+        }
+    }
+    @include from(1680px) {
+        margin-top: 95px;
+        .button {
+            max-width: 360px;
+        }
+        .flat-data-block {
+            margin-top: 50px;
         }
     }
     @include to(1125px) {

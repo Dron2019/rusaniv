@@ -47,6 +47,13 @@
             display: initial;
         }
     }
+    @include from(1680px) {
+        .webcam-links a {
+            width: 240px;
+            height: 44px;
+            font-size: 25px;
+        }
+    }
     @include to(768px) {
         .webcam-links {
             @include size(12);

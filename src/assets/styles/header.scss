@@ -9,6 +9,12 @@ header.header {
     left: 0;
     z-index: 5;
     padding: 32px var(--side-fields) 0 var(--side-fields);
+    @include from(1680px) {
+        padding-top: 46px;
+        picture img {
+            width: 218px;
+        }
+    }
     @include to(768px) {
         padding-top: 25px;
     }
@@ -36,6 +42,9 @@ header.header {
     & .button {
         margin-right: 20px;
     }
+    @include from(1680px) {
+        font-size: 34px;
+    }
 }
 
 .menu-button {
@@ -54,6 +63,13 @@ header.header {
     &>svg {
         width: 20px;
         height: 40px;
+    }
+    @include from(1680px) {
+        height: 58px;
+        align-self: center;
+        &>span {
+            font-size: 34px;
+        }
     }
     @include to(768px) {
         &>svg {
@@ -122,6 +138,13 @@ header.header {
         color: var(--white);
         background: var(--red);
     }
+    @include from(1680px) {
+        --lang-width: 56px;
+        .lang {
+            font-size: 24px;
+            border-radius: 35.8px;
+        }
+    }
     @include to(575px) {
         display: none;
     }
@@ -152,6 +175,10 @@ header.header {
     top: 0;
     // display: none;
     animation: fadeInDown 1s forwards;
+    @include from(1680px) {
+        width: 994px;
+        height: 735px;
+    }
     @include to(575px) {
         width: 320px;
     }
@@ -210,10 +237,11 @@ header.header {
         background: none;
         border: none;
         color: var(--gray);
-        font-family: $default-font;
+        font-family: $default-font2;
         font-size: 14px;
         line-height: 2em;
         margin-bottom: 6px;
+        padding-left: 15px;
     }
     input[type=text]::placeholder {
         color: var(--gray);
@@ -292,6 +320,52 @@ header.header {
         align-items: center;
         flex-wrap: wrap;
         cursor: pointer;
+    }
+    @include from(1680px) {
+        legend {
+            font-size: 52px;
+            line-height: 70px;
+            letter-spacing: unset;
+        }
+        .form-close-button {
+            font-size: 20px;
+            line-height: 40px;
+        }
+        .form-close-button>svg {
+            width: 56px;
+            height: 56px;
+        }
+        .input-group {
+            margin-bottom: 35px;
+        }
+        .input-group,
+        input[type=text] {
+            font-size: 20px;
+            line-height: 40px;
+        }
+        input[type=text] {
+            padding-left: 20px;
+        }
+        .datetimewrapper {
+            width: 100%;
+        }
+        .checkbox-wrap {
+            width: 14px;
+            height: 14px;
+            margin-right: 9px;
+        }
+        .checkbox {
+            background: transparent;
+            width: 8px;
+            border-radius: 50%;
+            height: 8px;
+        }
+        .button.text {
+            width: 242px;
+            height: 44px;
+            font-size: 25px;
+            line-height: 28px;
+        }
     }
     @include to(575px) {
         width: 100%;

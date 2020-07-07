@@ -67,6 +67,10 @@
     /* or 200% */
     /* Gray-2 */
     color: #6C7C84;
+    @include from(1680px) {
+        font-size: 20px;
+        line-height: 42px;
+    }
 }
 
 .card-title {
@@ -80,6 +84,11 @@
     /* Gray */
     color: #AAC0C9;
     width: 70%;
+    @include from(1680px) {
+        font-size: 20px;
+        line-height: 1.3em;
+        width: 80%;
+    }
     @include to(575px) {
         width: 65%;
     }
@@ -96,6 +105,10 @@
     letter-spacing: 0.1em;
     /* Blue */
     color: #00395A;
+    @include from(1680px) {
+        font-size: 25px;
+        line-height: 42px;
+    }
     @include to(575px) {
         letter-spacing: normal;
         font-size: 20px;
@@ -127,6 +140,11 @@
     }
     &:nth-child(3n) {
         margin-right: 0;
+    }
+    @include from(1680px) {
+        img {
+            max-width: 250px;
+        }
     }
     @include to(1150px) {
         &:nth-child(2n) {

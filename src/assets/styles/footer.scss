@@ -5,6 +5,13 @@
     }
     display: flex;
     align-items: flex-end;
+    @include from(1680px) {
+        &>img {
+            width: 115px;
+            height: 46px;
+            margin-bottom: 15px;
+        }
+    }
     @include to(575px) {
         &>img {
             width: 55px;
@@ -25,6 +32,15 @@
         position: fixed;
         left: var(--side-fields);
         bottom: calc(var(--side-fields) - 10px);
+    }
+    @include from(1680px) {
+        font-size: 20px;
+        line-height: 28px;
+        max-width: 240px;
+        .button {
+            ;
+            bottom: calc(var(--side-fields) - 20px);
+        }
     }
     @include to(768px) {
         .button {
@@ -58,6 +74,9 @@
     padding-bottom: 10px;
     // position: relative;
     z-index: 2;
+    @include from(1680px) {
+        height: 150px;
+    }
     @include to(575px) {
         height: 50px;
         padding-top: 0;

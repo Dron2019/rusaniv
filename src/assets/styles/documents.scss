@@ -11,6 +11,11 @@
         @include shift-right(1);
         @include shift-left(2);
     }
+    @include from(1680px) {
+        .slick-track {
+            left: -1px;
+        }
+    }
     @include to(768px) {
         margin-left: 0;
         .breadcrumbs-wrapper .link-standart {
@@ -89,6 +94,31 @@
     &__date {
         display: inline-block;
         vertical-align: middle;
+    }
+    @include from(1680px) {
+        padding: 35px 32px 31px 38px;
+        margin-left: 46px;
+        &__date {
+            font-size: 25px;
+            left: 38px;
+            margin-left: calc(100% - 78px - 136px);
+        }
+        &__file-type-icon {
+            width: 78px;
+            height: 78px;
+        }
+        &__title {
+            font-size: 36px;
+            line-height: 50px;
+        }
+        &__file-size[href] {
+            font-size: 25px;
+            line-height: 38px;
+        }
+        .plus {
+            width: 20px;
+            height: 20px;
+        }
     }
     @include to(768px) {}
     @include to(575px) {

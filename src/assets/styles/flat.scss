@@ -2,6 +2,7 @@
     .pdf-link {
         display: flex;
         align-items: center;
+        margin-top: 25px;
     }
     .pdf-link:before {
         content: url(../images/common/pdf-link.svg);
@@ -47,9 +48,6 @@
             margin-top: 50px;
             width: 270px;
         }
-        .pdf-link {
-            margin-top: 25px;
-        }
     }
     .flat-plan-block {
         cursor: zoom-in;
@@ -62,6 +60,33 @@
     .floor-plan-svg {
         width: 188px;
         height: 132px;
+    }
+    @include from(1680px) {
+        .flat-plan-wrapper {
+            height: calc(100vh - 470px);
+        }
+        .flat-info-block.last .button {
+            width: 400px;
+        }
+        .mini-floor-plan-block .text-standart {
+            font-size: 16px;
+            line-height: 40px;
+        }
+        .mini-floor-plan-block .link-standart {
+            margin-top: 40px;
+        }
+        .floor-plan-svg {
+            width: 230px;
+            height: 164px;
+        }
+        .pdf-link:before {
+            content: '';
+            background-image: url(../images/common/pdf-link.svg);
+            background-size: 46px 66px;
+            width: 46px;
+            height: 66px;
+            margin-right: 19px;
+        }
     }
     @include from-to(769px, 1100px) {
         .breadcrumbs-wrapper .link-standart {

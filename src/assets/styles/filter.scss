@@ -21,6 +21,13 @@
         color: #6C7C84;
         display: block;
     }
+    @include from(1680px) {
+        &__label {
+            font-size: 20px;
+            line-height: 40px;
+            margin-bottom: 16px;
+        }
+    }
     @include to(768px) {
         &__label {
             font-size: 20px;
@@ -85,6 +92,11 @@
     width: 7px;
     height: 7px;
     top: 23px;
+    @include from(1680px) {
+        width: 10px;
+        height: 10px;
+        top: 22px;
+    }
     @include to(768px) {
         width: 10px;
         height: 10px;
@@ -153,6 +165,11 @@
     font-family: $default-font2;
     font-size: 12px;
     font-weight: 500;
+    @include from(1680px) {
+        font-size: 16.9412px;
+        line-height: 40px;
+        margin-top: -1.4em;
+    }
     @include to(768px) {
         font-size: 26px;
         line-height: 28px;
@@ -177,6 +194,10 @@
         width: 14px;
         height: 18px;
     }
+    @include from(1680px) {
+        margin-left: auto;
+        margin-right: 7em;
+    }
 }
 
 #filter {
@@ -199,6 +220,29 @@
     }
     .range-item {
         @include size(3.5);
+    }
+    .table-flat {
+        font-family: $default-font2;
+    }
+    @include from(1680px) {
+        .filter-controls {
+            @include shift-padding-left(2);
+            @include shift-padding-right(1.5);
+            padding-top: 45px;
+        }
+        .filter-button {
+            width: 360px;
+            height: 72px;
+            max-width: none;
+        }
+        .result-count-info-wrapper {
+            display: flex;
+            align-items: center;
+            max-width: 25%;
+        }
+        .filter-button {
+            margin-left: auto;
+        }
     }
     @include to(768px) {
         .filter-controls {
@@ -279,6 +323,12 @@
     &:before {
         content: attr(data-value);
     }
+    @include from(1680px) {
+        width: 48px;
+        height: 48px;
+        font-size: 19.7647px;
+        line-height: 40px;
+    }
     @include to(768px) {
         width: 70px;
         height: 70px;
@@ -319,6 +369,14 @@
     }
     .card-filter-list {
         width: 49%;
+    }
+    @include from(1680px) {
+        &__title {
+            margin-bottom: 10px;
+        }
+        & .link-standart {
+            text-decoration: underline;
+        }
     }
     @include from-to(769px, 1100px) {
         @include size(6);
@@ -376,6 +434,12 @@
     &__title {
         width: 100%;
     }
+    @include from(1680px) {
+        &__title {
+            font-size: 20px;
+            line-height: 2em;
+        }
+    }
     @include to(768px) {
         width: 100%;
         &__title {
@@ -400,6 +464,10 @@
     @include shift-padding-right(1);
     &__body {
         padding-top: 40px;
+    }
+    @include from(1680px) {
+        @include shift-padding-left(1.85);
+        @include shift-padding-right(1.5);
     }
     @include to(768px) {
         padding-left: 0;
@@ -460,6 +528,10 @@
     &__val {
         color: var(--dark-gray);
     }
+    @include from(1680px) {
+        font-size: 20px;
+        line-height: 40px;
+    }
 }
 
 .card-filter-btn {
@@ -511,9 +583,18 @@
     height: 80px;
     border-top: 2px solid var(--hz);
     color: var(--blue);
+    @include from(1680px) {
+        font-size: 20px;
+        line-height: 40px;
+    }
     @include to(768px) {
         text-align: center;
     }
+}
+
+.jsgrid-cell:first-child,
+.jsgrid-header-cell:first-child {
+    padding-left: 20px;
 }
 
 .button--res {
@@ -530,4 +611,40 @@
     &.filter-tab-nav-btn--current {
         color: var(--blue);
     }
+    @include from(1680px) {
+        font-size: 25px;
+        line-height: 42px;
+    }
+}
+
+.facad-hover-card {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    z-index: 5;
+    width: 400px;
+    height: 300px;
+    visibility: hidden;
+    display: none;
+    padding: 10px 5px;
+    margin: 10px;
+    background: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facad-hover-card img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.build-hover-card--visible:not(#L) {
+    visibility: visible;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
 }

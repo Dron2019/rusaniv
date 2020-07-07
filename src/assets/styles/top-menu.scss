@@ -112,6 +112,7 @@
         max-width: 150px;
         height: 40px;
         margin-left: auto;
+        font-family: $default-font2;
         cursor: pointer;
     }
     .close-button>svg {
@@ -139,6 +140,52 @@
     .logo-menu-mobile {
         width: 150px;
         height: 60px;
+    }
+    @include from(1680px) {
+        &__content {
+            padding: 30px 40px 35px calc(100% / 12 - 20px);
+        }
+        &__large-span,
+        &__large-span[href] {
+            font-size: 36px;
+            line-height: 50px;
+        }
+        &__large-span {
+            white-space: nowrap;
+        }
+        &__standart-span,
+        &__standart-span[href] {
+            font-size: 20px;
+            line-height: 40px;
+        }
+        &__tel-link[href],
+        &__adress-link[href] {
+            font-size: 18px;
+            line-height: 36px;
+        }
+        &__tel-link>svg {
+            width: 57.6px;
+            height: 57.6px;
+            margin-right: 15px;
+        }
+        &__adress-link>svg {
+            width: 16px;
+            height: 23px;
+            margin-right: 15px;
+        }
+        .button {
+            margin-top: 5px;
+            width: 240px;
+        }
+        .close-button {
+            font-size: 20px;
+            line-height: 40px;
+        }
+        .close-button>svg {
+            width: 56px;
+            height: 56px;
+            margin-left: 26px;
+        }
     }
     @include from(769px) {
         .logo-menu-mobile {

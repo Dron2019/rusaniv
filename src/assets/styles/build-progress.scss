@@ -6,6 +6,16 @@
             pointer-events: none;
         }
     }
+    @include from(1680px) {
+        .breadcrumbs-wrapper {
+            @include shift-padding-right(1);
+        }
+        .page__footer-wrapper {
+            margin-top: -160px;
+            height: 150px;
+            pointer-events: none;
+        }
+    }
     .smarto-logo {
         display: flex;
         align-items: flex-end;
@@ -24,6 +34,10 @@
     font-size: 18px;
     color: var(--blue);
     font-family: $default-font;
+    @include from(1680px) {
+        font-size: 24px;
+        line-height: 43px;
+    }
     @include to(575px) {
         font-size: 16px;
         margin-bottom: 14px;
@@ -45,6 +59,15 @@
     }
     .navigation-block {
         padding-left: 0;
+    }
+    @include from(1680px) {
+        margin-top: 70px;
+        @include size(9);
+        @include shift-left(2);
+        @include shift-right(1);
+        .delimiter {
+            margin: 66px 25% 71px 25%;
+        }
     }
     @include to(768px) {
         @include shift(0);
@@ -78,6 +101,15 @@
     }
     &>li.active {
         background: var(--shta);
+    }
+    @include from(1680px) {
+        padding: 0 50px;
+        &>li {
+            width: 242px;
+            height: 58px;
+            font-size: 25px;
+            line-height: 28px;
+        }
     }
     @include to(768px) {
         // width: calc(100% + var(--side-fields) * 2);
@@ -155,7 +187,7 @@
         margin-bottom: 43px;
     }
     .build-progress-part {
-        @include size(6);
+        @include size(4.5);
     }
     .build-progress-part:not(:nth-last-child(-n+2)) {
         margin-bottom: 38px;
@@ -182,6 +214,11 @@
     }
     .years-slider {
         margin-left: 15px;
+    }
+    @include from(1680px) {
+        .subtitle {
+            text-align: center;
+        }
     }
     @include from(576px) {
         .slider-numbers {
@@ -286,6 +323,11 @@
         width: calc(var(--completed-value) - 15px);
     }
     .build-progress-part-load-indicator-completed {}
+    @include from(1680px) {
+        .build-progress-part-load-indicator {
+            height: 43px;
+        }
+    }
 }
 
 .navigation-block {

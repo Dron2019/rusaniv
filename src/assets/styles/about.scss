@@ -44,6 +44,9 @@
         margin-top: var(--negative-block-margin);
         @include size(8.3);
         margin-left: auto;
+        .title-large {
+            margin-bottom: 10px;
+        }
     }
     .complex-data-block {
         width: 100%;
@@ -93,9 +96,43 @@
         display: block;
         margin-top: 70px;
     }
-    @include from(1720px) {
+    @include from(1680px) {
+        --negative-block-margin: -230px;
+        .about-wrapper {
+            padding-bottom: 187px;
+        }
+        .about-wrapper .bg-title-large {
+            left: -0.6em;
+            top: 0.3em;
+        }
         .about-dark-block {
-            @include size(7);
+            @include size(8);
+            padding-top: 50px;
+            padding-bottom: 105px;
+        }
+        .about-wrapper-bottom {
+            margin-bottom: -160px;
+            padding-bottom: 145px;
+        }
+        .about-wrapper-bottom .text-standart {
+            @include shift-padding-right(1);
+        }
+        .about-wrapper-bottom .button {
+            margin-top: 70px;
+        }
+        .about-wrapper-bottom .vertical-line,
+        .about-dark-block .vertical-line {
+            top: 0.1em;
+            left: -10px;
+        }
+        .about-dark-block .title-wrapper {
+            padding-left: 65px;
+        }
+        .about-dark-block .title-large {
+            margin-bottom: 30px;
+        }
+        .about-wrapper-bottom .title-wrapper {
+            padding-left: 65px;
         }
     }
     @include to(768px) {

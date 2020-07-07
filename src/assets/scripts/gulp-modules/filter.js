@@ -926,6 +926,8 @@ function(a, b) {
             room: parseInt(app.dataset.room),
             section: parseInt(app.dataset.section),
             floor: parseInt(app.dataset.floor),
+            image: app.dataset.image,
+            href: app.dataset.href,
             //this.test = parseInt(app.dataset.test); // new param filter
 
         }
@@ -936,6 +938,11 @@ function(a, b) {
     // init table first time we init with all appartments
     // then we will delete table and init again with new filtered data
     function tableStaticFlatInit(tableDB = appartments) {
+        function createCastomCell(item, value) {
+            console.log(value);
+
+            return $(`<td data-href='${value.href}' data-image='${value.image}'>`).addClass("js-hover-class").append(value[this.name]);
+        }
         tableStaticFlat = $(".js-table-flat").jsGrid({
             // height: "500px",
             width: "100%",
@@ -949,19 +956,22 @@ function(a, b) {
                     title: 'Будинок',
                     name: "section",
                     type: "number",
-                    width: '20%'
+                    width: '20%',
+                    cellRenderer: createCastomCell
                 },
                 {
                     title: 'Кімнати',
                     name: "room",
                     type: "number",
-                    width: '20%'
+                    width: '20%',
+                    cellRenderer: createCastomCell
                 },
                 {
                     title: 'Поверх',
                     name: "floor",
                     type: "number",
-                    width: '20%'
+                    width: '20%',
+                    cellRenderer: createCastomCell
                 },
                 {
                     title: 'Загальна площа м<sub>2</sub>',
@@ -969,7 +979,8 @@ function(a, b) {
                     type: "number",
                     valueField: "Id",
                     width: '20%',
-                    textField: "Name"
+                    textField: "Name",
+                    cellRenderer: createCastomCell
                 },
                 {
                     title: 'Житлолва площа м<sub>2</sub>',
@@ -977,7 +988,8 @@ function(a, b) {
                     type: "number",
                     valueField: "Id",
                     width: '20%',
-                    textField: "Name"
+                    textField: "Name",
+                    cellRenderer: createCastomCell
                 },
 
             ]
@@ -1092,6 +1104,8 @@ function(a, b) {
                 validDBTable.push(appartment)
             }
         });
+        console.log(validDBTable);
+
         updateSortTable(validDBTable)
         elemsWichMakeFilter.numberFlats.innerHTML = totalAppartments - i <= 0 ? 0 : totalAppartments - i;
 
@@ -1226,3 +1240,124 @@ tabsButtons.forEach(tab => {
         });
     })
     /**tabs switch end*/
+
+/** big scree move elements start */
+if (document.documentElement.clientWidth > 1679) {
+
+    let resetButton = document.querySelector('.js-reset_button'),
+        controlsBlock = document.querySelector('.filter-controls');
+
+    controlsBlock.append(resetButton);
+    resetButton = null;
+    controlsBlock = null;
+}
+
+/** big scree move elements end */
+
+// table link
+$('body').on("click", 'td[data-href]', function() {
+    document.location = $(this).data('href');
+});
+
+/*
+ * hover card end
+ */
+/**********************************/
+
+const hoverCardFacad = $('.js-facad-hover-card');
+const hoverCardBuild = $('.js-hover-bild-plan-card');
+
+if ($(window).width() > 768) {
+    var currentMousePos = {
+        padding: 20,
+        x: -1,
+        y: -1,
+        disToTopCursor: 0,
+        disToTopCard: 0,
+        disToRight: 0,
+        disToRightCard: 0
+    };
+    $(document).mousemove(function(event) {
+        currentMousePos.x = event.pageX;
+        currentMousePos.y = event.pageY - currentMousePos.padding;
+
+        currentMousePos.disToTop = event.pageY - $(window).scrollTop();
+        currentMousePos.disToTopCard = (currentMousePos.disToTop) - hoverCardFacad.outerHeight(true) - currentMousePos.padding;
+
+        currentMousePos.disToRight = event.pageX - $(window).scrollLeft();
+        currentMousePos.disToRightCard = $(window).width() - ((currentMousePos.disToRight) + hoverCardFacad.outerWidth(true) + currentMousePos.padding);
+
+    });
+
+
+    function hoverCardShow(card, hoverItem) {
+        $("body").delegate(hoverItem, "mouseover", function() {
+            for (const key in this.dataset) {
+                if (this.dataset.hasOwnProperty(key)) {
+                    const element = this.dataset[key];
+                    let currentClassElement = `.hover-card-${key}-js`;
+
+                    switch (key) {
+                        case 'image':
+                            console.log(card.find(currentClassElement), card, element);
+
+                            card.find(currentClassElement).attr('src', element)
+                            break;
+                        case 'key':
+                            card.find(currentClassElement).text(element)
+                            break;
+                        case 'house':
+                            card.find(currentClassElement).text(element)
+                            break;
+                        case 'stock':
+                            card.find(currentClassElement).text(element)
+                            break;
+                        case 'floor':
+                            card.find(currentClassElement).text(element)
+                            break;
+                        default:
+                            card.find(currentClassElement).html(element)
+                    }
+                }
+            }
+            card.addClass('build-hover-card--visible');
+        });
+
+        $("body").delegate(hoverItem, "mouseout", function() {
+            card.removeClass('build-hover-card--visible');
+        });
+
+        $("body").delegate(hoverItem, "mousemove", function(e) {
+            const height = card.height();
+            const width = card.width();
+
+            const divInfoTopPos = currentMousePos.y - height - currentMousePos.padding;
+            const divInfoLeftPos = currentMousePos.x + currentMousePos.padding;;
+
+            if (currentMousePos.disToRightCard <= 0 && currentMousePos.disToTopCard <= 0) {
+                card.css({
+                    top: divInfoTopPos + height + (currentMousePos.padding * 2.5),
+                    left: divInfoLeftPos - width - (currentMousePos.padding * 2.5),
+                });
+            } else if (currentMousePos.disToTopCard <= 0) {
+                card.css({
+                    top: divInfoTopPos + height + (currentMousePos.padding * 2.5),
+                    left: divInfoLeftPos
+                });
+            } else if (currentMousePos.disToRightCard <= 0) {
+                card.css({
+                    top: divInfoTopPos,
+                    left: divInfoLeftPos - width - (currentMousePos.padding * 2.5),
+                });
+            } else {
+                card.css({
+                    top: divInfoTopPos,
+                    left: divInfoLeftPos
+                });
+            }
+        });
+    }
+
+    hoverCardShow(hoverCardFacad, ".js-hover-class");
+    hoverCardShow(hoverCardBuild, ".js-link-house");
+}

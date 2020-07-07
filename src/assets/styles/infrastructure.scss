@@ -2,6 +2,9 @@
     width: 100%;
     height: calc(100vh - 182px);
     // height: 556px;
+    @include from(1680px) {
+        height: calc(100vh - 236px);
+    }
     @include to(575px) {
         height: calc(100vh - 210px);
     }
@@ -19,6 +22,11 @@
     }
     .breadcrumbs-wrapper .link-standart {
         margin-left: auto;
+    }
+    @include from(1680px) {
+        .page__footer-wrapper {
+            margin-top: -160px;
+        }
     }
     @include to(768px) {
         .breadcrumbs-wrapper .link-standart.key-before {

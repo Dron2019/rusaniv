@@ -30,11 +30,6 @@
     .text-standart p {
         margin-bottom: 1.6em;
     }
-    @include from(769px) {
-        .mobile-arrows {
-            display: none;
-        }
-    }
     .mobile-arrows {
         position: absolute;
         bottom: 0;
@@ -42,6 +37,19 @@
         z-index: 2;
         left: 50%;
         transform: translate(-100%, 0);
+    }
+    .page__footer-wrapper {
+        margin-top: -102px;
+    }
+    @include from(1680px) {
+        .page__footer-wrapper {
+            margin-top: -150px;
+        }
+    }
+    @include from(769px) {
+        .mobile-arrows {
+            display: none;
+        }
     }
     @include to(575px) {
         .wrapper.first {
@@ -82,6 +90,20 @@
     }
     .text-standart {
         @include size(6);
+    }
+    @include from(1680px) {
+        padding-top: 100px;
+        padding-bottom: 156px;
+        @include shift-left(1.8);
+        .perfect-logo {
+            width: 400px;
+            height: 67px;
+        }
+        .slogan {
+            padding-left: 35px;
+            font-size: 18px;
+            line-height: 2em;
+        }
     }
     @include to(768px) {
         margin: 0 auto;
@@ -154,6 +176,21 @@
             @include size(12);
         }
     }
+    @include from(1680px) {
+        @include shift-left(1.8);
+        padding-top: 100px;
+        padding-bottom: 156px;
+        .title-wrapper {
+            padding-left: 37px;
+        }
+        .vertical-line {
+            left: -28px;
+        }
+        .citex-logo {
+            width: 255px;
+            height: 129px;
+        }
+    }
     @include to(575px) {
         width: 100%;
         margin-right: 0;
@@ -216,6 +253,12 @@
     .project-slide {
         object-fit: cover;
         height: 580px;
+    }
+    @include from(1680px) {
+        @include shift-padding-left(2.3);
+        .slider-description-block .text-standart {
+            font-size: 20px;
+        }
     }
     @include to(768px) {
         @include shift-padding-left(0);
