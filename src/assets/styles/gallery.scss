@@ -51,11 +51,14 @@
         transform: rotate(180deg);
     }
     .slick-slide:not(.slick-active) {
-        animation: clipPathOut .5s 1 ease-in;
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        // animation: clipPathOut .5s 1 ease-in;
+        // clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
     .slider-numbers {
         pointer-events: none;
+    }
+    .breadcrumbs-block .link:not(.current-link) {
+        color: #CFDDE4;
     }
 }
 

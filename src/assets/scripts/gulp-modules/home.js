@@ -7,11 +7,12 @@ class Scroller {
         this.i = 1;
         this.delta = 10;
         this.lastScrollTop = 0;
+        this.speed = 2;
     }
     styling() {
         this.moveValue = window.screen.height * this.delta / parseInt(getComputedStyle(this.scrollElement).width.replace('px', '')) * 1.2;
         this.elemHeight = parseInt(getComputedStyle(this.scrollElement).blockSize);
-        this.scrollElement.style.transition = '.8s';
+        this.scrollElement.style.transition = '.2s';
     }
     onScroll(e) {
         var top = window.pageYOffset;
@@ -60,7 +61,7 @@ class Scroller {
         }
         // console.log(this.i);
 
-        this.scrollElement.style.transform = `translateX(${this.i}px)`;
+        this.scrollElement.style.transform = `translateX(${this.i*this.speed}px)`;
     }
     show() {
         // console.log(this.scrollElement.offsetTop);

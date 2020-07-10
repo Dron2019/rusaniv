@@ -921,11 +921,11 @@ function(a, b) {
     function appartment(app) {
         return {
             flat: app,
-            life_square: parseInt(app.dataset.life_square),
-            total_square: parseInt(app.dataset.total_square),
-            room: parseInt(app.dataset.room),
-            section: parseInt(app.dataset.section),
-            floor: parseInt(app.dataset.floor),
+            life_square: parseFloat(app.dataset.life_square),
+            total_square: parseFloat(app.dataset.total_square),
+            room: parseFloat(app.dataset.room),
+            section: parseFloat(app.dataset.section),
+            floor: parseFloat(app.dataset.floor),
             image: app.dataset.image,
             href: app.dataset.href,
             //this.test = parseInt(app.dataset.test); // new param filter

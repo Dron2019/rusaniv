@@ -43,6 +43,10 @@
     align-items: center;
     justify-content: space-around;
     .select-box {
+        // margin-right: auto;
+    }
+    .years-slider {
+        margin-left: auto;
         margin-right: auto;
     }
     @include shift-padding-left(1);
@@ -73,6 +77,9 @@
     .previous {
         cursor: pointer;
     }
+    .next svg {
+        fill: #6C7C84;
+    }
     @include from(1680px) {
         & svg {
             width: 107px;
@@ -94,7 +101,7 @@
 }
 
 .news-articles-wrapper {
-    margin-top: 35px;
+    margin-top: 55px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -113,6 +120,7 @@
         object-fit: cover;
         object-position: left;
         max-height: 180px;
+        max-width: 180px;
     }
     &__text {
         @include size(6);
@@ -142,6 +150,7 @@
     @include from(1680px) {
         &__img {
             max-height: 255px;
+            max-width: 255px;
             padding-right: 36px;
         }
         .subtitle {
@@ -166,6 +175,9 @@
         &:nth-child(n+3),
         & {
             margin-top: 50px;
+        }
+        &__img {
+            max-width: none;
         }
     }
     @include to(575px) {

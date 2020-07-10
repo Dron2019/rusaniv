@@ -36,8 +36,9 @@
         }
     }
     .webcam-frame {
-        @include size(9);
+        @include size(7);
         @include shift-right(1);
+        @include shift-left(1);
         transition: .5s;
         iframe {
             width: 100%;

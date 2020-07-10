@@ -12,7 +12,7 @@ header.header {
     @include from(1680px) {
         padding-top: 46px;
         picture img {
-            width: 218px;
+            width: 190px;
         }
     }
     @include to(768px) {
@@ -39,11 +39,37 @@ header.header {
     margin-right: 120px;
     font-size: 24px;
     line-height: 1.1em;
+    transition: .5s;
+    position: relative;
+    .icon--tel-tube {
+        transform: rotate(0deg);
+    }
     & .button {
         margin-right: 20px;
     }
     @include from(1680px) {
-        font-size: 34px;
+        font-size: 30px;
+    }
+    .hvr-buzz:hover {
+        animation: none;
+    }
+    @include from(769px) {
+        &:after {
+            content: '';
+            width: calc(100% - 60px);
+            height: 2px;
+            transform-origin: center;
+            transform: scaleX(0);
+            background-color: var(--blue);
+            transition: .5s;
+            transition-timing-function: ease-in-out;
+            position: absolute;
+            bottom: 0;
+            left: 60px;
+        }
+        &:hover:after {
+            transform: scaleX(1);
+        }
     }
 }
 
@@ -68,7 +94,7 @@ header.header {
         height: 58px;
         align-self: center;
         &>span {
-            font-size: 34px;
+            font-size: 30px;
         }
     }
     @include to(768px) {
@@ -94,8 +120,8 @@ header.header {
             fill: var(--white) !important;
         }
         &>svg {
-            width: 26px;
-            height: 26px;
+            width: 30px;
+            height: 30px;
         }
         .menu-button-mobile line {
             transform-origin: center;
@@ -180,7 +206,9 @@ header.header {
         height: 735px;
     }
     @include to(575px) {
-        width: 320px;
+        // width: 320px;
+        width: 100vw;
+        height: 100vh;
     }
 }
 
@@ -208,6 +236,9 @@ header.header {
     }
     .input-group {
         margin-bottom: 32px;
+    }
+    .input-group.checkbox-group {
+        margin-bottom: 10px;
     }
     .input-group.unfilled .input-group-line {
         background-color: var(--red);
@@ -280,7 +311,8 @@ header.header {
         position: relative;
         width: 10px;
         height: 10px;
-        border: 1px solid var(--red);
+        // border: 1px solid var(--red);
+        border: 1px solid var(--white);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -338,6 +370,9 @@ header.header {
         .input-group {
             margin-bottom: 35px;
         }
+        .input-group.checkbox-group {
+            margin-bottom: 10px;
+        }
         .input-group,
         input[type=text] {
             font-size: 20px;
@@ -369,9 +404,32 @@ header.header {
     }
     @include to(575px) {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        .input-group.checkbox-group {
+            margin-bottom: 6px;
+        }
+        .input-group-line {
+            background-color: #F4F9FB;
+        }
+        .form-close-block {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 12px;
+            line-height: 28px;
+        }
         .form-close-button {
+            margin-left: 15px;
             height: 27px;
             width: 27px;
+        }
+        .button.text {
+            height: 50px;
+            width: 100%;
+            max-width: none;
         }
     }
 }
@@ -382,4 +440,11 @@ header.header {
 
 .mfp-bg {
     transition: .5s;
+}
+
+@include to(575px) {}
+
+.mfp-container {
+    padding-left: 0;
+    padding-right: 0;
 }

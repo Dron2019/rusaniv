@@ -58,7 +58,7 @@
     line-height: 1.67em;
     /* identical to box height, or 167% */
     letter-spacing: 0.1em;
-    margin-top: 35px;
+    margin-top: 15px;
     /* Blue */
     color: var(--blue);
     display: flex;
@@ -72,6 +72,7 @@
         font-size: 25px;
         line-height: 28px;
         letter-spacing: 0.025em;
+        margin-top: 25px;
     }
 }
 
@@ -105,6 +106,7 @@
         height: 26px;
     }
     @include from(1680px) {
+        margin-bottom: 25px;
         &>svg {
             top: 0.8em;
             width: 25px;

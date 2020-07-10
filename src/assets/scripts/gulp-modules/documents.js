@@ -1,6 +1,9 @@
 const WINDOW_WIDTH = window.screen.width;
 
 if (WINDOW_WIDTH > 576) {
+    $('.slider').on('init', () => {
+        document.querySelector('.slick-track').style.height = getComputedStyle(document.querySelector('.slick-track')).height;
+    })
     $('.slider').slick({
         slidesToShow: 3,
         nextArrow: '.slider-arrows .next',

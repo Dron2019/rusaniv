@@ -51,6 +51,11 @@
     background-color: var(--blue);
     padding: 40px 30px 30px 30px;
     margin-left: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &.slick-slide {
+        display: flex;
+    }
     &__file-type-icon {
         width: 66px;
         height: 83px;
@@ -68,10 +73,14 @@
         line-height: 1.47em;
         color: var(--white);
         margin-top: 35px;
+        min-height: 2.94em;
     }
     & hr {
-        border-color: #084365;
+        background-color: #084365;
         margin: 40px 0;
+        border: none;
+        height: 2px;
+        width: 100%;
     }
     .plus {
         width: 16px;
@@ -120,7 +129,9 @@
             height: 20px;
         }
     }
-    @include to(768px) {}
+    @include from(769px) {
+        // min-height: 400px;
+    }
     @include to(575px) {
         padding: 20px 20px 25px 20px;
         margin-left: 0;

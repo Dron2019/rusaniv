@@ -17,6 +17,11 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    .flat-info-block.first .circle.flat-type {
+        margin-top: 43px;
+        margin-bottom: auto;
     }
     .arrows-container {
         width: 290px;

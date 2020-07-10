@@ -75,7 +75,13 @@ $('.datetimepicker').datetimepicker({
 let checkboxes = document.querySelectorAll('.checkbox-group');
 checkboxes.forEach(box => {
         box.addEventListener('click', function(evt) {
+            console.log(box);
+
+            document.querySelectorAll('.checkbox-wrap').forEach(radio => radio.style.borderColor = `var(--white)`);
             box.querySelector('input').checked = true;
+            box.querySelector('input').checked ?
+                box.querySelector('.checkbox-wrap').style.borderColor = `var(--red)` :
+                null;
 
             if (box.classList.contains('with-date-js')) {
                 let dateInput = box.querySelector('.datetimewrapper') || null;

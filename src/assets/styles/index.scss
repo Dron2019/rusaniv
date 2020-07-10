@@ -46,14 +46,14 @@ a:-webkit-any-link {
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 var(--side-fields) 30px var(--side-fields);
+    padding: 0 var(--side-fields) 20px var(--side-fields);
     .title-wrapper {
         @include size(5);
         @include shift-right(1.5);
         @include shift-padding-left(0.5);
         position: relative;
         .button {
-            margin-top: 34px;
+            margin-top: 45px;
         }
     }
     .developers-row {
@@ -111,7 +111,8 @@ a:-webkit-any-link {
         background-size: cover;
     }
     @include to(575px) {
-        height: 100%;
+        // height: 100%;
+        min-height: calc(100vh - 70px);
         background-position: -47vh 50px;
         // min-height: -webkit-fill-available;
         .title-wrapper {
@@ -122,6 +123,7 @@ a:-webkit-any-link {
             margin-top: auto;
             height: 70vh;
             display: flex;
+            margin-top: 1.5em;
             flex-direction: column;
         }
         .title-wrapper .button {
@@ -145,12 +147,12 @@ a:-webkit-any-link {
             margin-left: 0;
         }
         .perfect-logo {
-            width: 104px;
-            height: 18px;
+            width: 121px;
+            height: 21px;
         }
         .citex-logo {
-            width: 37px;
-            height: 19px;
+            width: 50px;
+            height: 26px;
         }
     }
 }
@@ -173,7 +175,7 @@ a:-webkit-any-link {
         object-fit: cover;
     }
     .button {
-        margin-top: 40px;
+        margin-top: 50px;
     }
     .title-large {
         margin-bottom: 10px;
@@ -225,6 +227,9 @@ a:-webkit-any-link {
             width: calc(100% + var(--side-fields) * 2);
             max-width: unset;
             margin-left: calc(var(--side-fields) - (var(--side-fields) * 2));
+        }
+        .button.text {
+            margin-left: 15px;
         }
     }
 }
@@ -346,6 +351,9 @@ a:-webkit-any-link {
         .text-standart {
             padding-left: 15px;
         }
+        .button.text {
+            margin-left: 15px;
+        }
         .title-large {
             max-width: 50%;
         }
@@ -407,7 +415,7 @@ a:-webkit-any-link {
     a.button {
         height: 50px;
         max-width: 250px;
-        margin-top: 40px;
+        margin-top: 39px;
     }
     .news-slide {
         @include size(6);
@@ -429,6 +437,9 @@ a:-webkit-any-link {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        .button {
+            margin-top: 0;
+        }
     }
     @include from(1680px) {
         padding-top: 170px;
@@ -454,11 +465,11 @@ a:-webkit-any-link {
             line-clamp: 3;
             box-orient: vertical;
         }
-        a.button {
-            height: 72px;
-            max-width: 360px;
-            margin-top: 110px;
-        }
+        // a.button {s
+        //     height: 72px;
+        //     max-width: 360px;
+        //     margin-top: 110px;
+        // }
         .news-date {
             margin-bottom: 16.38px;
             font-size: 24px;
@@ -662,15 +673,16 @@ a:-webkit-any-link {
     }
     .header-telephone {
         color: var(--gray);
+        color: #F4F9FB;
         font-size: 12px;
         letter-spacing: 0.025em;
         text-decoration: underline;
         margin: 0 auto;
-        font-size: 12px;
+        font-size: 14px;
     }
     .header-telephone .icon.button {
-        width: 26px;
-        height: 26px;
+        width: 30px;
+        height: 30px;
         margin-right: 10px;
     }
 }

@@ -32,10 +32,7 @@ header.header
                 .form-close-block
                     .form-close-block-title Закрити
                     .form-close-button
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="8.44582" y="23.5151" width="21.4279" height="0.738894" transform="rotate(-45 8.44582 23.5151)" fill="white" stroke="white" stroke-width="0.738894"/>
-                        <rect x="8.96826" y="8.3633" width="21.4279" height="0.738894" transform="rotate(45 8.96826 8.3633)" fill="white" stroke="white" stroke-width="0.738894"/>
-                        </svg>
+                        +svg('close-button')
                 legend.form-legend &Zcy;&acy;&mcy;&ocy;&vcy;&icy;&tcy;&icy; &dcy;&zcy;&vcy;&iukcy;&ncy;&ocy;&kcy;
                 .input-group.text
                     label.name-label.common-label(for='name') &Vcy;&acy;&shcy;&iecy; &iukcy;&mcy;&grave;&yacy;:
@@ -43,7 +40,7 @@ header.header
                     .input-group-line
                 .input-group.text
                     label.telephone-label.common-label(for='telephone') &Vcy;&acy;&shcy; &tcy;&iecy;&lcy;&iecy;&fcy;&ocy;&ncy;:*
-                    input.text-input.common-input.inputtelmask(type='text' name='telephone' placeholder='Ваш телефон:*' autocomplete='off' id='' data-required='true')
+                    input.text-input.common-input.inputtelmask(type='text' pattern="[0-9]*" name='telephone' placeholder='Ваш телефон:*' autocomplete='off' id='' data-required='true')
                     .input-group-line
                 .input-group.checkbox-group
                     div.checkbox-wrap

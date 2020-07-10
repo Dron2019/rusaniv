@@ -55,11 +55,11 @@
         flex-wrap: wrap;
     }
     .about-description-paragraph {
-        @include size(3);
+        @include size(4);
         margin-top: 100px;
     }
     .complex-data-block {
-        @include size(8);
+        @include size(7);
     }
     .complex-data-block-item {
         width: 50%;
@@ -133,6 +133,13 @@
         }
         .about-wrapper-bottom .title-wrapper {
             padding-left: 65px;
+        }
+        .about-description-paragraph,
+        .complex-data-block {
+            margin-top: 228px;
+        }
+        .complex-data-block-item:nth-child(even) {
+            // width: 35%;
         }
     }
     @include to(768px) {

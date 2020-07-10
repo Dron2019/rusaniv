@@ -17,8 +17,8 @@ $('.gallery-slider-js').slick({
     // nextArrow: '.gallery-arrow-js',
     prevArrow: false,
     nextArrow: false,
-    fade: true,
-    speed: 1000,
+    // fade: true,
+    speed: 1500,
     responsive: [{
         breakpoint: 769,
         settings: {

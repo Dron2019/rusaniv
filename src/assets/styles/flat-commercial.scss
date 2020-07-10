@@ -4,7 +4,7 @@
     @include shift-right(1);
     display: flex;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 50px;
     .flat-img {
         @include size(4);
         max-height: 500px;

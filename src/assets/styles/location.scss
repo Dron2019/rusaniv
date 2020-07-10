@@ -33,6 +33,9 @@
         @include size(6);
         padding-left: 40px;
         margin-left: -40px;
+        .title-large {
+            padding-right: 5%;
+        }
     }
     .arrows-container {
         height: 135px;
@@ -61,6 +64,7 @@
     }
     &__slider .slide {
         display: flex;
+        justify-content: center;
         align-items: center;
     }
     &__slider .text-standart {
@@ -83,6 +87,10 @@
         padding-top: 20px;
         padding-left: calc(100% / 8 - #{$offset});
         padding-right: calc(100% / 8 * 0.7 - #{$offset});
+        .text-standart {
+            font-size: 10px;
+            margin-bottom: -0.7em;
+        }
     }
     &__map-block-info svg {
         width: 18.34px;
@@ -109,6 +117,9 @@
             height: 18px;
             margin-right: 10px;
             margin-top: 25px;
+        }
+        &__map-block-info .text-standart {
+            font-size: 15px;
         }
         .location-wrapper__map-block-info {
             padding-bottom: 35px;
@@ -284,6 +295,8 @@
         }
         &__text {
             padding-right: calc(100% / 12 * 1.5 - 20px);
+            padding-bottom: 131px;
+            padding-top: 131px;
         }
     }
     @include to(768px) {

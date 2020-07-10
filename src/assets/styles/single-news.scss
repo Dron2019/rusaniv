@@ -32,6 +32,9 @@
     .article-text p:not(:last-child) {
         margin-bottom: 1.6em;
     }
+    .article-text p:last-of-type {
+        margin-bottom: 80px;
+    }
     .button.text {
         padding-left: 5%;
         padding-right: 5%;
@@ -46,6 +49,14 @@
         position: absolute;
         left: -170px;
         bottom: 35%;
+    }
+    @include from(1680px) {
+        .article-text {
+            margin-right: 0;
+        }
+        .article-text p:last-of-type {
+            margin-bottom: 155px;
+        }
     }
     @include to(768px) {
         .vertical-line {

@@ -94,6 +94,8 @@ function handleSectionSliderFilter($yearsWrapper) {
         currentFilterData.year = $yearsWrapper.querySelector('li.active').dataset.value;
         // console.log(currentFilterData);
         filterSlides(target, currentFilterData);
+        console.log(currentFilterData);
+
     }
 
     $yearsWrapper.querySelector('.select-box').addEventListener('click', function(evt) {
@@ -115,8 +117,21 @@ function filterSlides(target, filterData) {
     document.querySelector(`[data-section='${sectionNumber}'] .build-progress-section-slider`).style.opacity = `0`;
     sectionSliders[`slider${sectionNumber}`].slick('slickUnfilter');
     sectionSliders[`slider${sectionNumber}`].slick('slickFilter', `[data-month=${filterData.month}][data-yeasr=${filterData.year}]`);
-
     document.querySelector(`[data-section='${sectionNumber}'] .build-progress-section-slider`).style.opacity = `1`;
+
+
+
+
+
+    document.querySelectorAll(`[data-section='${sectionNumber}']  .build-section__text-description-part`).forEach(text => {
+
+        if (text.dataset.month == filterData.month && text.dataset.yeasr == filterData.year) {
+            text.style.display = `block`;
+        } else {
+
+            text.style.display = `none`;
+        }
+    })
 
 }
 /**Фильтрация слайдер в секции по гадом и месяцам Конец */

@@ -213,11 +213,11 @@
         animation: flipOutY 1s 1 ease-in;
     }
     .years-slider {
-        margin-left: 15px;
+        margin-left: 25px;
     }
     @include from(1680px) {
         .subtitle {
-            text-align: center;
+            // text-align: center;
         }
     }
     @include from(576px) {
@@ -286,7 +286,17 @@
 
 .build-progress-section-slider {
     transition: .5s;
+    & img {
+        height: 350px;
+        object-fit: cover;
+    }
     @include size(6.5);
+    @include from(1680px) {
+        & img {
+            height: 450px;
+            object-fit: cover;
+        }
+    }
     @include to(768px) {
         @include size(7);
     }
@@ -298,7 +308,9 @@
 .build-progress-part {
     font-family: $default-font2;
     font-style: normal;
-    font-weight: bold;
+    // font-weight: bold;
+    /*Semibold*/
+    font-weight: 500;
     font-size: 14px;
     line-height: 2em;
     color: var(--blue);
