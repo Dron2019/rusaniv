@@ -36,7 +36,10 @@ mixin SelectBox(name, options,dataNumber)
 					.select-box__value
 					input.select-box__input(type="radio" id=index value=option.value name=name )
 				label.select-box__input-text(for=name) #{option.name}
-			img.select-box__icon(src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true")
+			//- img.select-box__icon(src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true")
+			<svg class="select-box__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+			<g><path d="M500,775.4L10,287.2l64.4-62.6L500,650.2l425.6-425.6l64.4,62.6L500,775.4z"/></g>
+			</svg>
 		ul.select-box__list
 			each option, index in options
 				li

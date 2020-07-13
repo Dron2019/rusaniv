@@ -54,15 +54,19 @@
         cursor: zoom-in;
         display: flex;
         align-items: center;
-        @include size(2.5);
+        // @include size(2.5);
+        @include size(3.5);
         img {
             object-fit: contain;
             max-height: 500px;
         }
     }
     .floor-plan-svg {
-        width: 188px;
-        height: 132px;
+        // width: 188px;
+        // height: 132px;
+        width: 160px;
+        height: 110px;
+        margin-left: 0;
     }
     .flat-info-block__item {
         margin-top: 15px;
@@ -82,8 +86,9 @@
             margin-top: 40px;
         }
         .floor-plan-svg {
-            width: 230px;
-            height: 164px;
+            width: 160px;
+            height: 110px;
+            margin-left: 0;
         }
         .pdf-link:before {
             content: '';
@@ -95,6 +100,12 @@
         }
         .flat-info-block__item {
             margin-top: 25px;
+        }
+        .flat-plan-block {
+            @include size(3.5);
+            img {
+                max-height: 600px;
+            }
         }
     }
     @include from-to(769px, 1100px) {

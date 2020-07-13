@@ -53,7 +53,8 @@ a:-webkit-any-link {
         @include shift-padding-left(0.5);
         position: relative;
         .button {
-            margin-top: 45px;
+            // margin-top: 45px;
+            margin-top: 80px;
         }
     }
     .developers-row {
@@ -112,9 +113,13 @@ a:-webkit-any-link {
     }
     @include to(575px) {
         // height: 100%;
-        min-height: calc(100vh - 70px);
         background-position: -47vh 50px;
-        // min-height: -webkit-fill-available;
+        @supports ( min-height: -webkit-fill-available) {
+            height: -webkit-fill-available;
+        }
+        @supports not ( min-height: -webkit-fill-available) {
+            min-height: calc(100vh - 70px);
+        }
         .title-wrapper {
             width: 100%;
             margin-right: 0;
@@ -192,6 +197,9 @@ a:-webkit-any-link {
         }
         .title-large {
             margin-bottom: 30px;
+        }
+        .button {
+            margin-top: 80px;
         }
     }
     @include to(1240px) {
@@ -317,6 +325,9 @@ a:-webkit-any-link {
         &>img {
             min-height: 75vh;
             width: 50.5%;
+        }
+        .button {
+            margin-top: 80px;
         }
     }
     @include to(1240px) {

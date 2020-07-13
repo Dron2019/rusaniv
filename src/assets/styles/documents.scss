@@ -12,6 +12,10 @@
         @include shift-left(2);
     }
     @include from(1680px) {
+        .slider {
+            margin-bottom: 75px;
+            margin-top: 75px;
+        }
         .slick-track {
             left: -1px;
         }
@@ -107,6 +111,7 @@
     @include from(1680px) {
         padding: 35px 32px 31px 38px;
         margin-left: 46px;
+        height: 500px;
         &__date {
             font-size: 25px;
             left: 38px;

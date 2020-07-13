@@ -36,9 +36,8 @@
     @include from(1680px) {
         font-size: 20px;
         line-height: 28px;
-        max-width: 240px;
+        max-width: 320px;
         .button {
-            ;
             bottom: calc(var(--side-fields) - 20px);
         }
     }

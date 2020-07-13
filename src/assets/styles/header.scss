@@ -165,9 +165,10 @@ header.header {
         background: var(--red);
     }
     @include from(1680px) {
-        --lang-width: 56px;
+        // --lang-width: 56px;
+        --lang-width: 40px;
         .lang {
-            font-size: 24px;
+            // font-size: 24px;
             border-radius: 35.8px;
         }
     }
@@ -267,7 +268,8 @@ header.header {
     input[type=text] {
         background: none;
         border: none;
-        color: var(--gray);
+        // color: var(--gray);
+        color: var(--white);
         font-family: $default-font2;
         font-size: 14px;
         line-height: 2em;
@@ -275,12 +277,14 @@ header.header {
         padding-left: 15px;
     }
     input[type=text]::placeholder {
-        color: var(--gray);
+        // color: var(--gray);
+        color: var(--white);
     }
     .input-group-line {
         height: 1px;
         width: 100%;
-        background-color: #AAC0C9;
+        // background-color: #AAC0C9;
+        background-color: #265D7D;
         transition: .5s;
     }
     .button.text {
@@ -312,7 +316,8 @@ header.header {
         width: 10px;
         height: 10px;
         // border: 1px solid var(--red);
-        border: 1px solid var(--white);
+        // border: 1px solid var(--white);
+        border: 1px solid #CBCBCB;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -352,6 +357,7 @@ header.header {
         align-items: center;
         flex-wrap: wrap;
         cursor: pointer;
+        color: var(--shta);
     }
     @include from(1680px) {
         legend {
@@ -412,7 +418,8 @@ header.header {
             margin-bottom: 6px;
         }
         .input-group-line {
-            background-color: #F4F9FB;
+            // background-color: #F4F9FB;
+            background-color: #265D7D;
         }
         .form-close-block {
             position: absolute;

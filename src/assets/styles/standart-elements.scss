@@ -331,10 +331,11 @@
         fill: var(--white);
     }
     @include from(1680px) {
-        --arrow-width: 72px;
+        // --arrow-width: 72px;
+        --arrow-width: 50px;
         & svg {
-            width: 25px;
-            height: 20px;
+            // width: 25px;
+            // height: 20px;
         }
     }
     @include to(575px) {
@@ -427,24 +428,29 @@
         border: 1px solid var(--gray);
         border-radius: 25px;
         min-height: 1.5em;
+        z-index: 3;
         transition: .5s;
         &:focus {
             background-color: #CFDDE4;
+            border-color: transparent;
             &+.select-box__list {
                 opacity: 1;
-                padding-top: 15px;
+                padding-top: 20px;
                 margin-top: -15px;
-                z-index: -1;
+                z-index: 2;
                 position: relative;
                 background-color: var(--white);
                 // We have to set "animation-name: none;" to make the list visible (read below how it works)
                 animation-name: none;
+                transition: .5s;
                 .select-box__option {
                     cursor: pointer;
                 }
             }
             .select-box__icon {
                 transform: translateY(-50%) rotate(180deg);
+                fill: var(--red);
+                opacity: 1;
             }
         }
     }
@@ -532,6 +538,33 @@
         &__list {
             border-bottom-left-radius: 25px;
             border-bottom-right-radius: 25px;
+        }
+    }
+    @include from(769px) {
+        &:hover {
+            .select-box__current {
+                background-color: #CFDDE4;
+                border-color: transparent;
+            }
+            .select-box__current+.select-box__list {
+                opacity: 1;
+                padding-top: 20px;
+                margin-top: -15px;
+                z-index: 2;
+                position: relative;
+                background-color: var(--white);
+                // We have to set "animation-name: none;" to make the list visible (read below how it works)
+                animation-name: none;
+                transition: .5s;
+                .select-box__option {
+                    cursor: pointer;
+                }
+            }
+            .select-box__icon {
+                transform: translateY(-50%) rotate(180deg);
+                fill: var(--red);
+                opacity: 1;
+            }
         }
     }
     @include to(575px) {
@@ -765,6 +798,7 @@
 
 .square-m-block {
     margin-top: -0.5em;
+    display: inline-block;
 }
 
 .list-standart {

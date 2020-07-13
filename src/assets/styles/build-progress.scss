@@ -192,15 +192,16 @@
     .build-progress-part:not(:nth-last-child(-n+2)) {
         margin-bottom: 38px;
     }
-    .subtitle {
-        margin-bottom: 28px;
-    }
     .subtitle,
     .title-large,
     .navigation-block {
         width: 100%;
         position: relative;
         z-index: 2;
+    }
+    .subtitle {
+        margin-bottom: 28px;
+        z-index: 1;
     }
     .slider-arrows {
         margin-left: auto;

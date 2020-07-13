@@ -107,13 +107,15 @@
         font-family: $default-font2;
     }
     @include from(1680px) {
-        padding-top: 100px;
+        padding-top: 135px;
         padding-bottom: 156px;
         @include shift-left(1.8);
         @include size(9);
         @include shift-right(1);
         .link-standart {
             font-size: 20px;
+            display: inline-block;
+            margin-top: 156px;
         }
         .perfect-logo {
             width: 400px;
@@ -221,6 +223,8 @@
         }
         .link-standart {
             font-size: 20px;
+            display: inline-block;
+            margin-top: 156px;
         }
         .title-wrapper {
             padding-left: 37px;

@@ -25,6 +25,13 @@ $sections.forEach(buildSection => {
     });
     $(`${thisSectionSelector} .build-progress-section-slider`).on('reInit', (init, init1) => {
         document.querySelector(`${thisSectionSelector} .slider-numbers .total`).innerHTML = init1.slideCount;
+        if (init1.slideCount === 0) {
+            document.querySelector(`${thisSectionSelector} .slider-arrows`).style.display = 'none';
+        } else {
+            document.querySelector(`${thisSectionSelector} .slider-arrows`).style.display = 'flex';
+
+        }
+        console.log(init1.slideCount);
     });
 
     sectionSliders[`slider${buildSection.dataset.section}`] = $(`${thisSectionSelector} .build-progress-section-slider`).slick({
@@ -119,21 +126,18 @@ function filterSlides(target, filterData) {
     sectionSliders[`slider${sectionNumber}`].slick('slickFilter', `[data-month=${filterData.month}][data-yeasr=${filterData.year}]`);
     document.querySelector(`[data-section='${sectionNumber}'] .build-progress-section-slider`).style.opacity = `1`;
 
-
-
-
-
     document.querySelectorAll(`[data-section='${sectionNumber}']  .build-section__text-description-part`).forEach(text => {
 
         if (text.dataset.month == filterData.month && text.dataset.yeasr == filterData.year) {
             text.style.display = `block`;
         } else {
-
             text.style.display = `none`;
         }
     })
-
 }
+
+
+
 /**Фильтрация слайдер в секции по гадом и месяцам Конец */
 
 /**********************************/

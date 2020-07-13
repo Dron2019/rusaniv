@@ -72,7 +72,9 @@ function switchDot(slideIndex) {
     let dotsContainer = document.querySelector('.navigation');
     if (document.querySelector('.advantage-slider style') === null && window.screen.width < 576) {
         changePseudoProperties('.advantage-slider', 'opacity:0', 'after');
+
     }
+    changePseudoProperties('.advantage-slider', 'opacity:1', 'before');
     dotsContainer.querySelector('.active').classList.remove('active');
     dotsContainer.querySelector(`[data-dot-index="${slideIndex}"]`).classList.add('active');
 }
