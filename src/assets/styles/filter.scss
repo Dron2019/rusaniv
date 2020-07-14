@@ -311,6 +311,7 @@
     justify-content: center;
     font-family: $default-font;
     margin-right: 28px;
+    cursor: pointer;
     input {
         width: 100%;
         height: 100%;
@@ -323,6 +324,7 @@
         border-color: var(-blue);
         background-color: var(--blue);
         color: var(--white);
+        border-color: var(--blue);
     }
     &:before {
         content: attr(data-value);
@@ -332,6 +334,14 @@
         height: 48px;
         font-size: 19.7647px;
         line-height: 40px;
+    }
+    @include from(769px) {
+        &:hover {
+            border-color: var(-blue);
+            background-color: var(--blue);
+            color: var(--white);
+            border-color: var(--blue);
+        }
     }
     @include to(768px) {
         width: 70px;
@@ -397,8 +407,8 @@
     @include to(768px) {
         @include size(12);
         .subtitle {
-            font-size: 36px;
-            white-space: nowrap;
+            font-size: 20px;
+            // white-space: nowrap;
             margin-bottom: 10px;
         }
         &__img {

@@ -120,6 +120,7 @@
         object-fit: cover;
         object-position: left;
         max-height: 180px;
+        height: 180px;
         max-width: 180px;
     }
     &__text {
@@ -150,6 +151,7 @@
     @include from(1680px) {
         &__img {
             max-height: 255px;
+            height: 255px;
             max-width: 255px;
             padding-right: 36px;
         }
@@ -175,6 +177,9 @@
         &:hover {
             box-shadow: 0px 30px 50px rgba(0, 57, 90, 0.15);
             padding: 20px;
+        }
+        .hvr-bounce-to-right:hover {
+            border-color: transparent;
         }
     }
     @include to(768px) {

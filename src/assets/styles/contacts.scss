@@ -121,6 +121,9 @@
     }
 }
 
-.group-contact-info {
-    margin-bottom: 25px;
+@include from(1024px) {
+    .group-with-marker,
+    .group-contact-info {
+        margin-bottom: 30px;
+    }
 }

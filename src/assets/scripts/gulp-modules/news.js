@@ -1,5 +1,6 @@
 const WIDTH = window.screen.width;
-$yearsWrapper = document.querySelector('.years-slider');
+$yearsWrapper = document.querySelector('.years-slider'),
+    newsList = document.querySelectorAll('.news-article');
 let currentFilterData = {
     month: '',
     year: '',
@@ -33,15 +34,32 @@ document.querySelector('.years-arrows .prev').addEventListener('click', function
 
 
 function setCurrentFilterDate() {
+
     currentFilterData.month = document.querySelector(`input[name='month']:checked`).value;
     currentFilterData.year = $yearsWrapper.querySelector('li.active').dataset.value;
+    filterNews(newsList, currentFilterData)
     console.log(currentFilterData);
 }
 
+
+function filterNews(list, datObject) {
+    list.forEach(block => {
+        if (block.dataset.month === datObject.month && block.dataset.year === datObject.year) {
+            block.style.display = 'flex';
+        } else if (datObject.month === 'null') {
+            block.style.display = 'flex';
+        } else {
+            block.style.display = 'none';
+        }
+
+    })
+}
 document.querySelector('.select-box').addEventListener('click', function(evt) {
     evt.stopPropagation();
     setCurrentFilterDate();
 });
+
+
 
 /**MOBILE */
 if (WIDTH < 576) {

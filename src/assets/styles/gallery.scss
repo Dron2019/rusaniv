@@ -130,6 +130,12 @@
 }
 
 #panorama {
+    .gallery-page {
+        pointer-events: none;
+    }
+    iframe {
+        z-index: 1;
+    }
     @include to(575px) {
         .breadcrumbs-wrapper {
             margin-top: 0;

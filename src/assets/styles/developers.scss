@@ -131,7 +131,7 @@
             @include shift-right(1);
         }
         .text-standart {
-            @include size(7);
+            @include size(6);
         }
     }
     @include to(768px) {
@@ -219,7 +219,7 @@
             @include shift-right(1);
         }
         .text-standart {
-            @include size(7);
+            @include size(6);
         }
         .link-standart {
             font-size: 20px;

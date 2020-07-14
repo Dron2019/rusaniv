@@ -77,7 +77,7 @@ checkboxes.forEach(box => {
         box.addEventListener('click', function(evt) {
             console.log(box);
 
-            document.querySelectorAll('.checkbox-wrap').forEach(radio => radio.style.borderColor = `var(--white)`);
+            document.querySelectorAll('.checkbox-wrap').forEach(radio => radio.style.borderColor = `var(--dark-gray)`);
             box.querySelector('input').checked = true;
             box.querySelector('input').checked ?
                 box.querySelector('.checkbox-wrap').style.borderColor = `var(--red)` :

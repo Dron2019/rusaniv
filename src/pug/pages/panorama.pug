@@ -11,8 +11,8 @@ block scripts
     script(defer src='./assets/scripts/index.js')
     script(defer src='./assets/scripts/gallery.js')
 block content
-        .gallery-slider
-            +img('panorama/panorama.jpg')
+        iframe( src="./static/panorama/pannellum.htm#panorama=../../assets/images/background.jpg" frameborder="0").gallery-slider
+            //- +img('panorama/panorama.jpg')
         .wrapper.first.gallery-page
             .breadcrumbs-wrapper
                 .breadcrumbs-block

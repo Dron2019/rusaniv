@@ -19,15 +19,16 @@ block content
                 a(href="/").link.current-link Новини
         .news-navigation-block
             +SelectBox('month', [
-                {name: 'Січень',value: '1'}, 
-                {name: 'Лютий',value: '2'}, 
-                {name: 'Березень',value: '3'}, 
-                {name: 'Квітень', value: '4'}, 
-                {name: 'Травень',value: '5'},
-                {name: 'Червень',value: '6'},
-                {name: 'Липень',value: '7'},
-                {name: 'Серпень',value: '8'},
-                {name: 'Вересень',value: '9'},
+                {name: 'Місяць',value: 'null'}, 
+                {name: 'Січень',value: '01'}, 
+                {name: 'Лютий',value: '02'}, 
+                {name: 'Березень',value: '03'}, 
+                {name: 'Квітень', value: '04'}, 
+                {name: 'Травень',value: '05'},
+                {name: 'Червень',value: '06'},
+                {name: 'Липень',value: '07'},
+                {name: 'Серпень',value: '08'},
+                {name: 'Вересень',value: '09'},
                 {name: 'Жовтень',value: '10'},
                 {name: 'Листопад',value: '11'},
                 {name: 'Грудень',value: '12'},
@@ -49,35 +50,35 @@ block content
                     </svg>
     .wrapper.news-wrapper
         .news-articles-wrapper 
-            .news-article
+            .news-article(data-month="01" data-year="2020")
                 +img('news/article-img.jpg').news-article__img
                 .news-article__text
                     .subtitle Графік роботи відділу продажу на День захисника України
                     .news-date 19 листопада 2019
                     .text-standart Дорога на роботу і додому — значна частина нашого життя. Але якщо офіс буде розташований у житловому...
                     a.button.text-small.transparent.hvr-bounce-to-right Читати новину
-            .news-article
+            .news-article(data-month="02" data-year="2020")
                 +img('news/article-img.jpg').news-article__img
                 .news-article__text
                     .subtitle Графік роботи відділу продажу на День захисника України
                     .news-date 19 листопада 2019
                     .text-standart Дорога на роботу і додому — значна частина нашого життя. Але якщо офіс буде розташований у житловому...
                     a.button.text-small.transparent.hvr-bounce-to-right Читати новину
-            .news-article
+            .news-article(data-month="03" data-year="2020")
                 +img('news/article-img.jpg').news-article__img
                 .news-article__text
                     .subtitle Графік роботи відділу продажу на День захисника України
                     .news-date 19 листопада 2019
                     .text-standart Дорога на роботу і додому — значна частина нашого життя. Але якщо офіс буде розташований у житловому...
                     a.button.text-small.transparent.hvr-bounce-to-right Читати новину
-            .news-article
+            .news-article(data-month="03" data-year="2020")
                 +img('news/article-img.jpg').news-article__img
                 .news-article__text
                     .subtitle Графік роботи відділу продажу на День захисника України
                     .news-date 19 листопада 2019
                     .text-standart Дорога на роботу і додому — значна частина нашого життя. Але якщо офіс буде розташований у житловому...
                     a.button.text-small.transparent.hvr-bounce-to-right Читати новину
-            .news-article
+            .news-article(data-month="01" data-year="2020")
                 +img('news/article-img.jpg').news-article__img
                 .news-article__text
                     .subtitle Графік роботи відділу продажу на День захисника України
