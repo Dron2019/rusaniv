@@ -140,8 +140,12 @@
     @include to(575px) {
         padding: 20px 20px 25px 20px;
         margin-left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        max-width: 320px;
         &:nth-last-child(n+2) {
-            margin-bottom: 20px;
+            margin-bottom: 35px;
         }
         &__title {
             font-size: 20px;
@@ -153,6 +157,9 @@
         &__file-type-icon {
             width: 45px;
             height: 56px;
+        }
+        &__date {
+            margin-left: calc(100% - 100px - 45px);
         }
     }
 }

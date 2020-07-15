@@ -282,6 +282,10 @@
         .build-progress-part:nth-last-child(-n+2) {
             margin-bottom: 15px;
         }
+        .years-slider {
+            margin-left: 25px;
+            margin-right: 25px;
+        }
     }
 }
 
@@ -323,7 +327,8 @@
         background: var(--hz);
         overflow: hidden;
         svg {
-            transform: translate(-1.3px, -0.2px);
+            // transform: translate(-1.3px, -0.2px);
+            transform: translate(-1.3px, -2.2px);
             display: block;
         }
     }

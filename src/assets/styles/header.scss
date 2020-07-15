@@ -24,6 +24,13 @@ header.header {
         padding-bottom: 10px;
         background-color: var(--blue);
         font-size: 12px;
+        transition: .5s;
+        transition-delay: .65s;
+        &.opened {
+            padding-top: 15px;
+            height: 60px;
+            padding-bottom: 15px;
+        }
     }
 }
 
@@ -424,8 +431,10 @@ header.header {
         }
         .form-close-block {
             position: absolute;
-            right: 10px;
-            top: 10px;
+            // right: 10px;
+            // top: 10px;
+            right: 20px;
+            top: 15px;
             font-size: 12px;
             line-height: 28px;
         }
@@ -438,6 +447,9 @@ header.header {
             height: 50px;
             width: 100%;
             max-width: none;
+        }
+        legend {
+            font-size: 32px;
         }
     }
 }

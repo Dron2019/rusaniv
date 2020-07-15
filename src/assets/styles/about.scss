@@ -96,9 +96,6 @@
         display: block;
         margin-top: 70px;
     }
-    .link.current-link {
-        color: var(--shta);
-    }
     @include from(1680px) {
         --negative-block-margin: -190px;
         .about-wrapper {
@@ -184,6 +181,11 @@
         .about-wrapper-bottom .text-standart {
             padding-left: 57px;
             width: 100%;
+        }
+    }
+    @include from(576px) {
+        .link.current-link {
+            color: var(--shta);
         }
     }
     @include to(575px) {

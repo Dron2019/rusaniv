@@ -203,7 +203,8 @@
             width: calc(100% + (var(--side-fields) * 2));
             margin-left: calc(var(--side-fields) - (var(--side-fields) * 2));
             margin-right: calc(var(--side-fields) - (var(--side-fields) * 2));
-            margin-bottom: 35px;
+            // margin-bottom: 35px;
+            margin-bottom: 50px;
         }
         &__map-block-info {
             width: 100%;
@@ -226,6 +227,7 @@
         }
         &__slider {
             width: 100%;
+            margin-top: 50px;
         }
         .arrows-container {
             width: auto;

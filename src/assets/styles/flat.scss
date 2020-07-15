@@ -99,13 +99,16 @@
             margin-right: 19px;
         }
         .flat-info-block__item {
-            margin-top: 25px;
+            margin-top: 18px;
         }
         .flat-plan-block {
             @include size(3.5);
             img {
                 max-height: 600px;
             }
+        }
+        .button {
+            margin-top: 50px;
         }
     }
     @include from-to(769px, 1100px) {
@@ -206,6 +209,9 @@
         .flat-info-block.last .subtitle {
             margin-top: 0;
             font-size: 32px;
+        }
+        .flat-info-block.last .button.text {
+            margin-top: 50px;
         }
         .mini-floor-plan-block {
             width: 100%;

@@ -7,7 +7,10 @@
     justify-content: space-between;
     @include to(575px) {
         .irs--flat .irs-to {
-            transform: translateX(-10px);
+            transform: translateX(-20px);
+        }
+        .irs--flat .irs-from {
+            transform: translateX(20px);
         }
     }
 }
@@ -293,7 +296,7 @@
             margin-top: 0;
         }
         .range-item {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
     }
 }
@@ -479,7 +482,7 @@
         margin-bottom: 45px;
     }
     @include to(575px) {
-        margin-bottom: 25px;
+        margin-bottom: 35px;
         &__title {
             font-size: 18px;
             line-height: 28px;

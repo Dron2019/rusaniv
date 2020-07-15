@@ -74,7 +74,7 @@ function switchDot(slideIndex) {
         changePseudoProperties('.advantage-slider', 'opacity:0', 'after');
 
     }
-    changePseudoProperties('.advantage-slider', 'opacity:1', 'before');
+    if (window.screen.width > 575) changePseudoProperties('.advantage-slider', 'opacity:1', 'before');
     dotsContainer.querySelector('.active').classList.remove('active');
     dotsContainer.querySelector(`[data-dot-index="${slideIndex}"]`).classList.add('active');
 }

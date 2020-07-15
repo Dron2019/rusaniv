@@ -126,3 +126,87 @@ const card = $(`${viewParentSelector}`);
 
     }
 })(jQuery);
+
+
+
+
+
+
+let popupStyle = `
+position:fixed;
+background: #00395a;
+max-width: 150px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows: auto;
+grid-gap: 10px;
+padding: 10px;
+text-align:center;
+color: white;`;
+let popupAfterStyle = `border: 20px solid transparent;
+border-top: 20px solid #00395a;
+content: '';
+position: absolute;
+top: 100%;
+left: 50%;
+transform: translateX(-50%);`;
+var floorSelectPopup = () => {
+    let target = document.querySelector('.mob-floor-link-js');
+    let curFloor = +target.dataset.floor || 1;
+    let popup = document.createElement('div');
+    target.addEventListener('click', function(evt) {
+        if (window.mobFloorPopupCreated) {
+            popup.style.opacity = `1`;
+            popup.style.pointerEvents = 'initial';
+            return;
+        }
+        popup.innerHTML += `<button style="border:none; color:var(--red); background:none; border-radius:50%; border: 1px solid var(--red); height:24px; width:24px; grid-area:1/5/1/5">&#10006;</button>`;
+        for (let i = 1; i <= 23; i++) {
+            if (i !== curFloor) {
+                popup.innerHTML += `<a style="color:white" href="choose-floor/?dom=1&section=4&floor=${i}">${i}</button>`;
+            } else {
+                popup.innerHTML += `<a style="color:var(--red); pointer-events:none;"   href="choose-floor/?dom=1&section=4&floor=${i}">${i}</button>`;
+            }
+        };
+        popup.classList.add('popup-floors-js');
+        popup.style.cssText = `
+        ${popupStyle}
+        top :calc(${target.getBoundingClientRect().bottom}px - 3em);
+        transform:translateY(-100%) ;
+        left:${target.getBoundingClientRect().left}px;
+        animation:fadeIn 1s 1 linear;
+        `;
+        changePseudoProperties(popup, popupAfterStyle, 'after');
+        target.append(popup);
+        popup.querySelector('button').addEventListener('click', (evt) => {
+            evt.stopPropagation();
+            popup.style.opacity = `0`;
+            popup.style.pointerEvents = 'none';
+        });
+        window.mobFloorPopupCreated = true;
+    });
+
+};
+if (window.screen.width < 576) {
+    floorSelectPopup();
+};
+
+function changePseudoProperties(container, cssText, pseudoType) {
+    let containerSelector = '';
+    if (pseudoType === undefined) {
+        console.warn(`Pseudo element is not defined, ${changePseudoProperties.name} is stopping`);
+        return;
+    }
+    if (typeof container === 'string') {
+        containerSelector = container;
+        container = document.querySelector(container);
+    } else {
+        containerSelector = `.${container.classList[0]}`;
+    }
+    let style = document.createElement('style');
+    style.innerHTML = `
+    ${containerSelector}:${pseudoType}{
+        ${cssText}
+    } `;
+    container.append(style);
+}

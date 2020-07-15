@@ -17,12 +17,14 @@ menuButton.addEventListener('mouseout', function(evt) {
 });
 menuButton.addEventListener('click', function(evt) {
     menu.classList.add('opened');
+    header.classList.add('opened');
     menuButton.classList.add('opened');
     if (window.screen.width < 576) menuButton.addEventListener('click', closeMenuOnMobile);
 
 });
 menu.querySelector('.close-button').addEventListener('click', function(evt) {
     menu.classList.remove('opened');
+    header.classList.remove('opened');
     menuButton.classList.remove('opened');
 });
 /**Menu hover Effect  END*/
@@ -36,6 +38,7 @@ document.querySelector('div').__proto__.putTempClass = function(className, timeo
 function closeMenuOnMobile(evt) {
     menu.classList.remove('opened');
     menuButton.classList.remove('opened');
+    header.classList.remove('opened');
     menuButton.removeEventListener('click', closeMenuOnMobile, false);
 }
 /**MASK */

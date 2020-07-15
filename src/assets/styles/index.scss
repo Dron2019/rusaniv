@@ -490,6 +490,14 @@ a:-webkit-any-link {
             -webkit-line-clamp: 4;
             line-clamp: 4;
         }
+        .buttons-block .arrows-container {
+            --arrow-width: 72px;
+            width: calc(var(--arrow-width) * 2 + 45px);
+            svg {
+                width: 25px;
+                height: 20px;
+            }
+        }
     }
     @include to(1140px) {
         .news-slide .subtitle {
@@ -687,9 +695,13 @@ a:-webkit-any-link {
         color: #F4F9FB;
         font-size: 12px;
         letter-spacing: 0.025em;
-        text-decoration: underline;
+        // text-decoration: underline;
+        // text-decoration-skip-ink: none;
         margin: 0 auto;
         font-size: 14px;
+    }
+    .header-telephone span {
+        border-bottom: 1px solid var(--white);
     }
     .header-telephone .icon.button {
         width: 30px;

@@ -34,6 +34,17 @@
             background-color: var(--shta);
             height: 50px;
         }
+        .breadcrumbs-block {
+            .link:not(.current-link) {
+                color: var(--hz);
+            }
+            .link:not(.current-link):after {
+                content: url(../images/common/breadcrump-line-hz-color.svg);
+                transform: translateY(2px);
+                display: inline-block;
+                margin-left: 10px;
+            }
+        }
     }
 }
 
@@ -218,9 +229,11 @@
     @include to(575px) {
         .wrapper {
             position: relative;
-            padding: 25px 0 0 0;
+            padding: 35px 0 0 0;
             .subtitle {
                 padding-left: 0;
+                font-size: 26px;
+                line-height: 36px;
                 width: 100%;
                 max-width: 75%;
             }
@@ -231,7 +244,7 @@
         &__img {
             position: absolute;
             width: 100%;
-            top: calc(25px + 30px + 1.38em + 1.38em);
+            top: calc(35px + 30px + 1.38em + 1.38em);
             height: 50vh;
         }
         .adv-dark-block {
