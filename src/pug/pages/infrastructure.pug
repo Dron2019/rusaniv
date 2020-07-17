@@ -21,10 +21,14 @@ block content
         #map
         .mobile-infra-legend.infra-legend-js
             .mobile-infra-legend__title Об’єкти інфраструктури
-            <svg class="mobile-infra-legend__close " width="27" height="27" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8.44582" y="23.5151" width="21.4279" height="0.738894" transform="rotate(-45 8.44582 23.5151)" fill="white" stroke="white" stroke-width="0.738894"></rect>
-            <rect x="8.96826" y="8.3633" width="21.4279" height="0.738894" transform="rotate(45 8.96826 8.3633)" fill="white" stroke="white" stroke-width="0.738894"></rect>
+            <svg class="mobile-infra-legend__close " width="27" height="27" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path transform="scale(0.7) translate(2.5, 1.95)" d="M7.38462 0L6.74961 0.690482L10.2537 4.50675H0V5.49316H10.2537L6.74961 9.30952L7.38462 10L12 4.99995L7.38462 0Z" fill="white"/>
             </svg>
+
+            //- <svg class="mobile-infra-legend__close " width="27" height="27" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            //- <rect x="8.44582" y="23.5151" width="21.4279" height="0.738894" transform="rotate(-45 8.44582 23.5151)" fill="white" stroke="white" stroke-width="0.738894"></rect>
+            //- <rect x="8.96826" y="8.3633" width="21.4279" height="0.738894" transform="rotate(45 8.96826 8.3633)" fill="white" stroke="white" stroke-width="0.738894"></rect>
+            //- </svg>
             .mobile-infra-legend__icon-wrapper
                 .mobile-infra-legend__icon-row.active(data-type="main")
                     +svg('marker-main').mobile-infra-legend__icon-img

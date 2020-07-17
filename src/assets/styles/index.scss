@@ -114,11 +114,13 @@ a:-webkit-any-link {
     @include to(575px) {
         // height: 100%;
         background-position: -47vh 50px;
-        @supports ( min-height: -webkit-fill-available) {
+        min-height: unset;
+        @supports ( height: -webkit-fill-available) {
             height: -webkit-fill-available;
+            height: calc(100vh - 60px);
         }
-        @supports not ( min-height: -webkit-fill-available) {
-            min-height: calc(100vh - 70px);
+        @supports not ( height: -webkit-fill-available) {
+            height: calc(100vh - 70px);
         }
         .title-wrapper {
             width: 100%;
@@ -136,6 +138,7 @@ a:-webkit-any-link {
             margin-left: auto;
             margin-right: auto;
             width: 260px;
+            margin-bottom: 15px;
         }
         .title-wrapper .title-large {
             @include shift-left(5.3);
@@ -425,7 +428,7 @@ a:-webkit-any-link {
     }
     a.button {
         height: 50px;
-        max-width: 250px;
+        max-width: 310px;
         margin-top: 39px;
     }
     .news-slide {
@@ -444,13 +447,17 @@ a:-webkit-any-link {
         box-orient: vertical;
     }
     .buttons-block {
-        @include size(2.5);
+        @include size(3);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         .button {
             margin-top: 0;
         }
+    }
+    .arrows-container {
+        margin-left: auto;
+        margin-right: auto;
     }
     @include from(1680px) {
         padding-top: 170px;
@@ -579,6 +586,10 @@ a:-webkit-any-link {
         .bg-title-large {
             left: -15vw;
             top: -1.25em;
+        }
+        .arrows-container {
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 }

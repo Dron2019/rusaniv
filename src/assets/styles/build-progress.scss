@@ -176,6 +176,11 @@
     }
     &__text-description {
         @include size(4.6);
+        max-height: 350px;
+        overflow-y: scroll;
+    }
+    &__text-description::-webkit-scrollbar-thumb {
+        background: #00395a;
     }
     &__text-description-part:not(:last-child) {
         margin-bottom: 28px;
@@ -220,6 +225,9 @@
         .subtitle {
             // text-align: center;
         }
+        &__text-description {
+            max-height: 460px;
+        }
     }
     @include from(576px) {
         .slider-numbers {
@@ -247,6 +255,8 @@
         }
         &__text-description {
             @include size(5);
+            max-height: 460px;
+            overflow-y: scroll;
         }
     }
     @include to(575px) {
@@ -284,7 +294,7 @@
         }
         .years-slider {
             margin-left: 25px;
-            margin-right: 25px;
+            margin-right: 40px;
         }
     }
 }
@@ -344,6 +354,9 @@
     @include from(1680px) {
         .build-progress-part-load-indicator {
             height: 43px;
+            svg {
+                transform: translate(-1.3px, -2.2px) scaleY(1.1);
+            }
         }
     }
 }

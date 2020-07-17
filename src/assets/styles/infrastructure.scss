@@ -3,7 +3,7 @@
     height: calc(100vh - 182px);
     // height: 556px;
     @include from(1680px) {
-        height: calc(100vh - 236px);
+        height: calc(100vh - 215px);
     }
     @include to(575px) {
         height: calc(100vh - 210px);
@@ -103,6 +103,13 @@
         position: absolute;
         right: 12px;
         top: 14px;
+    }
+    &__close {
+        transition: .5s;
+        transform: rotate(-90deg);
+    }
+    &.opened &__close {
+        transform: rotate(90deg);
     }
     &__icon-row {
         color: var(--gray);

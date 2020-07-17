@@ -134,7 +134,7 @@ const card = $(`${viewParentSelector}`);
 
 let popupStyle = `
 position:fixed;
-background: #00395a;
+background:#fff;
 max-width: 150px;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -142,9 +142,10 @@ grid-template-rows: auto;
 grid-gap: 10px;
 padding: 10px;
 text-align:center;
-color: white;`;
-let popupAfterStyle = `border: 20px solid transparent;
-border-top: 20px solid #00395a;
+color: white;
+box-shadow: 0px 0px 45px rgba(0, 57, 90, 0.4);`;
+let popupAfterStyle = `border: 10px solid transparent;
+border-top: 10px solid #00395a;
 content: '';
 position: absolute;
 top: 100%;
@@ -160,10 +161,21 @@ var floorSelectPopup = () => {
             popup.style.pointerEvents = 'initial';
             return;
         }
-        popup.innerHTML += `<button style="border:none; color:var(--red); background:none; border-radius:50%; border: 1px solid var(--red); height:24px; width:24px; grid-area:1/5/1/5">&#10006;</button>`;
+        popup.innerHTML += `<button style="border:none; color:var(--red); background:none; border-radius:50%; fill:var(--red); display: flex;
+        justify-content: center;
+        align-items: center; 
+        border: 1px solid var(--red); height:24px; width:24px; grid-area:1/5/1/5">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+            <g>
+                <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z"/>
+            </g>
+        </svg>
+        
+        </button>`;
         for (let i = 1; i <= 23; i++) {
             if (i !== curFloor) {
-                popup.innerHTML += `<a style="color:white" href="choose-floor/?dom=1&section=4&floor=${i}">${i}</button>`;
+                popup.innerHTML += `<a style="color:var(--blue)" href="choose-floor/?dom=1&section=4&floor=${i}">${i}</button>`;
             } else {
                 popup.innerHTML += `<a style="color:var(--red); pointer-events:none;"   href="choose-floor/?dom=1&section=4&floor=${i}">${i}</button>`;
             }
@@ -173,7 +185,7 @@ var floorSelectPopup = () => {
         ${popupStyle}
         top :calc(${target.getBoundingClientRect().bottom}px - 3em);
         transform:translateY(-100%) ;
-        left:${target.getBoundingClientRect().left}px;
+        left:${target.getBoundingClientRect().left - (+getComputedStyle(target).width.replace(/px/,'') / 2)}px;
         animation:fadeIn 1s 1 linear;
         `;
         changePseudoProperties(popup, popupAfterStyle, 'after');

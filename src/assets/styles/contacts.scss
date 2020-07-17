@@ -4,7 +4,8 @@
     }
     #map {
         @include size(7);
-        height: calc(100vh - 120px - 87px);
+        // height: calc(100vh - 120px - 87px);
+        height: calc(100vh - 61px - 87px);
         margin-left: auto;
         margin-right: calc(var(--side-fields) - (var(--side-fields) * 2));
     }
@@ -31,7 +32,7 @@
             max-width: none;
         }
         #map {
-            height: calc(100vh - 175px - 87px);
+            height: calc(100vh - 175px - 65px);
         }
         .page__footer-wrapper {
             margin-top: -160px;
@@ -63,6 +64,9 @@
     color: var(--blue);
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
     &>svg {
         width: 57.33px;
         height: 57.33px;
@@ -131,6 +135,6 @@
 @include to(575px) {
     .group-with-marker,
     .group-contact-info {
-        margin-bottom: 35px;
+        margin-bottom: 30px;
     }
 }

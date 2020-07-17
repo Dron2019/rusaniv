@@ -42,6 +42,7 @@
     .js-see-more-floor {
         width: 100%;
         margin: 20px auto;
+        margin-top: 40px;
     }
     @include from(1680px) {
         .flat-info-block.first {
@@ -174,6 +175,11 @@
         .flat-info-block.first .circle.flat-type {
             margin-top: 10px;
             margin-bottom: auto;
+        }
+        .button.js-see-more-floor {
+            max-width: 320px;
+            height: 50px;
+            font-size: 18px;
         }
     }
     @include from(576px) {

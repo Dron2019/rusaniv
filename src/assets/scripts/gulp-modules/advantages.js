@@ -2,6 +2,7 @@ var advSlider = $('.advantage-slider-js');
 $('.advantage-slider-js').on('init', (slick) => {
     console.log(slick);
     transformSlickTrack();
+    alignSlides('.advantage-slide');
 });
 $('.advantage-slider-js').on('beforeChange', (slick, r, current, next) => {
     console.log(next);
@@ -36,6 +37,20 @@ $('.advantage-slider-js').slick({
         }
     ]
 });
+
+function alignSlides(selector) {
+    let maxArray = [];
+    document.querySelectorAll(selector).forEach((el) => {
+        maxArray.push(+getComputedStyle(el).height.replace(/px/, ''));
+    });
+    console.log(maxArray);
+    maxArray = Math.max.apply(null, maxArray);
+    for (i = 1; i < document.querySelectorAll(selector).length; i++) {
+        document.querySelectorAll(selector)[i].style.height = `${maxArray}px`;
+    }
+
+
+}
 
 function transformSlickTrack() {
     document.querySelector('.slick-track').style.position = `relative`;

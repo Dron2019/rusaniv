@@ -111,6 +111,11 @@
         .arrows-container {
             height: 200px;
             width: 76px;
+            --arrow-width: 72px;
+            .icon--arrow {
+                width: 25px;
+                height: 20px;
+            }
         }
         &__map-block-info svg {
             width: 26px;
