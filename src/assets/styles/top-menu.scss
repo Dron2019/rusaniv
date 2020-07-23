@@ -92,6 +92,9 @@
         color: rgba(170, 192, 201, 0.6);
         height: 1.43em;
     }
+    &__adress-link {
+        justify-content: flex-end;
+    }
     &__tel-link[href] {
         display: flex;
         align-items: center;
@@ -136,8 +139,9 @@
         margin-top: auto;
         align-items: center;
     }
-    &__bottom-links>a {
-        width: 50%;
+    &__bottom-links>a:not(.socials) {
+        // width: 50%;
+        width: calc(100% / 2 - 40px);
     }
     .logo-menu-mobile {
         width: 150px;
@@ -274,7 +278,8 @@
             padding-bottom: 50px;
         }
         &__lang-block-mobile {
-            width: 120px;
+            // width: 120px;
+            width: 105px;
             display: flex;
             position: static;
             color: var(--white);
@@ -286,6 +291,17 @@
             width: 26px;
             margin-right: 10px;
             color: var(--gray);
+        }
+        &__bottom-links>a:not(.socials) {
+            width: calc(100% / 2 - 20px);
+        }
+    }
+    @include to(374px) {
+        &__bottom-links>a:not(.socials) {
+            width: 50%;
+        }
+        .socials {
+            display: none;
         }
     }
 }

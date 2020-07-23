@@ -5,14 +5,18 @@ class Scroller {
         this.selectorName = selector;
         this.scrollElement = document.querySelector(selector);
         this.i = 1;
-        this.delta = 10;
+        this.delta = 5;
         this.lastScrollTop = 0;
-        this.speed = 2;
+        this.speed = 10;
+
+    }
+    setSpeed() {
+        if (/Android|webOS|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|iPhone|iPad|iPod/.test(window.navigator.userAgent)) this.speed = 1.2;
     }
     styling() {
-        this.moveValue = window.screen.height * this.delta / parseInt(getComputedStyle(this.scrollElement).width.replace('px', '')) * 1.2;
+        this.moveValue = window.screen.height * this.delta / parseInt(getComputedStyle(this.scrollElement).width.replace('px', '')) * this.speed;
         this.elemHeight = parseInt(getComputedStyle(this.scrollElement).blockSize);
-        this.scrollElement.style.transition = '.2s';
+        this.scrollElement.style.transition = '.8s';
     }
     onScroll(e) {
         var top = window.pageYOffset;
@@ -32,6 +36,7 @@ class Scroller {
     };
     init() {
         // console.log(this.selectorName);
+        this.setSpeed();
         this.isDevice();
         if (this.scrollElement == undefined) {
             console.error(`${this.selectorName} is ${undefined}`);
@@ -61,7 +66,7 @@ class Scroller {
         }
         // console.log(this.i);
 
-        this.scrollElement.style.transform = `translateX(${this.i*this.speed}px)`;
+        this.scrollElement.style.transform = `translateX(${this.i}px)`;
     }
     show() {
         // console.log(this.scrollElement.offsetTop);

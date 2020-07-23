@@ -1,8 +1,10 @@
 // Google map start
 function func() {
     var script = document.createElement('script');
-    // const key = 'AIzaSyACEKUzegoxX0LUNPoGhD6WQdN4ogXmsFo';
-    const key = '';
+    const key = 'AIzaSyC4EBsCfQfnwCFGD_o8iLWwH97tmNCU-6E';
+    // const key = '';
+    if (window.location.pathname.match(/localhost/)) key = '';
+    // ?key=AIzaSyC4EBsCfQfnwCFGD_o8iLWwH97tmNCU-6E&sensor=false
     script.src = `https://maps.googleapis.com/maps/api/js?&callback=initMap&key=${key}`;
     document.getElementsByTagName('head')[0].appendChild(script);
 

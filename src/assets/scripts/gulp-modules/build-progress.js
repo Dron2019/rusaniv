@@ -31,7 +31,7 @@ $sections.forEach(buildSection => {
             document.querySelector(`${thisSectionSelector} .slider-arrows`).style.display = 'flex';
 
         }
-        console.log(init1.slideCount);
+        //console.log(init1.slideCount);
     });
 
     sectionSliders[`slider${buildSection.dataset.section}`] = $(`${thisSectionSelector} .build-progress-section-slider`).slick({
@@ -97,11 +97,14 @@ function handleSectionSliderFilter($yearsWrapper) {
 
 
     function setCurrentFilterDate(target) {
+        if (currentFilterData.month.toString() === $yearsWrapper.querySelector(`input[name^='month']:checked`).value.toString()) return;
+
+
         currentFilterData.month = $yearsWrapper.querySelector(`input[name^='month']:checked`).value;
         currentFilterData.year = $yearsWrapper.querySelector('li.active').dataset.value;
         // console.log(currentFilterData);
         filterSlides(target, currentFilterData);
-        console.log(currentFilterData);
+        //console.log(currentFilterData);
 
     }
 
@@ -127,9 +130,11 @@ function filterSlides(target, filterData) {
     document.querySelector(`[data-section='${sectionNumber}'] .build-progress-section-slider`).style.opacity = `1`;
 
     document.querySelectorAll(`[data-section='${sectionNumber}']  .build-section__text-description-part`).forEach(text => {
-
         if (text.dataset.month == filterData.month && text.dataset.yeasr == filterData.year) {
             text.style.display = `block`;
+        } else if (filterData.month === 'null') {
+            text.style.display = `block`;
+            sectionSliders[`slider${sectionNumber}`].slick('slickUnfilter');
         } else {
             text.style.display = `none`;
         }

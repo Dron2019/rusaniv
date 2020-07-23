@@ -32,6 +32,7 @@ $('.advantage-slider-js').slick({
                 centerMode: true,
                 centerPadding: '0px',
                 slidesToShow: 1,
+                speed: 750,
                 variableWidth: true,
             }
         }
